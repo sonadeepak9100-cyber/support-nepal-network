@@ -760,9 +760,43 @@ function Institutions() {
                   </span>
                 </div>
 
+                {inst.highlight ? (
+                  <p className="mt-6 inline-flex rounded-lg bg-secondary px-3 py-2 font-body text-[12px] font-semibold text-primary">
+                    {inst.highlight}
+                  </p>
+                ) : null}
+
                 <p className="mt-6 font-body text-sm leading-relaxed text-muted-foreground text-pretty">
                   {inst.blurb}
                 </p>
+
+                {inst.branches ? (
+                  <div className="mt-6">
+                    <p className="font-body text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                      Branches
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {inst.branches.map((b) => (
+                        <span
+                          key={b.name}
+                          className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 font-body text-[12px] ${
+                            b.status
+                              ? "border-dashed border-brandred/40 text-brandred"
+                              : "border-border text-foreground"
+                          }`}
+                        >
+                          {b.name}
+                          {b.status ? (
+                            <span className="font-body text-[10px] uppercase tracking-[0.14em]">
+                              {b.status}
+                            </span>
+                          ) : null}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+
 
                 <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
                   <span className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground">
