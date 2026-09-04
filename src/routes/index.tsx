@@ -419,7 +419,7 @@ function Institutions() {
         <div className="max-w-[36ch]">
           <p className="eyebrow">The house</p>
           <h2 className="mt-6 font-display text-4xl leading-[1.1] tracking-[-0.01em] text-balance lg:text-[3.25rem]">
-            Eight institutions, one standard
+            Six institutions, one standard
           </h2>
         </div>
 
