@@ -309,9 +309,9 @@ function Hero() {
           className="rise mt-8 max-w-[52ch] font-body text-lg leading-relaxed text-paper/80 text-pretty"
           style={{ animationDelay: "200ms" }}
         >
-          A house of institutions in Nepal — fashion ateliers, analytics labs,
-          design studios and schools — held to a single, uncompromising
-          standard.
+          A house of institutions in Nepal — design studios, colleges, schools
+          and early years campuses — held to a single, uncompromising standard.
+
         </p>
         <div
           className="rise mt-12 flex flex-wrap items-center gap-4"
