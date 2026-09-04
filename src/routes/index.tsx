@@ -188,6 +188,8 @@ function Nav() {
         </a>
 
 
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 font-body text-[13px] font-medium tracking-[0.01em] md:flex lg:gap-10">
+
         <nav className="hidden items-center gap-7 font-body text-[12px] uppercase tracking-[0.16em] md:flex lg:gap-9">
           {navLinks.map((link) =>
             link.children ? (
