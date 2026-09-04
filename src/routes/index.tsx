@@ -184,12 +184,12 @@ function Nav() {
           : "border-b border-transparent text-paper"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-10">
         <a href="#top" className="flex items-center gap-3">
           <Wordmark invert={!(scrolled || open)} />
         </a>
 
-        <nav className="hidden items-center gap-10 font-body text-[12px] uppercase tracking-[0.2em] md:flex">
+        <nav className="hidden items-center gap-7 font-body text-[12px] uppercase tracking-[0.16em] md:flex lg:gap-9">
           {navLinks.map((link) =>
             link.children ? (
               <div key={link.href} className="group relative">
