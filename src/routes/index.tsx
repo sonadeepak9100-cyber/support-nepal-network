@@ -4,8 +4,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroCampus from "@/assets/hero-campus.jpg";
 import iecLogo from "@/assets/iec-logo.jpg.asset.json";
 import leaderFounder from "@/assets/leader-founder.jpg";
-import leaderOperations from "@/assets/leader-operations.jpg";
-import leaderBusiness from "@/assets/leader-business.jpg";
+import leaderManish from "@/assets/leader-manish.jpg.asset.json";
+import leaderSona from "@/assets/leader-sona.jpg.asset.json";
 
 const TITLE = "IEC Group — Nepal's Legacy of Education Since 1997";
 const DESCRIPTION =
