@@ -243,7 +243,7 @@ function Nav() {
                 : "border border-paper/60 text-paper hover:bg-paper hover:text-ink"
             }`}
           >
-            Enquire
+            Get in Touch
           </a>
           <button
             type="button"
@@ -297,7 +297,7 @@ function Nav() {
             onClick={() => setOpen(false)}
             className="mt-6 block bg-primary px-6 py-4 text-center font-body text-[11px] uppercase tracking-[0.14em] text-primary-foreground"
           >
-            Enquire
+            Get in Touch
           </a>
         </nav>
       ) : null}
