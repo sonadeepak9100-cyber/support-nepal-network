@@ -21,8 +21,9 @@ import {
   Quote,
 } from "lucide-react";
 
-import heroCampus from "@/assets/hero-campus.jpg";
+import aboutCampus from "@/assets/hero-campus.jpg";
 import heroUnity from "@/assets/hero-unity.jpg.asset.json";
+import heroCampus from "@/assets/hero-campus.jpg.asset.json";
 import iecLogo from "@/assets/iec-logo.jpg.asset.json";
 import leaderManish from "@/assets/leader-manish.jpg.asset.json";
 import leaderSona from "@/assets/leader-sona.jpg.asset.json";
@@ -507,24 +508,32 @@ function Hero() {
   return (
     <section id="top" className="relative isolate min-h-[92vh] overflow-hidden bg-primary">
       <img
-        src={heroUnity.url}
-        alt="Students and mentors joining hands at an IEC Group campus"
+        src={heroCampus.url}
+        alt="Students walking through an IEC Group campus courtyard at golden hour"
         className="absolute inset-0 size-full scale-105 object-cover"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(150deg,color-mix(in_oklab,var(--veil-base)_92%,transparent),color-mix(in_oklab,var(--veil-base)_58%,transparent))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(150deg,color-mix(in_oklab,var(--veil-base)_92%,transparent),color-mix(in_oklab,var(--veil-base)_62%,transparent))]" />
       <div className="absolute inset-x-0 bottom-0 h-56 veil" />
 
-      <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col items-center justify-center px-6 py-40 text-center text-paper lg:px-10">
-        <p className="rise inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/10 px-4 py-1.5 font-body text-[11px] uppercase tracking-[0.28em] text-paper/90 backdrop-blur-sm">
+      <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col items-center justify-center px-6 py-32 text-center text-paper lg:px-10">
+        <img
+          src={iecLogo.url}
+          alt="IEC Group of Companies"
+          className="rise h-[130px] w-auto rounded-xl bg-paper object-contain px-3 py-1 shadow-2xl sm:h-[160px] lg:h-[190px]"
+        />
+        <h1
+          className="rise mt-10 font-display text-[3.6rem] font-bold uppercase leading-[0.92] tracking-[-0.03em] sm:text-[6rem] lg:text-[8rem]"
+          style={{ animationDelay: "100ms" }}
+        >
+          IEC Group
+        </h1>
+        <p
+          className="rise mt-6 inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/10 px-4 py-1.5 font-body text-[11px] uppercase tracking-[0.28em] text-paper/90 backdrop-blur-sm"
+          style={{ animationDelay: "160ms" }}
+        >
           <span className="size-1.5 rounded-full bg-brandgold" />
           Education… Our Passion
         </p>
-        <h1
-          className="rise mt-8 max-w-[16ch] font-display text-[3.4rem] font-bold leading-[0.95] tracking-[-0.035em] text-balance sm:text-[5.5rem] lg:text-[7rem]"
-          style={{ animationDelay: "100ms" }}
-        >
-          Together for Nepal's next generation
-        </h1>
         <p
           className="rise mt-8 max-w-[58ch] font-body text-lg leading-relaxed text-paper/85 text-pretty"
           style={{ animationDelay: "200ms" }}
@@ -532,6 +541,7 @@ function Hero() {
           Since 1997, IEC Group has built a network of six institutions across design, IT, K-12 and
           early years — held to a single, uncompromising standard of teaching and care.
         </p>
+
         <div
           className="rise mt-12 flex flex-wrap items-center justify-center gap-4"
           style={{ animationDelay: "300ms" }}
@@ -623,7 +633,7 @@ function About() {
 
           <Reveal delay={100} className="relative">
             <img
-              src={heroCampus}
+              src={aboutCampus}
               alt="Students at an IEC Group campus"
               loading="lazy"
               width={1200}
@@ -822,7 +832,7 @@ function Impact() {
               >
                 <figure className="overflow-hidden rounded-xl bg-secondary">
                   <img
-                    src={i === 0 ? heroCampus : heroUnity.url}
+                    src={i === 0 ? aboutCampus : heroUnity.url}
                     alt={s.title}
                     loading="lazy"
                     width={1200}
