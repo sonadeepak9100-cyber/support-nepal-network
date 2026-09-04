@@ -46,53 +46,54 @@
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
   --color-cream: var(--cream);
+  --color-sand: var(--sand);
 }
 
 :root {
-  --radius: 0.25rem;
+  --radius: 0.125rem;
 
-  /* Brand primitives */
-  --ink: oklch(0.19 0.055 264);
-  --ink-soft: oklch(0.26 0.06 264);
-  --gold: oklch(0.76 0.13 82);
-  --gold-soft: oklch(0.86 0.08 85);
-  --cream: oklch(0.96 0.012 85);
+  /* Brand primitives — forest green, antique gold, warm ivory */
+  --ink: oklch(0.32 0.05 157);
+  --ink-soft: oklch(0.42 0.045 157);
+  --gold: oklch(0.68 0.09 76);
+  --gold-soft: oklch(0.82 0.06 82);
+  --cream: oklch(0.968 0.015 88);
+  --sand: oklch(0.91 0.032 84);
 
-  --background: var(--ink);
-  --foreground: var(--cream);
-  --card: var(--ink-soft);
-  --card-foreground: var(--cream);
-  --popover: var(--ink-soft);
-  --popover-foreground: var(--cream);
-  --primary: var(--gold);
-  --primary-foreground: oklch(0.19 0.055 264);
-  --secondary: oklch(0.26 0.06 264);
-  --secondary-foreground: var(--cream);
-  --muted: oklch(0.26 0.06 264);
-  --muted-foreground: oklch(0.72 0.02 264);
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: oklch(0.99 0.008 88);
+  --card-foreground: var(--ink);
+  --popover: oklch(0.99 0.008 88);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--cream);
+  --secondary: var(--sand);
+  --secondary-foreground: var(--ink);
+  --muted: var(--sand);
+  --muted-foreground: oklch(0.5 0.02 157);
   --accent: var(--gold);
-  --accent-foreground: oklch(0.19 0.055 264);
-  --destructive: oklch(0.6 0.2 25);
+  --accent-foreground: var(--cream);
+  --destructive: oklch(0.55 0.19 25);
   --destructive-foreground: var(--cream);
-  --border: oklch(0.96 0.012 85 / 12%);
-  --input: oklch(0.96 0.012 85 / 16%);
+  --border: oklch(0.32 0.05 157 / 14%);
+  --input: oklch(0.32 0.05 157 / 20%);
   --ring: var(--gold);
 
   /* Luxury effects */
   --gradient-gilt: linear-gradient(
     100deg,
-    var(--gold-soft),
-    var(--gold) 45%,
-    color-mix(in oklab, var(--gold) 60%, var(--cream)) 70%,
+    var(--gold),
+    color-mix(in oklab, var(--gold) 55%, var(--ink)) 55%,
     var(--gold)
   );
   --gradient-veil: linear-gradient(
     to top,
-    var(--ink) 6%,
-    color-mix(in oklab, var(--ink) 78%, transparent) 45%,
-    color-mix(in oklab, var(--ink) 40%, transparent)
+    color-mix(in oklab, var(--ink) 88%, transparent) 4%,
+    color-mix(in oklab, var(--ink) 52%, transparent) 45%,
+    color-mix(in oklab, var(--ink) 22%, transparent)
   );
-  --shadow-lift: 0 30px 70px -40px oklch(0 0 0 / 0.85);
+  --shadow-lift: 0 30px 70px -45px oklch(0.32 0.05 157 / 0.4);
   --ease-lux: cubic-bezier(0.22, 0.68, 0, 1);
 }
 
