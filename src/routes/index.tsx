@@ -168,16 +168,49 @@ function Nav() {
         </a>
 
         <nav className="hidden items-center gap-10 font-body text-[12px] uppercase tracking-[0.2em] md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="relative py-1 transition-opacity duration-300 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-brandred after:transition-transform after:duration-500 hover:after:scale-x-100"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.children ? (
+              <div key={link.href} className="group relative">
+                <a
+                  href={link.href}
+                  className="relative flex items-center gap-1.5 py-1 transition-opacity duration-300 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-brandred after:transition-transform after:duration-500 group-hover:after:scale-x-100"
+                >
+                  {link.label}
+                  <span className="text-[9px] leading-none opacity-70">▼</span>
+                </a>
+                <div className="invisible absolute left-1/2 top-full z-50 w-[420px] -translate-x-1/2 pt-5 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
+                  <div className="border border-border bg-background p-2 shadow-2xl">
+                    {link.children.map((child) => (
+                      <a
+                        key={child.label}
+                        href={child.href}
+                        target={child.href.startsWith("http") ? "_blank" : undefined}
+                        rel={child.href.startsWith("http") ? "noreferrer" : undefined}
+                        className="block border-b border-border/60 px-4 py-3 last:border-0 hover:bg-secondary/70"
+                      >
+                        <span className="block font-display text-[13px] normal-case tracking-normal text-foreground">
+                          {child.label}
+                        </span>
+                        <span className="mt-0.5 block font-body text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                          {child.note}
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className="relative py-1 transition-opacity duration-300 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-brandred after:transition-transform after:duration-500 hover:after:scale-x-100"
+              >
+                {link.label}
+              </a>
+            ),
+          )}
         </nav>
+
 
         <div className="flex items-center gap-4">
           <a
