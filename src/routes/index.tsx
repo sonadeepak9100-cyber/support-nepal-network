@@ -6,6 +6,7 @@ import iecLogo from "@/assets/iec-logo.jpg.asset.json";
 
 import leaderManish from "@/assets/leader-manish.jpg.asset.json";
 import leaderSona from "@/assets/leader-sona.jpg.asset.json";
+import leaderSonaDeepak from "@/assets/leader-sona-deepak.jpg.asset.json";
 
 const TITLE = "IEC Group — Nepal's Legacy of Education Since 1997";
 const DESCRIPTION =
