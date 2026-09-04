@@ -237,7 +237,7 @@ function Nav() {
         <div className="flex items-center gap-4">
           <a
             href="#contact"
-            className="hidden rounded-lg bg-brandred px-6 py-2.5 font-body text-[15px] font-semibold text-paper transition-colors duration-300 hover:bg-primary sm:inline-block"
+            className="hidden rounded-lg bg-brandgold px-6 py-2.5 font-body text-[15px] font-semibold text-ink transition-colors duration-300 hover:bg-brandred hover:text-paper sm:inline-block"
           >
             Get in Touch
           </a>
