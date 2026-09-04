@@ -353,9 +353,10 @@ function About() {
               student in the room.
             </p>
             <p className="mt-6 max-w-[52ch] font-body leading-relaxed text-muted-foreground text-pretty">
-              From early years classrooms to analytics laboratories, we build
-              places where curiosity is treated as craft — practised slowly,
+              From early years classrooms to design studios, we build places
+              where curiosity is treated as craft — practised slowly,
               attentively, and for a lifetime.
+
             </p>
             <a
               href="#contact"
