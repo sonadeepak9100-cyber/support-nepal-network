@@ -87,11 +87,12 @@
     color-mix(in oklab, var(--brandred) 70%, var(--ink)) 60%,
     var(--ink)
   );
+  --veil-base: oklch(0.16 0.055 267);
   --gradient-veil: linear-gradient(
     to top,
-    color-mix(in oklab, var(--ink) 92%, transparent) 4%,
-    color-mix(in oklab, var(--ink) 58%, transparent) 45%,
-    color-mix(in oklab, var(--ink) 24%, transparent)
+    color-mix(in oklab, var(--veil-base) 90%, transparent) 4%,
+    color-mix(in oklab, var(--veil-base) 62%, transparent) 48%,
+    color-mix(in oklab, var(--veil-base) 30%, transparent)
   );
   --shadow-lift: 0 24px 60px -34px oklch(0.32 0.203 267 / 0.38);
   --ease-lux: cubic-bezier(0.22, 0.68, 0, 1);
