@@ -25,41 +25,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Institutions", href: "#institutions" },
-  { label: "Leadership", href: "#leadership" },
-  { label: "Contact", href: "#contact" },
-];
-
-const stats = [
-  { value: "28", unit: "Years", note: "Of unbroken academic legacy since 1997" },
-  { value: "08", unit: "Institutions", note: "Colleges, schools and studios" },
-  { value: "50K", unit: "Alumni", note: "Careers shaped across Nepal" },
-  { value: "500", unit: "Faculty", note: "Educators, mentors and staff" },
-];
-
-const leaders = [
-  {
-    name: "Ms. Shailaja Adhikary",
-    role: "Founder & Managing Director",
-    note: "Founded IEC in 1997 and remains the guiding hand behind the group's institutions across the valley.",
-    image: leaderFounder,
-  },
-  {
-    name: "Manish Kumar Deepak",
-    role: "Director, Operations",
-    note: "An engineer by training, he has held the group's operating standards since its very first year.",
-    image: leaderOperations,
-  },
-  {
-    name: "Sona Deepak",
-    role: "Business Director",
-    note: "Bridges craft and technology, steering the group's next chapter toward global standards.",
-    image: leaderBusiness,
-  },
-];
-
 const institutions = [
   {
     name: "IEC College of Art & Fashion",
@@ -68,20 +33,14 @@ const institutions = [
     href: "https://ieccollege.com.np/",
   },
   {
-    name: "IEC School of Analytics",
-    discipline: "Data Science & Analytics",
-    locations: "Mandikatar",
-    href: "https://iecschoolofanalytics.com/",
-  },
-  {
-    name: "IEC School of Art & Fashion",
-    discipline: "Creative Arts",
+    name: "IEC School of Design",
+    discipline: "Design & Creative Arts",
     locations: "Dillibazar",
     href: "https://iecsaf.com/",
   },
   {
-    name: "Euro Kids",
-    discipline: "Pre-Primary",
+    name: "EuroKids Early Childhood Education",
+    discipline: "Early Years",
     locations: "Hattigauda · Samakhusi · Bishalnagar · Tinkune",
     href: "https://eurokids.com.np/",
   },
@@ -103,13 +62,51 @@ const institutions = [
     locations: "Mandikatar",
     href: null,
   },
+];
+
+const navLinks = [
+  { label: "About", href: "#about" },
   {
-    name: "Sana School of Design",
-    discipline: "Design",
-    locations: "Kathmandu",
-    href: null,
+    label: "Institutions",
+    href: "#institutions",
+    children: institutions.map((i) => ({
+      label: i.name,
+      href: i.href ?? "#institutions",
+      note: i.discipline,
+    })),
+  },
+  { label: "Leadership", href: "#leadership" },
+  { label: "Contact", href: "#contact" },
+];
+
+const stats = [
+  { value: "28", unit: "Years", note: "Of unbroken academic legacy since 1997" },
+  { value: "06", unit: "Institutions", note: "Colleges, schools and studios" },
+  { value: "50K", unit: "Alumni", note: "Careers shaped across Nepal" },
+  { value: "500", unit: "Faculty", note: "Educators, mentors and staff" },
+];
+
+const leaders = [
+  {
+    name: "Ms. Shailaja Adhikary",
+    role: "Founder & Managing Director",
+    note: "Founded IEC in 1997 and remains the guiding hand behind the group's institutions across the valley.",
+    image: leaderFounder,
+  },
+  {
+    name: "Manish Kumar Deepak",
+    role: "Director, Operations",
+    note: "An engineer by training, he has held the group's operating standards since its very first year.",
+    image: leaderManish.url,
+  },
+  {
+    name: "Sona Deepak",
+    role: "Business Director",
+    note: "Bridges craft and technology, steering the group's next chapter toward global standards.",
+    image: leaderSona.url,
   },
 ];
+
 
 function Index() {
   return (
