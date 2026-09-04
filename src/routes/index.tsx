@@ -1062,7 +1062,7 @@ function Contact() {
                     <dt className="mt-6 font-body text-[10px] uppercase tracking-[0.24em] text-muted-foreground">
                       {d.label}
                     </dt>
-                    <dd className="mt-2 font-display text-lg font-semibold">
+                    <dd className="mt-2 break-words font-display text-lg font-semibold">
                       {d.href ? (
                         <a
                           href={d.href}
