@@ -6,9 +6,10 @@
 
 /*
  * IEC Group — luxury design system.
- * Deep navy lacquer, gilt gold, cream. Space Grotesk / DM Sans.
+ * Warm ivory, deep forest green, antique gold. Playfair Display / Jost.
  * All colors are oklch semantic tokens. Never hardcode colors in components.
  */
+
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 2px);
