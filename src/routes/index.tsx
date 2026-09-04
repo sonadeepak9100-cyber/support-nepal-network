@@ -236,12 +236,9 @@ function Nav() {
         <div className="flex items-center gap-4">
           <a
             href="#contact"
-            className={`hidden px-6 py-3 font-body text-[11px] uppercase tracking-[0.14em] transition-colors duration-500 sm:inline-block ${
-              scrolled || open
-                ? "bg-primary text-primary-foreground hover:bg-ink-soft"
-                : "border border-paper/60 text-paper hover:bg-paper hover:text-ink"
-            }`}
+            className="hidden rounded-full bg-brandred px-7 py-3 font-body text-[13px] font-semibold text-paper shadow-[var(--shadow-lift)] transition-colors duration-300 hover:bg-primary sm:inline-block"
           >
+
             Get in Touch
           </a>
           <button
