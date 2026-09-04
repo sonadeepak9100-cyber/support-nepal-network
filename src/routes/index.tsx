@@ -34,7 +34,7 @@ import { useActiveSection, useCountUp, useReveal } from "@/lib/use-reveal";
 
 const TITLE = "IEC Group — Nepal's Legacy of Education Since 1997";
 const DESCRIPTION =
-  "IEC Group is Nepal's education house: six institutions across design, IT, K-12 and early years, guided since 1997 by Ms. Shailaja Adhikary.";
+  "IEC Group is Nepal's education house: seven institutions across design, IT, K-12 and early years, guided since 1997 by Ms. Shailaja Adhikary.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -101,14 +101,26 @@ const institutions: Institution[] = [
   },
   {
     name: "Euro School Kathmandu",
-    discipline: "IB World School · K–12",
+    discipline: "IB World School · Grade 1–10",
     category: "K-12",
     locations: "Hattigauda",
     blurb:
-      "An IB World School offering the International Baccalaureate alongside a full K-12 pathway — inquiry-led learning, global-minded assessment, and space for music, sport and design.",
+      "An IB World School running Grade 1 to Grade 10 — inquiry-led learning and globally benchmarked assessment, with room for music, sport and design alongside academics.",
     href: "https://euroschool.edu.np/",
-    highlight: "IB World School",
+    highlight: "IB World School · Grade 1–10",
   },
+  {
+    name: "Euro A Level Academy",
+    discipline: "+2 / A Levels",
+    category: "K-12",
+    locations: "Kathmandu",
+    blurb:
+      "The group's +2 stage: a dedicated A Level academy carrying Euro School students — and students from other schools — through to university entry in Nepal and abroad.",
+    href: null,
+    highlight: "Coming soon",
+  },
+
+
 
   {
     name: "Metaphor Consultancy",
@@ -192,22 +204,23 @@ const leaders = [
   {
     name: "Ms. Shailaja Adhikary",
     role: "Founder & Managing Director",
-    note: "Founded IEC in 1997 and remains the guiding hand behind the group's institutions across the valley.",
+    note: "In 1997 she opened Nepal's first professional fashion and interior design institution in a small block in Bagbazar; a decade later she brought EuroKids to Nepal and went on to establish Euro School. Today she leads the IEC Group of Companies as Managing Director and serves as principal of Euro School, and has been profiled internationally as one of Asia's women leaders in education. Her conviction is simple — education has to be all-encompassing and enjoyable — and it shapes every campus in the group.",
     image: leaderSona.url,
   },
   {
     name: "Manish Kumar Deepak",
     role: "Director, Operations",
-    note: "An engineer by training, he has held the group's operating standards since its very first year.",
+    note: "An engineer by training, he has held the group's operating standards since its very first year — campuses, facilities, faculty systems and the day-to-day discipline that keeps seven institutions running to one standard.",
     image: leaderManish.url,
   },
   {
     name: "Sona Deepak",
     role: "Business Director",
-    note: "Bridges craft and technology, steering the group's next chapter toward global standards.",
+    note: "A graduate of Kodaikanal International School and the University of Leicester, he leads business development across the group and works at the meeting point of creativity and technology. His focus is on aligning IEC's programmes with global standards — international academic partnerships, industry-facing curricula and new ventures — so students graduate ready for a world that keeps changing.",
     image: leaderSonaDeepak.url,
   },
 ];
+
 
 const timeline = [
   {
@@ -232,8 +245,8 @@ const timeline = [
   },
   {
     year: "Today",
-    title: "Six institutions",
-    body: "A group of six institutions with 500+ faculty and a 50,000-strong alumni network.",
+    title: "Seven institutions",
+    body: "A group of seven institutions with 500+ faculty and a 50,000-strong alumni network.",
   },
 ];
 
@@ -550,7 +563,7 @@ function Hero() {
           className="rise mt-8 max-w-[58ch] font-body text-lg leading-relaxed text-paper/85 text-pretty"
           style={{ animationDelay: "200ms" }}
         >
-          Since 1997, IEC Group has built a network of six institutions across design, IT, K-12 and
+          Since 1997, IEC Group has built a network of seven institutions across design, IT, K-12 and
           early years — held to a single, uncompromising standard of teaching and care.
         </p>
 
@@ -712,7 +725,7 @@ function Institutions() {
         <div className="flex flex-wrap items-end justify-between gap-8">
           <SectionHeading
             eyebrow="The house"
-            title="Six institutions, one standard"
+            title="Seven institutions, one standard"
             intro="Colleges, schools, studios and a consultancy — filter by what you're looking for."
           />
         </div>
@@ -1158,7 +1171,7 @@ function Footer() {
               <Wordmark className="h-12 lg:h-12" />
             </span>
             <p className="mt-6 max-w-[38ch] font-body text-sm leading-relaxed text-paper/70">
-              IEC Group has been Nepal's education house since 1997 — six institutions across
+              IEC Group has been Nepal's education house since 1997 — seven institutions across
               design, IT, K-12 and early years, held to one standard of teaching and care.
             </p>
             <div className="mt-8 flex gap-3">
