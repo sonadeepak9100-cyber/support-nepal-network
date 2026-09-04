@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import heroCampus from "@/assets/hero-campus.jpg";
 import iecLogo from "@/assets/iec-logo.jpg.asset.json";
-import leaderFounder from "@/assets/leader-founder.jpg";
+
 import leaderManish from "@/assets/leader-manish.jpg.asset.json";
 import leaderSona from "@/assets/leader-sona.jpg.asset.json";
 
@@ -91,19 +91,13 @@ const leaders = [
     name: "Ms. Shailaja Adhikary",
     role: "Founder & Managing Director",
     note: "Founded IEC in 1997 and remains the guiding hand behind the group's institutions across the valley.",
-    image: leaderFounder,
+    image: leaderSona.url,
   },
   {
     name: "Manish Kumar Deepak",
     role: "Director, Operations",
     note: "An engineer by training, he has held the group's operating standards since its very first year.",
     image: leaderManish.url,
-  },
-  {
-    name: "Sona Deepak",
-    role: "Business Director",
-    note: "Bridges craft and technology, steering the group's next chapter toward global standards.",
-    image: leaderSona.url,
   },
 ];
 
