@@ -66,9 +66,31 @@ const institutions = [
 ];
 
 const navLinks = [
-  { label: "About", href: "#about" },
+  { label: "Home", href: "#top" },
+  { label: "About Us", href: "#about" },
   {
-    label: "Institutions",
+    label: "Leadership",
+    href: "#leadership",
+    children: [
+      {
+        label: "Ms. Shailaja Adhikary",
+        href: "#leadership",
+        note: "Founder & Managing Director",
+      },
+      {
+        label: "Manish Kumar Deepak",
+        href: "#leadership",
+        note: "Director, Operations",
+      },
+      {
+        label: "Sona Deepak",
+        href: "#leadership",
+        note: "Business Director",
+      },
+    ],
+  },
+  {
+    label: "Organizations",
     href: "#institutions",
     children: institutions.map((i) => ({
       label: i.name,
@@ -76,7 +98,6 @@ const navLinks = [
       note: i.discipline,
     })),
   },
-  { label: "Leadership", href: "#leadership" },
   { label: "Contact", href: "#contact" },
 ];
 
