@@ -85,20 +85,30 @@ const institutions: Institution[] = [
   },
   {
     name: "EuroKids",
-    discipline: "Early Childhood Education",
+    discipline: "Pre-School",
     category: "Early Years",
     locations: "Hattigauda · Bishalnagar · Tinkune · Samakhushi",
     blurb:
-      "Play-based early childhood education delivered to an international curriculum standard, with four Kathmandu branches running the same programme so families never lose continuity.",
+      "Play-based pre-school learning delivered to an international curriculum standard, with four Kathmandu branches running the same programme so families never lose continuity.",
     href: "https://eurokids.com.np/",
     branches: [
       { name: "Hattigauda" },
       { name: "Bishalnagar" },
       { name: "Tinkune" },
       { name: "Samakhushi" },
-      { name: "Sitapaila", status: "Coming soon" },
     ],
   },
+  {
+    name: "EuroKids Early Childhood Education",
+    discipline: "Early Childhood Education",
+    category: "Early Years",
+    locations: "Sitapaila",
+    blurb:
+      "A separate early childhood education centre opening in Sitapaila, extending the group's early years work with a dedicated, purpose-built campus.",
+    href: null,
+    highlight: "Coming soon",
+  },
+
   {
     name: "Euro School Kathmandu",
     discipline: "IB World School · Grade 1–10",
