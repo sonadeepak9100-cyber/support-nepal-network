@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import heroCampus from "@/assets/hero-campus.jpg";
+import heroUnity from "@/assets/hero-unity.jpg.asset.json";
+
 import iecLogo from "@/assets/iec-logo.jpg.asset.json";
 
 import leaderManish from "@/assets/leader-manish.jpg.asset.json";
@@ -178,18 +180,17 @@ function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
-        scrolled || open
-          ? "border-b border-border bg-background/95 text-foreground backdrop-blur-xl"
-          : "border-b border-transparent text-paper"
+      className={`fixed inset-x-0 top-0 z-50 border-b bg-background/95 text-foreground backdrop-blur-xl transition-shadow duration-500 ${
+        scrolled || open ? "border-border shadow-[var(--shadow-lift)]" : "border-border/60"
       }`}
     >
       <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-10">
         <a href="#top" className="flex items-center gap-3">
-          <Wordmark invert={!(scrolled || open)} />
+          <Wordmark />
         </a>
 
-        <nav className="hidden items-center gap-7 font-body text-[12px] uppercase tracking-[0.16em] md:flex lg:gap-9">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 font-body text-[13px] font-medium md:flex lg:gap-10">
+
           {navLinks.map((link) =>
             link.children ? (
               <div key={link.href} className="group relative">
@@ -237,12 +238,9 @@ function Nav() {
         <div className="flex items-center gap-4">
           <a
             href="#contact"
-            className={`hidden px-6 py-3 font-body text-[11px] uppercase tracking-[0.14em] transition-colors duration-500 sm:inline-block ${
-              scrolled || open
-                ? "bg-primary text-primary-foreground hover:bg-ink-soft"
-                : "border border-paper/60 text-paper hover:bg-paper hover:text-ink"
-            }`}
+            className="hidden rounded-full bg-brandred px-7 py-3 font-body text-[13px] font-semibold text-paper shadow-[var(--shadow-lift)] transition-colors duration-300 hover:bg-primary sm:inline-block"
           >
+
             Get in Touch
           </a>
           <button
@@ -311,8 +309,14 @@ function Hero() {
       id="top"
       className="relative isolate min-h-[92vh] overflow-hidden bg-primary"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_0%,rgba(255,255,255,0.16),transparent_65%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/25 to-transparent" />
+      <img
+        src={heroUnity.url}
+        alt="Students and mentors joining hands at an IEC Group campus"
+        className="absolute inset-0 size-full object-cover"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(140deg,color-mix(in_oklab,var(--primary)_92%,transparent),color-mix(in_oklab,var(--primary)_62%,transparent))]" />
+      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/40 to-transparent" />
+
 
       <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col items-center justify-center px-6 py-40 text-center text-paper lg:px-10">
         <p className="rise font-body text-[11px] uppercase tracking-[0.32em] text-red-soft">
