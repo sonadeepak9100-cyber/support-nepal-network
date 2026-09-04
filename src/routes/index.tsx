@@ -307,8 +307,14 @@ function Hero() {
       id="top"
       className="relative isolate min-h-[92vh] overflow-hidden bg-primary"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_0%,rgba(255,255,255,0.16),transparent_65%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/25 to-transparent" />
+      <img
+        src={heroUnity.url}
+        alt="Students and mentors joining hands at an IEC Group campus"
+        className="absolute inset-0 size-full object-cover"
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(140deg,color-mix(in_oklab,var(--primary)_92%,transparent),color-mix(in_oklab,var(--primary)_62%,transparent))]" />
+      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/40 to-transparent" />
+
 
       <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col items-center justify-center px-6 py-40 text-center text-paper lg:px-10">
         <p className="rise font-body text-[11px] uppercase tracking-[0.32em] text-red-soft">
