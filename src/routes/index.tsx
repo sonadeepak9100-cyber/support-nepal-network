@@ -4,12 +4,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroCampus from "@/assets/hero-campus.jpg";
 import iecLogo from "@/assets/iec-logo.jpg.asset.json";
 import leaderFounder from "@/assets/leader-founder.jpg";
-import leaderOperations from "@/assets/leader-operations.jpg";
-import leaderBusiness from "@/assets/leader-business.jpg";
+import leaderManish from "@/assets/leader-manish.jpg.asset.json";
+import leaderSona from "@/assets/leader-sona.jpg.asset.json";
 
 const TITLE = "IEC Group — Nepal's Legacy of Education Since 1997";
 const DESCRIPTION =
-  "IEC Group is Nepal's education house: institutions across fashion, design, analytics, K-12 and early years, guided since 1997 by Ms. Shailaja Adhikary.";
+  "IEC Group is Nepal's education house: institutions across fashion, design, K-12 and early years, guided since 1997 by Ms. Shailaja Adhikary.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,41 +25,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Institutions", href: "#institutions" },
-  { label: "Leadership", href: "#leadership" },
-  { label: "Contact", href: "#contact" },
-];
-
-const stats = [
-  { value: "28", unit: "Years", note: "Of unbroken academic legacy since 1997" },
-  { value: "08", unit: "Institutions", note: "Colleges, schools and studios" },
-  { value: "50K", unit: "Alumni", note: "Careers shaped across Nepal" },
-  { value: "500", unit: "Faculty", note: "Educators, mentors and staff" },
-];
-
-const leaders = [
-  {
-    name: "Ms. Shailaja Adhikary",
-    role: "Founder & Managing Director",
-    note: "Founded IEC in 1997 and remains the guiding hand behind the group's institutions across the valley.",
-    image: leaderFounder,
-  },
-  {
-    name: "Manish Kumar Deepak",
-    role: "Director, Operations",
-    note: "An engineer by training, he has held the group's operating standards since its very first year.",
-    image: leaderOperations,
-  },
-  {
-    name: "Sona Deepak",
-    role: "Business Director",
-    note: "Bridges craft and technology, steering the group's next chapter toward global standards.",
-    image: leaderBusiness,
-  },
-];
-
 const institutions = [
   {
     name: "IEC College of Art & Fashion",
@@ -68,20 +33,14 @@ const institutions = [
     href: "https://ieccollege.com.np/",
   },
   {
-    name: "IEC School of Analytics",
-    discipline: "Data Science & Analytics",
-    locations: "Mandikatar",
-    href: "https://iecschoolofanalytics.com/",
-  },
-  {
-    name: "IEC School of Art & Fashion",
-    discipline: "Creative Arts",
+    name: "IEC School of Design",
+    discipline: "Design & Creative Arts",
     locations: "Dillibazar",
     href: "https://iecsaf.com/",
   },
   {
-    name: "Euro Kids",
-    discipline: "Pre-Primary",
+    name: "EuroKids Early Childhood Education",
+    discipline: "Early Years",
     locations: "Hattigauda · Samakhusi · Bishalnagar · Tinkune",
     href: "https://eurokids.com.np/",
   },
@@ -103,13 +62,51 @@ const institutions = [
     locations: "Mandikatar",
     href: null,
   },
+];
+
+const navLinks = [
+  { label: "About", href: "#about" },
   {
-    name: "Sana School of Design",
-    discipline: "Design",
-    locations: "Kathmandu",
-    href: null,
+    label: "Institutions",
+    href: "#institutions",
+    children: institutions.map((i) => ({
+      label: i.name,
+      href: i.href ?? "#institutions",
+      note: i.discipline,
+    })),
+  },
+  { label: "Leadership", href: "#leadership" },
+  { label: "Contact", href: "#contact" },
+];
+
+const stats = [
+  { value: "28", unit: "Years", note: "Of unbroken academic legacy since 1997" },
+  { value: "06", unit: "Institutions", note: "Colleges, schools and studios" },
+  { value: "50K", unit: "Alumni", note: "Careers shaped across Nepal" },
+  { value: "500", unit: "Faculty", note: "Educators, mentors and staff" },
+];
+
+const leaders = [
+  {
+    name: "Ms. Shailaja Adhikary",
+    role: "Founder & Managing Director",
+    note: "Founded IEC in 1997 and remains the guiding hand behind the group's institutions across the valley.",
+    image: leaderFounder,
+  },
+  {
+    name: "Manish Kumar Deepak",
+    role: "Director, Operations",
+    note: "An engineer by training, he has held the group's operating standards since its very first year.",
+    image: leaderManish.url,
+  },
+  {
+    name: "Sona Deepak",
+    role: "Business Director",
+    note: "Bridges craft and technology, steering the group's next chapter toward global standards.",
+    image: leaderSona.url,
   },
 ];
+
 
 function Index() {
   return (
@@ -171,16 +168,49 @@ function Nav() {
         </a>
 
         <nav className="hidden items-center gap-10 font-body text-[12px] uppercase tracking-[0.2em] md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="relative py-1 transition-opacity duration-300 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-brandred after:transition-transform after:duration-500 hover:after:scale-x-100"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.children ? (
+              <div key={link.href} className="group relative">
+                <a
+                  href={link.href}
+                  className="relative flex items-center gap-1.5 py-1 transition-opacity duration-300 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-brandred after:transition-transform after:duration-500 group-hover:after:scale-x-100"
+                >
+                  {link.label}
+                  <span className="text-[9px] leading-none opacity-70">▼</span>
+                </a>
+                <div className="invisible absolute left-1/2 top-full z-50 w-[420px] -translate-x-1/2 pt-5 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
+                  <div className="border border-border bg-background p-2 shadow-2xl">
+                    {link.children.map((child) => (
+                      <a
+                        key={child.label}
+                        href={child.href}
+                        target={child.href.startsWith("http") ? "_blank" : undefined}
+                        rel={child.href.startsWith("http") ? "noreferrer" : undefined}
+                        className="block border-b border-border/60 px-4 py-3 last:border-0 hover:bg-secondary/70"
+                      >
+                        <span className="block font-display text-[13px] normal-case tracking-normal text-foreground">
+                          {child.label}
+                        </span>
+                        <span className="mt-0.5 block font-body text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                          {child.note}
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className="relative py-1 transition-opacity duration-300 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-brandred after:transition-transform after:duration-500 hover:after:scale-x-100"
+              >
+                {link.label}
+              </a>
+            ),
+          )}
         </nav>
+
 
         <div className="flex items-center gap-4">
           <a
@@ -213,15 +243,33 @@ function Nav() {
       {open ? (
         <nav className="border-t border-border bg-background px-6 pb-8 pt-4 md:hidden">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="block border-b border-border py-4 font-display text-xl text-foreground"
-            >
-              {link.label}
-            </a>
+            <div key={link.href} className="border-b border-border py-4">
+              <a
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="block font-display text-xl text-foreground"
+              >
+                {link.label}
+              </a>
+              {link.children ? (
+                <div className="mt-3 space-y-2 border-l border-border pl-4">
+                  {link.children.map((child) => (
+                    <a
+                      key={child.label}
+                      href={child.href}
+                      target={child.href.startsWith("http") ? "_blank" : undefined}
+                      rel={child.href.startsWith("http") ? "noreferrer" : undefined}
+                      onClick={() => setOpen(false)}
+                      className="block font-body text-sm text-muted-foreground"
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              ) : null}
+            </div>
           ))}
+
           <a
             href="#contact"
             onClick={() => setOpen(false)}
@@ -261,9 +309,9 @@ function Hero() {
           className="rise mt-8 max-w-[52ch] font-body text-lg leading-relaxed text-paper/80 text-pretty"
           style={{ animationDelay: "200ms" }}
         >
-          A house of institutions in Nepal — fashion ateliers, analytics labs,
-          design studios and schools — held to a single, uncompromising
-          standard.
+          A house of institutions in Nepal — design studios, colleges, schools
+          and early years campuses — held to a single, uncompromising standard.
+
         </p>
         <div
           className="rise mt-12 flex flex-wrap items-center gap-4"
@@ -305,9 +353,10 @@ function About() {
               student in the room.
             </p>
             <p className="mt-6 max-w-[52ch] font-body leading-relaxed text-muted-foreground text-pretty">
-              From early years classrooms to analytics laboratories, we build
-              places where curiosity is treated as craft — practised slowly,
+              From early years classrooms to design studios, we build places
+              where curiosity is treated as craft — practised slowly,
               attentively, and for a lifetime.
+
             </p>
             <a
               href="#contact"
@@ -370,7 +419,7 @@ function Institutions() {
         <div className="max-w-[36ch]">
           <p className="eyebrow">The house</p>
           <h2 className="mt-6 font-display text-4xl leading-[1.1] tracking-[-0.01em] text-balance lg:text-[3.25rem]">
-            Eight institutions, one standard
+            Six institutions, one standard
           </h2>
         </div>
 
