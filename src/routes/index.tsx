@@ -180,7 +180,7 @@ function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b bg-background/95 text-foreground backdrop-blur-xl transition-shadow duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b bg-paper text-foreground transition-shadow duration-500 ${
         scrolled || open ? "border-border shadow-[var(--shadow-lift)]" : "border-border/60"
       }`}
     >
@@ -189,7 +189,8 @@ function Nav() {
           <Wordmark />
         </a>
 
-        <nav className="hidden items-center gap-8 font-body text-[15px] font-medium text-primary md:flex">
+        <nav className="hidden items-center gap-8 font-body text-[15px] font-medium text-foreground md:flex">
+
           {navLinks.map((link) =>
             link.children ? (
               <div key={link.href} className="group relative">
@@ -236,7 +237,7 @@ function Nav() {
         <div className="flex items-center gap-4">
           <a
             href="#contact"
-            className="hidden rounded-lg bg-brandred px-6 py-2.5 font-body text-[15px] font-semibold text-paper transition-colors duration-300 hover:bg-primary sm:inline-block"
+            className="hidden rounded-lg bg-brandgold px-6 py-2.5 font-body text-[15px] font-semibold text-ink transition-colors duration-300 hover:bg-brandred hover:text-paper sm:inline-block"
           >
             Get in Touch
           </a>
