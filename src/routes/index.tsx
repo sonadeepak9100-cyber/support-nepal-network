@@ -6,6 +6,7 @@ import iecLogo from "@/assets/iec-logo.jpg.asset.json";
 
 import leaderManish from "@/assets/leader-manish.jpg.asset.json";
 import leaderSona from "@/assets/leader-sona.jpg.asset.json";
+import leaderSonaDeepak from "@/assets/leader-sona-deepak.jpg.asset.json";
 
 const TITLE = "IEC Group — Nepal's Legacy of Education Since 1997";
 const DESCRIPTION =
@@ -98,6 +99,12 @@ const leaders = [
     role: "Director, Operations",
     note: "An engineer by training, he has held the group's operating standards since its very first year.",
     image: leaderManish.url,
+  },
+  {
+    name: "Sona Deepak",
+    role: "Business Director",
+    note: "Bridges craft and technology, steering the group's next chapter toward global standards.",
+    image: leaderSonaDeepak.url,
   },
 ];
 
