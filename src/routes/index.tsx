@@ -34,7 +34,7 @@ import { useActiveSection, useCountUp, useReveal } from "@/lib/use-reveal";
 
 const TITLE = "IEC Group — Nepal's Legacy of Education Since 1997";
 const DESCRIPTION =
-  "IEC Group is Nepal's education house: seven institutions across design, IT, K-12 and early years, guided since 1997 by Ms. Shailaja Adhikary.";
+  "IEC Group is Nepal's education house: eight institutions across design, IT, K-12 and early years, guided since 1997 by Ms. Shailaja Adhikary.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -85,20 +85,30 @@ const institutions: Institution[] = [
   },
   {
     name: "EuroKids",
-    discipline: "Early Childhood Education",
+    discipline: "Pre-School",
     category: "Early Years",
     locations: "Hattigauda · Bishalnagar · Tinkune · Samakhushi",
     blurb:
-      "Play-based early childhood education delivered to an international curriculum standard, with four Kathmandu branches running the same programme so families never lose continuity.",
+      "Play-based pre-school learning delivered to an international curriculum standard, with four Kathmandu branches running the same programme so families never lose continuity.",
     href: "https://eurokids.com.np/",
     branches: [
       { name: "Hattigauda" },
       { name: "Bishalnagar" },
       { name: "Tinkune" },
       { name: "Samakhushi" },
-      { name: "Sitapaila", status: "Coming soon" },
     ],
   },
+  {
+    name: "EuroKids Early Childhood Education",
+    discipline: "Early Childhood Education",
+    category: "Early Years",
+    locations: "Sitapaila",
+    blurb:
+      "A separate early childhood education centre opening in Sitapaila, extending the group's early years work with a dedicated, purpose-built campus.",
+    href: null,
+    highlight: "Coming soon",
+  },
+
   {
     name: "Euro School Kathmandu",
     discipline: "IB World School · Grade 1–10",
@@ -210,7 +220,7 @@ const leaders = [
   {
     name: "Manish Kumar Deepak",
     role: "Director, Operations",
-    note: "An engineer by training, he has held the group's operating standards since its very first year — campuses, facilities, faculty systems and the day-to-day discipline that keeps seven institutions running to one standard.",
+    note: "An engineer by training, he has held the group's operating standards since its very first year — campuses, facilities, faculty systems and the day-to-day discipline that keeps eight institutions running to one standard.",
     image: leaderManish.url,
   },
   {
@@ -245,8 +255,8 @@ const timeline = [
   },
   {
     year: "Today",
-    title: "Seven institutions",
-    body: "A group of seven institutions with 500+ faculty and a 50,000-strong alumni network.",
+    title: "Eight institutions",
+    body: "A group of eight institutions with 500+ faculty and a 50,000-strong alumni network.",
   },
 ];
 
@@ -563,7 +573,7 @@ function Hero() {
           className="rise mt-8 max-w-[58ch] font-body text-lg leading-relaxed text-paper/85 text-pretty"
           style={{ animationDelay: "200ms" }}
         >
-          Since 1997, IEC Group has built a network of seven institutions across design, IT, K-12 and
+          Since 1997, IEC Group has built a network of eight institutions across design, IT, K-12 and
           early years — held to a single, uncompromising standard of teaching and care.
         </p>
 
@@ -725,7 +735,7 @@ function Institutions() {
         <div className="flex flex-wrap items-end justify-between gap-8">
           <SectionHeading
             eyebrow="The house"
-            title="Seven institutions, one standard"
+            title="Eight institutions, one standard"
             intro="Colleges, schools, studios and a consultancy — filter by what you're looking for."
           />
         </div>
@@ -1171,7 +1181,7 @@ function Footer() {
               <Wordmark className="h-12 lg:h-12" />
             </span>
             <p className="mt-6 max-w-[38ch] font-body text-sm leading-relaxed text-paper/70">
-              IEC Group has been Nepal's education house since 1997 — seven institutions across
+              IEC Group has been Nepal's education house since 1997 — eight institutions across
               design, IT, K-12 and early years, held to one standard of teaching and care.
             </p>
             <div className="mt-8 flex gap-3">
