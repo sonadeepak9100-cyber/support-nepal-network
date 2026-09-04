@@ -101,14 +101,26 @@ const institutions: Institution[] = [
   },
   {
     name: "Euro School Kathmandu",
-    discipline: "IB World School · K–12",
+    discipline: "IB World School · Grade 1–10",
     category: "K-12",
     locations: "Hattigauda",
     blurb:
-      "An IB World School offering the International Baccalaureate alongside a full K-12 pathway — inquiry-led learning, global-minded assessment, and space for music, sport and design.",
+      "An IB World School running Grade 1 to Grade 10 — inquiry-led learning and globally benchmarked assessment, with room for music, sport and design alongside academics.",
     href: "https://euroschool.edu.np/",
-    highlight: "IB World School",
+    highlight: "IB World School · Grade 1–10",
   },
+  {
+    name: "Euro A Level Academy",
+    discipline: "+2 / A Levels",
+    category: "K-12",
+    locations: "Kathmandu",
+    blurb:
+      "The group's +2 stage: a dedicated A Level academy carrying Euro School students — and students from other schools — through to university entry in Nepal and abroad.",
+    href: null,
+    highlight: "Coming soon",
+  },
+
+
 
   {
     name: "Metaphor Consultancy",
