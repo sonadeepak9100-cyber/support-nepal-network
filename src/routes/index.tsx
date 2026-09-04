@@ -34,9 +34,9 @@ const institutions = [
     href: "https://ieccollege.com.np/",
   },
   {
-    name: "IEC School of Design",
-    discipline: "Design & Creative Arts",
-    locations: "Dillibazar",
+    name: "IEC School of Design & IT",
+    discipline: "Design, Creative Arts & IT",
+    locations: "Mandikhatar · Miteripul",
     href: "https://iecsaf.com/",
   },
   {
