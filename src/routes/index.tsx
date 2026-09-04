@@ -243,15 +243,33 @@ function Nav() {
       {open ? (
         <nav className="border-t border-border bg-background px-6 pb-8 pt-4 md:hidden">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="block border-b border-border py-4 font-display text-xl text-foreground"
-            >
-              {link.label}
-            </a>
+            <div key={link.href} className="border-b border-border py-4">
+              <a
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="block font-display text-xl text-foreground"
+              >
+                {link.label}
+              </a>
+              {link.children ? (
+                <div className="mt-3 space-y-2 border-l border-border pl-4">
+                  {link.children.map((child) => (
+                    <a
+                      key={child.label}
+                      href={child.href}
+                      target={child.href.startsWith("http") ? "_blank" : undefined}
+                      rel={child.href.startsWith("http") ? "noreferrer" : undefined}
+                      onClick={() => setOpen(false)}
+                      className="block font-body text-sm text-muted-foreground"
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              ) : null}
+            </div>
           ))}
+
           <a
             href="#contact"
             onClick={() => setOpen(false)}
