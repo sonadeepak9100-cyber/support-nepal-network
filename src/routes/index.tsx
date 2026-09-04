@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import heroCampus from "@/assets/hero-campus.jpg";
@@ -7,7 +8,7 @@ import leaderBusiness from "@/assets/leader-business.jpg";
 
 const TITLE = "IEC Group — Nepal's Legacy of Education Since 1997";
 const DESCRIPTION =
-  "IEC Group is Nepal's education house: twelve institutions across fashion, design, analytics, K-12 and early years, guided since 1997 by Ms. Shailaja Adhikary.";
+  "IEC Group is Nepal's education house: institutions across fashion, design, analytics, K-12 and early years, guided since 1997 by Ms. Shailaja Adhikary.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,18 +24,25 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Institutions", href: "#institutions" },
+  { label: "Leadership", href: "#leadership" },
+  { label: "Contact", href: "#contact" },
+];
+
 const stats = [
-  { value: "28", suffix: "+", label: "Years of legacy" },
-  { value: "12", suffix: "+", label: "Institutions" },
-  { value: "50K", suffix: "+", label: "Students shaped" },
-  { value: "500", suffix: "+", label: "Faculty & staff" },
+  { value: "28", unit: "Years", note: "Of unbroken academic legacy since 1997" },
+  { value: "08", unit: "Institutions", note: "Colleges, schools and studios" },
+  { value: "50K", unit: "Alumni", note: "Careers shaped across Nepal" },
+  { value: "500", unit: "Faculty", note: "Educators, mentors and staff" },
 ];
 
 const leaders = [
   {
     name: "Ms. Shailaja Adhikary",
     role: "Founder & Managing Director",
-    note: "Founded IEC in 1997 and remains the guiding hand behind twelve institutions across the valley.",
+    note: "Founded IEC in 1997 and remains the guiding hand behind the group's institutions across the valley.",
     image: leaderFounder,
   },
   {
@@ -106,12 +114,14 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
-      <Hero />
-      <Ethos />
-      <Stats />
-      <Leadership />
-      <Institutions />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Stats />
+        <Institutions />
+        <Leadership />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );
@@ -120,82 +130,150 @@ function Index() {
 function Wordmark({ className = "" }: { className?: string }) {
   return (
     <span
-      className={`font-display text-sm font-semibold tracking-[0.34em] ${className}`}
+      className={`font-display text-base font-semibold tracking-[0.42em] uppercase ${className}`}
     >
-      IEC <span className="text-gold">GROUP</span>
+      IEC
     </span>
   );
 }
 
 function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:px-8">
-        <Wordmark />
-        <nav className="hidden items-center gap-10 font-body text-[13px] tracking-wide text-muted-foreground md:flex">
-          <a href="#ethos" className="transition-colors hover:text-gold">
-            Ethos
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
+        scrolled || open
+          ? "border-b border-border bg-background/95 text-foreground backdrop-blur-xl"
+          : "border-b border-transparent text-cream"
+      }`}
+    >
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+        <a href="#top" className="flex items-baseline gap-2">
+          <Wordmark />
+          <span className="font-body text-[10px] uppercase tracking-[0.34em] opacity-70">
+            Group Nepal
+          </span>
+        </a>
+
+        <nav className="hidden items-center gap-10 font-body text-[12px] uppercase tracking-[0.2em] md:flex">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="relative py-1 transition-opacity duration-300 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-500 hover:after:scale-x-100"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-4">
+          <a
+            href="#contact"
+            className={`hidden px-6 py-3 font-body text-[11px] uppercase tracking-[0.22em] transition-colors duration-500 sm:inline-block ${
+              scrolled || open
+                ? "bg-primary text-primary-foreground hover:bg-ink-soft"
+                : "border border-cream/60 text-cream hover:bg-cream hover:text-ink"
+            }`}
+          >
+            Enquire
           </a>
-          <a href="#leadership" className="transition-colors hover:text-gold">
-            Leadership
-          </a>
-          <a href="#institutions" className="transition-colors hover:text-gold">
-            Institutions
+          <button
+            type="button"
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="flex size-10 flex-col items-center justify-center gap-1.5 md:hidden"
+          >
+            <span
+              className={`block h-px w-6 bg-current transition-transform duration-300 ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
+            />
+            <span
+              className={`block h-px w-6 bg-current transition-transform duration-300 ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
+            />
+          </button>
+        </div>
+      </div>
+
+      {open ? (
+        <nav className="border-t border-border bg-background px-6 pb-8 pt-4 md:hidden">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="block border-b border-border py-4 font-display text-xl text-foreground"
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="#contact"
+            onClick={() => setOpen(false)}
+            className="mt-6 block bg-primary px-6 py-4 text-center font-body text-[11px] uppercase tracking-[0.22em] text-primary-foreground"
+          >
+            Enquire
           </a>
         </nav>
-        <a
-          href="#contact"
-          className="font-display text-[12px] tracking-[0.18em] uppercase text-gold underline-offset-8 transition-colors hover:text-gold-soft hover:underline"
-        >
-          Enquire
-        </a>
-      </div>
+      ) : null}
     </header>
   );
 }
 
 function Hero() {
   return (
-    <section className="relative isolate min-h-[92vh] overflow-hidden">
+    <section id="top" className="relative isolate min-h-[92vh] overflow-hidden">
       <img
         src={heroCampus}
-        alt="Golden dusk light across a modern university atrium"
+        alt="Golden light across a modern IEC Group campus atrium"
         width={1920}
         height={1280}
-        className="absolute inset-0 size-full object-cover opacity-70"
+        className="absolute inset-0 size-full object-cover"
       />
       <div className="veil absolute inset-0" />
 
-      <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-end px-6 pb-24 pt-40 lg:px-8 lg:pb-32">
-        <p className="eyebrow rise">Kathmandu · Established 1997</p>
-        <div className="hairline rule-in mt-8 max-w-[7rem]" />
+      <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-end px-6 pb-24 pt-40 text-cream lg:px-10 lg:pb-32">
+        <p className="rise font-body text-[11px] uppercase tracking-[0.36em] text-gold-soft">
+          Kathmandu · Established 1997
+        </p>
         <h1
-          className="rise mt-10 max-w-[16ch] font-display text-[3.1rem] font-semibold leading-[0.98] tracking-[-0.03em] text-balance sm:text-7xl lg:text-[5.75rem]"
+          className="rise mt-8 max-w-[18ch] font-display text-[3rem] leading-[1.02] tracking-[-0.01em] text-balance sm:text-6xl lg:text-[5.25rem]"
           style={{ animationDelay: "100ms" }}
         >
-          Education, <span className="text-gilt">refined</span> over
-          twenty-eight years.
+          A legacy of learning, crafted for generations
         </h1>
         <p
-          className="rise mt-9 max-w-[48ch] font-body text-lg leading-relaxed text-muted-foreground text-pretty"
+          className="rise mt-8 max-w-[52ch] font-body text-lg leading-relaxed text-cream/80 text-pretty"
           style={{ animationDelay: "200ms" }}
         >
-          A house of twelve institutions in Nepal — fashion ateliers, analytics
-          labs, design studios and schools — held to a single, uncompromising
+          A house of institutions in Nepal — fashion ateliers, analytics labs,
+          design studios and schools — held to a single, uncompromising
           standard.
         </p>
         <div
-          className="rise mt-12 flex items-center gap-8"
+          className="rise mt-12 flex flex-wrap items-center gap-4"
           style={{ animationDelay: "300ms" }}
         >
           <a
             href="#institutions"
-            className="group inline-flex items-center gap-3 border border-gold/50 px-8 py-4 font-display text-[13px] tracking-[0.16em] uppercase text-gold transition-colors duration-500 hover:bg-gold hover:text-primary-foreground"
+            className="bg-cream px-8 py-4 font-body text-[11px] uppercase tracking-[0.22em] text-ink transition-colors duration-500 hover:bg-gold hover:text-cream"
           >
-            View the house
-            <span className="transition-transform duration-500 group-hover:translate-x-1">
-              →
-            </span>
+            Explore institutions
+          </a>
+          <a
+            href="#about"
+            className="border border-cream/50 px-8 py-4 font-body text-[11px] uppercase tracking-[0.22em] text-cream transition-colors duration-500 hover:bg-cream/10"
+          >
+            Our story
           </a>
         </div>
       </div>
@@ -203,28 +281,51 @@ function Hero() {
   );
 }
 
-function Ethos() {
+function About() {
   return (
-    <section id="ethos" className="border-t border-border">
-      <div className="mx-auto max-w-6xl px-6 py-28 lg:px-8 lg:py-40">
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
-          <div className="lg:col-span-4">
-            <p className="eyebrow">Our ethos</p>
-          </div>
-          <div className="lg:col-span-8">
-            <p className="font-display text-2xl leading-[1.35] tracking-[-0.015em] text-balance sm:text-3xl lg:text-[2.4rem]">
-              We were founded on the belief that education is not a service to
-              be sold, but a{" "}
-              <span className="text-gold">craft to be practised</span> — slowly,
+    <section id="about" className="bg-background">
+      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-36">
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
+          <div>
+            <p className="eyebrow">Our story</p>
+            <h2 className="mt-6 max-w-[16ch] font-display text-4xl leading-[1.1] tracking-[-0.01em] text-balance lg:text-[3.25rem]">
+              A legendary welcome, every time
+            </h2>
+            <p className="mt-8 max-w-[52ch] font-body leading-relaxed text-muted-foreground text-pretty">
+              Founded in 1997 with a single fashion college, IEC Group has grown
+              into one of Nepal's most quietly consequential education houses.
+              Each institution keeps its own character and faculty; all of them
+              share the same insistence on rigour, taste, and care for the
+              student in the room.
+            </p>
+            <p className="mt-6 max-w-[52ch] font-body leading-relaxed text-muted-foreground text-pretty">
+              From early years classrooms to analytics laboratories, we build
+              places where curiosity is treated as craft — practised slowly,
               attentively, and for a lifetime.
             </p>
-            <p className="mt-10 max-w-[58ch] font-body leading-relaxed text-muted-foreground text-pretty">
-              From a single fashion college in 1997, IEC Group has grown into
-              one of Nepal's most quietly consequential education houses. Each
-              institution keeps its own character and faculty; all of them share
-              the same insistence on rigour, taste, and care for the student in
-              the room.
-            </p>
+            <a
+              href="#contact"
+              className="mt-10 inline-block bg-primary px-8 py-4 font-body text-[11px] uppercase tracking-[0.22em] text-primary-foreground transition-colors duration-500 hover:bg-ink-soft"
+            >
+              About us
+            </a>
+          </div>
+
+          <div className="relative">
+            <img
+              src={heroCampus}
+              alt="Students at an IEC Group campus"
+              loading="lazy"
+              width={1200}
+              height={900}
+              className="aspect-[4/3] w-full object-cover"
+            />
+            <div className="absolute -bottom-8 -left-8 hidden bg-card p-8 shadow-[var(--shadow-lift)] lg:block">
+              <p className="font-display text-4xl">1997</p>
+              <p className="mt-2 font-body text-[10px] uppercase tracking-[0.26em] text-muted-foreground">
+                The first campus
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -234,23 +335,20 @@ function Ethos() {
 
 function Stats() {
   return (
-    <section className="border-y border-border bg-card/40">
-      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-y-14 px-6 py-20 lg:grid-cols-4 lg:px-8">
-        {stats.map((stat, i) => (
-          <div
-            key={stat.label}
-            className={
-              i < stats.length - 1
-                ? "lg:border-r lg:border-border lg:pr-8"
-                : undefined
-            }
-          >
-            <div className="font-display text-5xl font-semibold tracking-[-0.03em] lg:text-6xl">
-              <span className="text-gilt">{stat.value}</span>
-              <span className="text-gold/50">{stat.suffix}</span>
+    <section className="bg-background">
+      <div className="mx-auto grid max-w-7xl gap-6 px-6 pb-24 sm:grid-cols-2 lg:grid-cols-4 lg:px-10 lg:pb-36">
+        {stats.map((stat) => (
+          <div key={stat.unit} className="border border-border bg-card p-8">
+            <div className="flex items-baseline gap-2">
+              <span className="font-display text-5xl tracking-[-0.02em]">
+                {stat.value}
+              </span>
+              <span className="font-body text-sm uppercase tracking-[0.18em] text-muted-foreground">
+                {stat.unit}
+              </span>
             </div>
-            <p className="mt-4 font-body text-[11px] uppercase tracking-[0.26em] text-muted-foreground">
-              {stat.label}
+            <p className="mt-8 font-body text-sm leading-relaxed text-muted-foreground">
+              {stat.note}
             </p>
           </div>
         ))}
@@ -259,73 +357,33 @@ function Stats() {
   );
 }
 
-function Leadership() {
-  return (
-    <section id="leadership">
-      <div className="mx-auto max-w-6xl px-6 py-28 lg:px-8 lg:py-40">
-        <div className="flex items-end justify-between gap-8 border-b border-border pb-8">
-          <h2 className="max-w-[18ch] font-display text-4xl font-semibold tracking-[-0.03em] text-balance lg:text-5xl">
-            The stewards of the house
-          </h2>
-          <span className="eyebrow hidden shrink-0 sm:block">Leadership</span>
-        </div>
-
-        <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-10">
-          {leaders.map((leader) => (
-            <article key={leader.name} className="group">
-              <div className="overflow-hidden bg-card">
-                <img
-                  src={leader.image}
-                  alt={`Portrait of ${leader.name}`}
-                  loading="lazy"
-                  width={1024}
-                  height={1280}
-                  className="aspect-[4/5] w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
-                />
-              </div>
-              <h3 className="mt-7 font-display text-xl font-medium tracking-[-0.01em]">
-                {leader.name}
-              </h3>
-              <p className="mt-2 font-body text-[11px] uppercase tracking-[0.22em] text-gold">
-                {leader.role}
-              </p>
-              <p className="mt-5 font-body text-sm leading-relaxed text-muted-foreground text-pretty">
-                {leader.note}
-              </p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Institutions() {
   return (
-    <section id="institutions" className="border-t border-border bg-card/30">
-      <div className="mx-auto max-w-6xl px-6 py-28 lg:px-8 lg:py-40">
-        <div className="flex items-end justify-between gap-8 border-b border-border pb-8">
-          <h2 className="max-w-[18ch] font-display text-4xl font-semibold tracking-[-0.03em] text-balance lg:text-5xl">
+    <section id="institutions" className="bg-secondary/50">
+      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-36">
+        <div className="max-w-[36ch]">
+          <p className="eyebrow">The house</p>
+          <h2 className="mt-6 font-display text-4xl leading-[1.1] tracking-[-0.01em] text-balance lg:text-[3.25rem]">
             Eight institutions, one standard
           </h2>
-          <span className="eyebrow hidden shrink-0 sm:block">01 — 08</span>
         </div>
 
-        <div className="mt-4">
+        <div className="mt-16 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
           {institutions.map((inst, i) => {
             const index = String(i + 1).padStart(2, "0");
-            const inner = (
+            const body = (
               <>
-                <span className="w-10 shrink-0 font-display text-sm text-gold/60">
+                <span className="font-body text-[11px] tracking-[0.24em] text-gold">
                   {index}
                 </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block font-display text-xl font-medium tracking-[-0.015em] transition-colors duration-500 group-hover:text-gold lg:text-2xl">
-                    {inst.name}
-                  </span>
-                  <span className="mt-2 block font-body text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-                    {inst.discipline} · {inst.locations}
-                  </span>
+                <span className="mt-6 block font-display text-2xl leading-snug tracking-[-0.01em]">
+                  {inst.name}
+                </span>
+                <span className="mt-4 block font-body text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                  {inst.discipline}
+                </span>
+                <span className="mt-2 block font-body text-sm text-muted-foreground">
+                  {inst.locations}
                 </span>
               </>
             );
@@ -334,10 +392,10 @@ function Institutions() {
               return (
                 <div
                   key={inst.name}
-                  className="flex items-center gap-6 border-b border-border py-8 opacity-55"
+                  className="flex min-h-[19rem] flex-col bg-card p-8"
                 >
-                  {inner}
-                  <span className="shrink-0 border border-gold/40 px-3 py-1.5 font-body text-[10px] uppercase tracking-[0.2em] text-gold">
+                  {body}
+                  <span className="mt-auto pt-8 font-body text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
                     Coming soon
                   </span>
                 </div>
@@ -350,18 +408,59 @@ function Institutions() {
                 href={inst.href}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center gap-6 border-b border-border py-8 transition-colors duration-500 hover:border-gold/40"
+                className="group flex min-h-[19rem] flex-col bg-card p-8 transition-colors duration-500 hover:bg-primary hover:text-primary-foreground"
               >
-                {inner}
-                <span className="hidden shrink-0 font-body text-[10px] uppercase tracking-[0.2em] text-muted-foreground transition-colors duration-500 group-hover:text-gold sm:block">
+                {body}
+                <span className="mt-auto flex items-center gap-3 pt-8 font-body text-[10px] uppercase tracking-[0.22em] text-gold">
                   Visit
-                </span>
-                <span className="shrink-0 text-lg text-gold/60 transition-transform duration-500 group-hover:translate-x-1.5">
-                  →
+                  <span className="transition-transform duration-500 group-hover:translate-x-1">
+                    →
+                  </span>
                 </span>
               </a>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Leadership() {
+  return (
+    <section id="leadership" className="bg-background">
+      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-36">
+        <div className="max-w-[34ch]">
+          <p className="eyebrow">Leadership</p>
+          <h2 className="mt-6 font-display text-4xl leading-[1.1] tracking-[-0.01em] text-balance lg:text-[3.25rem]">
+            The stewards of the house
+          </h2>
+        </div>
+
+        <div className="mt-16 grid gap-10 md:grid-cols-3">
+          {leaders.map((leader) => (
+            <article key={leader.name} className="group">
+              <div className="overflow-hidden bg-secondary">
+                <img
+                  src={leader.image}
+                  alt={`Portrait of ${leader.name}`}
+                  loading="lazy"
+                  width={1024}
+                  height={1280}
+                  className="aspect-[4/5] w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
+                />
+              </div>
+              <h3 className="mt-7 font-display text-2xl tracking-[-0.01em]">
+                {leader.name}
+              </h3>
+              <p className="mt-2 font-body text-[11px] uppercase tracking-[0.2em] text-gold">
+                {leader.role}
+              </p>
+              <p className="mt-5 font-body text-sm leading-relaxed text-muted-foreground text-pretty">
+                {leader.note}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -381,15 +480,17 @@ function Contact() {
   ];
 
   return (
-    <section id="contact" className="border-t border-border">
-      <div className="mx-auto max-w-6xl px-6 py-28 lg:px-8 lg:py-40">
+    <section id="contact" className="bg-primary text-primary-foreground">
+      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-36">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
           <div>
-            <p className="eyebrow">Correspondence</p>
-            <h2 className="mt-7 max-w-[14ch] font-display text-4xl font-semibold tracking-[-0.03em] text-balance lg:text-6xl">
-              Begin a <span className="text-gilt">conversation</span>
+            <p className="font-body text-[11px] uppercase tracking-[0.34em] text-gold-soft">
+              Correspondence
+            </p>
+            <h2 className="mt-6 max-w-[14ch] font-display text-4xl leading-[1.1] text-balance lg:text-[3.25rem]">
+              Begin a conversation
             </h2>
-            <p className="mt-8 max-w-[42ch] font-body leading-relaxed text-muted-foreground text-pretty">
+            <p className="mt-8 max-w-[44ch] font-body leading-relaxed text-cream/75 text-pretty">
               Admissions, partnerships, or a visit to one of our campuses — the
               group office in Kathmandu will see to it personally.
             </p>
@@ -397,15 +498,15 @@ function Contact() {
 
           <dl className="grid gap-10 sm:grid-cols-2">
             {details.map((d) => (
-              <div key={d.label}>
-                <dt className="font-body text-[10px] uppercase tracking-[0.26em] text-muted-foreground">
+              <div key={d.label} className="border-t border-cream/20 pt-6">
+                <dt className="font-body text-[10px] uppercase tracking-[0.26em] text-cream/60">
                   {d.label}
                 </dt>
-                <dd className="mt-3 font-display text-lg tracking-[-0.01em]">
+                <dd className="mt-3 font-display text-xl">
                   {d.href ? (
                     <a
                       href={d.href}
-                      className="transition-colors duration-500 hover:text-gold"
+                      className="transition-colors duration-500 hover:text-gold-soft"
                     >
                       {d.value}
                     </a>
@@ -424,8 +525,8 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="border-t border-border">
-      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-6 py-10 sm:flex-row sm:items-center lg:px-8">
+    <footer className="bg-background">
+      <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 px-6 py-10 sm:flex-row sm:items-center lg:px-10">
         <Wordmark />
         <p className="font-body text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
           © 1997–2026 IEC Group Nepal
