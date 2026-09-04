@@ -21,7 +21,8 @@ import {
   Quote,
 } from "lucide-react";
 
-import heroCampus from "@/assets/hero-campus.jpg";
+import aboutCampus from "@/assets/hero-campus.jpg";
+import heroUnity from "@/assets/hero-unity.jpg.asset.json";
 import heroCampus from "@/assets/hero-campus.jpg.asset.json";
 import iecLogo from "@/assets/iec-logo.jpg.asset.json";
 import leaderManish from "@/assets/leader-manish.jpg.asset.json";
@@ -632,7 +633,7 @@ function About() {
 
           <Reveal delay={100} className="relative">
             <img
-              src={heroCampus}
+              src={aboutCampus}
               alt="Students at an IEC Group campus"
               loading="lazy"
               width={1200}
@@ -831,7 +832,7 @@ function Impact() {
               >
                 <figure className="overflow-hidden rounded-xl bg-secondary">
                   <img
-                    src={i === 0 ? heroCampus : heroUnity.url}
+                    src={i === 0 ? aboutCampus : heroUnity.url}
                     alt={s.title}
                     loading="lazy"
                     width={1200}
