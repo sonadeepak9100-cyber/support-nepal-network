@@ -160,7 +160,7 @@ function Wordmark({
       alt="IEC Group of Companies"
       width={320}
       height={160}
-      className={`h-10 w-auto object-contain ${invert ? "rounded-md bg-paper p-1" : ""} ${className}`}
+      className={`h-14 w-auto object-contain lg:h-16 ${invert ? "rounded-md bg-paper p-1.5" : ""} ${className}`}
     />
   );
 }
