@@ -153,7 +153,7 @@ function Nav() {
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
         scrolled || open
           ? "border-b border-border bg-background/95 text-foreground backdrop-blur-xl"
-          : "border-b border-transparent text-cream"
+          : "border-b border-transparent text-paper"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
@@ -169,7 +169,7 @@ function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="relative py-1 transition-opacity duration-300 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-500 hover:after:scale-x-100"
+              className="relative py-1 transition-opacity duration-300 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-brandred after:transition-transform after:duration-500 hover:after:scale-x-100"
             >
               {link.label}
             </a>
@@ -182,7 +182,7 @@ function Nav() {
             className={`hidden px-6 py-3 font-body text-[11px] uppercase tracking-[0.22em] transition-colors duration-500 sm:inline-block ${
               scrolled || open
                 ? "bg-primary text-primary-foreground hover:bg-ink-soft"
-                : "border border-cream/60 text-cream hover:bg-cream hover:text-ink"
+                : "border border-paper/60 text-paper hover:bg-paper hover:text-ink"
             }`}
           >
             Enquire
@@ -241,8 +241,8 @@ function Hero() {
       />
       <div className="veil absolute inset-0" />
 
-      <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-end px-6 pb-24 pt-40 text-cream lg:px-10 lg:pb-32">
-        <p className="rise font-body text-[11px] uppercase tracking-[0.36em] text-gold-soft">
+      <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-end px-6 pb-24 pt-40 text-paper lg:px-10 lg:pb-32">
+        <p className="rise font-body text-[11px] uppercase tracking-[0.36em] text-red-soft">
           Kathmandu · Established 1997
         </p>
         <h1
@@ -252,7 +252,7 @@ function Hero() {
           A legacy of learning, crafted for generations
         </h1>
         <p
-          className="rise mt-8 max-w-[52ch] font-body text-lg leading-relaxed text-cream/80 text-pretty"
+          className="rise mt-8 max-w-[52ch] font-body text-lg leading-relaxed text-paper/80 text-pretty"
           style={{ animationDelay: "200ms" }}
         >
           A house of institutions in Nepal — fashion ateliers, analytics labs,
@@ -265,13 +265,13 @@ function Hero() {
         >
           <a
             href="#institutions"
-            className="bg-cream px-8 py-4 font-body text-[11px] uppercase tracking-[0.22em] text-ink transition-colors duration-500 hover:bg-gold hover:text-cream"
+            className="bg-paper px-8 py-4 font-body text-[11px] uppercase tracking-[0.22em] text-ink transition-colors duration-500 hover:bg-brandred hover:text-paper"
           >
             Explore institutions
           </a>
           <a
             href="#about"
-            className="border border-cream/50 px-8 py-4 font-body text-[11px] uppercase tracking-[0.22em] text-cream transition-colors duration-500 hover:bg-cream/10"
+            className="border border-paper/50 px-8 py-4 font-body text-[11px] uppercase tracking-[0.22em] text-paper transition-colors duration-500 hover:bg-paper/10"
           >
             Our story
           </a>
@@ -373,7 +373,7 @@ function Institutions() {
             const index = String(i + 1).padStart(2, "0");
             const body = (
               <>
-                <span className="font-body text-[11px] tracking-[0.24em] text-gold">
+                <span className="font-body text-[11px] tracking-[0.24em] text-brandred">
                   {index}
                 </span>
                 <span className="mt-6 block font-display text-2xl leading-snug tracking-[-0.01em]">
@@ -411,7 +411,7 @@ function Institutions() {
                 className="group flex min-h-[19rem] flex-col bg-card p-8 transition-colors duration-500 hover:bg-primary hover:text-primary-foreground"
               >
                 {body}
-                <span className="mt-auto flex items-center gap-3 pt-8 font-body text-[10px] uppercase tracking-[0.22em] text-gold">
+                <span className="mt-auto flex items-center gap-3 pt-8 font-body text-[10px] uppercase tracking-[0.22em] text-brandred">
                   Visit
                   <span className="transition-transform duration-500 group-hover:translate-x-1">
                     →
@@ -453,7 +453,7 @@ function Leadership() {
               <h3 className="mt-7 font-display text-2xl tracking-[-0.01em]">
                 {leader.name}
               </h3>
-              <p className="mt-2 font-body text-[11px] uppercase tracking-[0.2em] text-gold">
+              <p className="mt-2 font-body text-[11px] uppercase tracking-[0.2em] text-brandred">
                 {leader.role}
               </p>
               <p className="mt-5 font-body text-sm leading-relaxed text-muted-foreground text-pretty">
@@ -484,13 +484,13 @@ function Contact() {
       <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-36">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
           <div>
-            <p className="font-body text-[11px] uppercase tracking-[0.34em] text-gold-soft">
+            <p className="font-body text-[11px] uppercase tracking-[0.34em] text-red-soft">
               Correspondence
             </p>
             <h2 className="mt-6 max-w-[14ch] font-display text-4xl leading-[1.1] text-balance lg:text-[3.25rem]">
               Begin a conversation
             </h2>
-            <p className="mt-8 max-w-[44ch] font-body leading-relaxed text-cream/75 text-pretty">
+            <p className="mt-8 max-w-[44ch] font-body leading-relaxed text-paper/75 text-pretty">
               Admissions, partnerships, or a visit to one of our campuses — the
               group office in Kathmandu will see to it personally.
             </p>
@@ -498,15 +498,15 @@ function Contact() {
 
           <dl className="grid gap-10 sm:grid-cols-2">
             {details.map((d) => (
-              <div key={d.label} className="border-t border-cream/20 pt-6">
-                <dt className="font-body text-[10px] uppercase tracking-[0.26em] text-cream/60">
+              <div key={d.label} className="border-t border-paper/20 pt-6">
+                <dt className="font-body text-[10px] uppercase tracking-[0.26em] text-paper/60">
                   {d.label}
                 </dt>
                 <dd className="mt-3 font-display text-xl">
                   {d.href ? (
                     <a
                       href={d.href}
-                      className="transition-colors duration-500 hover:text-gold-soft"
+                      className="transition-colors duration-500 hover:text-red-soft"
                     >
                       {d.value}
                     </a>
