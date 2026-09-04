@@ -515,11 +515,11 @@ function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(150deg,color-mix(in_oklab,var(--veil-base)_92%,transparent),color-mix(in_oklab,var(--veil-base)_62%,transparent))]" />
       <div className="absolute inset-x-0 bottom-0 h-56 veil" />
 
-      <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col items-center justify-center px-6 py-40 text-center text-paper lg:px-10">
+      <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col items-center justify-center px-6 py-32 text-center text-paper lg:px-10">
         <img
           src={iecLogo.url}
           alt="IEC Group of Companies"
-          className="rise w-[240px] rounded-2xl bg-paper p-5 shadow-2xl sm:w-[320px] lg:w-[380px]"
+          className="rise h-[92px] w-auto rounded-xl bg-paper object-contain px-6 py-3 shadow-2xl sm:h-[112px] lg:h-[128px]"
         />
         <h1
           className="rise mt-10 font-display text-[3.6rem] font-bold uppercase leading-[0.92] tracking-[-0.03em] sm:text-[6rem] lg:text-[8rem]"
