@@ -60,6 +60,8 @@
   --red-soft: oklch(0.72 0.15 30);
   --paper: oklch(1 0 0);
   --sand: oklch(0.955 0.012 264);
+  --brandgold: oklch(0.79 0.15 76);
+
 
   --background: var(--paper);
   --foreground: oklch(0.22 0.04 267);
