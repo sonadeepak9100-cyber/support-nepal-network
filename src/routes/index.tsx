@@ -66,9 +66,31 @@ const institutions = [
 ];
 
 const navLinks = [
-  { label: "About", href: "#about" },
+  { label: "Home", href: "#top" },
+  { label: "About Us", href: "#about" },
   {
-    label: "Institutions",
+    label: "Leadership",
+    href: "#leadership",
+    children: [
+      {
+        label: "Ms. Shailaja Adhikary",
+        href: "#leadership",
+        note: "Founder & Managing Director",
+      },
+      {
+        label: "Manish Kumar Deepak",
+        href: "#leadership",
+        note: "Director, Operations",
+      },
+      {
+        label: "Sona Deepak",
+        href: "#leadership",
+        note: "Business Director",
+      },
+    ],
+  },
+  {
+    label: "Organizations",
     href: "#institutions",
     children: institutions.map((i) => ({
       label: i.name,
@@ -76,7 +98,6 @@ const navLinks = [
       note: i.discipline,
     })),
   },
-  { label: "Leadership", href: "#leadership" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -139,7 +160,7 @@ function Wordmark({
       alt="IEC Group of Companies"
       width={320}
       height={160}
-      className={`h-10 w-auto object-contain ${invert ? "rounded-md bg-paper p-1" : ""} ${className}`}
+      className={`h-14 w-auto object-contain lg:h-16 ${invert ? "rounded-md bg-paper p-1.5" : ""} ${className}`}
     />
   );
 }
@@ -163,12 +184,12 @@ function Nav() {
           : "border-b border-transparent text-paper"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-10">
         <a href="#top" className="flex items-center gap-3">
           <Wordmark invert={!(scrolled || open)} />
         </a>
 
-        <nav className="hidden items-center gap-10 font-body text-[12px] uppercase tracking-[0.2em] md:flex">
+        <nav className="hidden items-center gap-7 font-body text-[12px] uppercase tracking-[0.16em] md:flex lg:gap-9">
           {navLinks.map((link) =>
             link.children ? (
               <div key={link.href} className="group relative">
@@ -222,7 +243,7 @@ function Nav() {
                 : "border border-paper/60 text-paper hover:bg-paper hover:text-ink"
             }`}
           >
-            Enquire
+            Get in Touch
           </a>
           <button
             type="button"
@@ -276,7 +297,7 @@ function Nav() {
             onClick={() => setOpen(false)}
             className="mt-6 block bg-primary px-6 py-4 text-center font-body text-[11px] uppercase tracking-[0.14em] text-primary-foreground"
           >
-            Enquire
+            Get in Touch
           </a>
         </nav>
       ) : null}
@@ -286,49 +307,46 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative isolate min-h-[92vh] overflow-hidden">
-      <img
-        src={heroCampus}
-        alt="Golden light across a modern IEC Group campus atrium"
-        width={1920}
-        height={1280}
-        className="absolute inset-0 size-full object-cover"
-      />
-      <div className="veil absolute inset-0" />
+    <section
+      id="top"
+      className="relative isolate min-h-[92vh] overflow-hidden bg-primary"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_0%,rgba(255,255,255,0.16),transparent_65%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/25 to-transparent" />
 
-      <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-end px-6 pb-24 pt-40 text-paper lg:px-10 lg:pb-32">
-        <p className="rise font-body text-[11px] uppercase tracking-[0.24em] text-red-soft">
-          Kathmandu · Established 1997
+      <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col items-center justify-center px-6 py-40 text-center text-paper lg:px-10">
+        <p className="rise font-body text-[11px] uppercase tracking-[0.32em] text-red-soft">
+          Education… Our Passion
         </p>
         <h1
-          className="rise mt-8 max-w-[18ch] font-display text-[3rem] leading-[1.02] tracking-[-0.01em] text-balance sm:text-6xl lg:text-[5.25rem]"
+          className="rise mt-8 font-display text-[4.25rem] font-bold uppercase leading-[0.92] tracking-[-0.02em] sm:text-[7rem] lg:text-[10rem]"
           style={{ animationDelay: "100ms" }}
         >
-          A legacy of learning, crafted for generations
+          IEC Group
         </h1>
         <p
-          className="rise mt-8 max-w-[52ch] font-body text-lg leading-relaxed text-paper/80 text-pretty"
+          className="rise mt-8 max-w-[54ch] font-body text-lg leading-relaxed text-paper/80 text-pretty"
           style={{ animationDelay: "200ms" }}
         >
-          A house of institutions in Nepal — design studios, colleges, schools
-          and early years campuses — held to a single, uncompromising standard.
-
+          Established in 1997 in Kathmandu — a house of institutions across
+          design, technology, K-12 and early years, held to a single,
+          uncompromising standard.
         </p>
         <div
-          className="rise mt-12 flex flex-wrap items-center gap-4"
+          className="rise mt-12 flex flex-wrap items-center justify-center gap-4"
           style={{ animationDelay: "300ms" }}
         >
           <a
             href="#institutions"
             className="bg-paper px-8 py-4 font-body text-[11px] uppercase tracking-[0.14em] text-ink transition-colors duration-500 hover:bg-brandred hover:text-paper"
           >
-            Explore institutions
+            Our organizations
           </a>
           <a
             href="#about"
             className="border border-paper/50 px-8 py-4 font-body text-[11px] uppercase tracking-[0.14em] text-paper transition-colors duration-500 hover:bg-paper/10"
           >
-            Our story
+            About us
           </a>
         </div>
       </div>
