@@ -192,22 +192,23 @@ const leaders = [
   {
     name: "Ms. Shailaja Adhikary",
     role: "Founder & Managing Director",
-    note: "Founded IEC in 1997 and remains the guiding hand behind the group's institutions across the valley.",
+    note: "In 1997 she opened Nepal's first professional fashion and interior design institution in a small block in Bagbazar; a decade later she brought EuroKids to Nepal and went on to establish Euro School. Today she leads the IEC Group of Companies as Managing Director and serves as principal of Euro School, and has been profiled internationally as one of Asia's women leaders in education. Her conviction is simple — education has to be all-encompassing and enjoyable — and it shapes every campus in the group.",
     image: leaderSona.url,
   },
   {
     name: "Manish Kumar Deepak",
     role: "Director, Operations",
-    note: "An engineer by training, he has held the group's operating standards since its very first year.",
+    note: "An engineer by training, he has held the group's operating standards since its very first year — campuses, facilities, faculty systems and the day-to-day discipline that keeps six institutions running to one standard.",
     image: leaderManish.url,
   },
   {
     name: "Sona Deepak",
     role: "Business Director",
-    note: "Bridges craft and technology, steering the group's next chapter toward global standards.",
+    note: "A graduate of Kodaikanal International School and the University of Leicester, he leads business development across the group and works at the meeting point of creativity and technology. His focus is on aligning IEC's programmes with global standards — international academic partnerships, industry-facing curricula and new ventures — so students graduate ready for a world that keeps changing.",
     image: leaderSonaDeepak.url,
   },
 ];
+
 
 const timeline = [
   {
