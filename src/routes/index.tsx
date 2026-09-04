@@ -184,32 +184,31 @@ function Nav() {
         scrolled || open ? "border-border shadow-[var(--shadow-lift)]" : "border-border/60"
       }`}
     >
-      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-10">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
         <a href="#top" className="flex items-center gap-3">
           <Wordmark />
         </a>
 
-        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 font-body text-[13px] font-medium md:flex lg:gap-10">
-
+        <nav className="hidden items-center gap-8 font-body text-[15px] font-medium text-primary md:flex">
           {navLinks.map((link) =>
             link.children ? (
               <div key={link.href} className="group relative">
                 <a
                   href={link.href}
-                  className="relative flex items-center gap-1.5 py-1 transition-opacity duration-300 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-brandred after:transition-transform after:duration-500 group-hover:after:scale-x-100"
+                  className="flex items-center gap-1.5 py-1 transition-colors duration-300 hover:text-brandred"
                 >
                   {link.label}
                   <span className="text-[9px] leading-none opacity-70">▼</span>
                 </a>
                 <div className="invisible absolute left-1/2 top-full z-50 w-[420px] -translate-x-1/2 pt-5 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
-                  <div className="border border-border bg-background p-2 shadow-2xl">
+                  <div className="rounded-xl border border-border bg-background p-2 shadow-2xl">
                     {link.children.map((child) => (
                       <a
                         key={child.label}
                         href={child.href}
                         target={child.href.startsWith("http") ? "_blank" : undefined}
                         rel={child.href.startsWith("http") ? "noreferrer" : undefined}
-                        className="block border-b border-border/60 px-4 py-3 last:border-0 hover:bg-secondary/70"
+                        className="block rounded-lg border-b border-border/60 px-4 py-3 last:border-0 hover:bg-secondary/70"
                       >
                         <span className="block font-display text-[13px] normal-case tracking-normal text-foreground">
                           {child.label}
@@ -226,7 +225,7 @@ function Nav() {
               <a
                 key={link.href}
                 href={link.href}
-                className="relative py-1 transition-opacity duration-300 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-brandred after:transition-transform after:duration-500 hover:after:scale-x-100"
+                className="py-1 transition-colors duration-300 hover:text-brandred"
               >
                 {link.label}
               </a>
@@ -234,15 +233,14 @@ function Nav() {
           )}
         </nav>
 
-
         <div className="flex items-center gap-4">
           <a
             href="#contact"
-            className="hidden rounded-full bg-brandred px-7 py-3 font-body text-[13px] font-semibold text-paper shadow-[var(--shadow-lift)] transition-colors duration-300 hover:bg-primary sm:inline-block"
+            className="hidden rounded-lg bg-brandred px-6 py-2.5 font-body text-[15px] font-semibold text-paper transition-colors duration-300 hover:bg-primary sm:inline-block"
           >
-
             Get in Touch
           </a>
+
           <button
             type="button"
             aria-label="Toggle menu"
