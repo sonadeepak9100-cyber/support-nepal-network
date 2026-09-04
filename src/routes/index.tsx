@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import heroCampus from "@/assets/hero-campus.jpg";
+import heroUnity from "@/assets/hero-unity.jpg.asset.json";
+
 import iecLogo from "@/assets/iec-logo.jpg.asset.json";
 
 import leaderManish from "@/assets/leader-manish.jpg.asset.json";
