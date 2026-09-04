@@ -183,3 +183,42 @@
   transform-origin: left;
   animation: ruleIn 1.2s var(--ease-lux) both;
 }
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s var(--ease-lux),
+    transform 0.9s var(--ease-lux);
+}
+
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@utility card-lift {
+  transition:
+    transform 0.5s var(--ease-lux),
+    box-shadow 0.5s var(--ease-lux),
+    border-color 0.5s var(--ease-lux);
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lift);
+  }
+}
+
+@utility grid-faint {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in oklab, var(--ink) 7%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--ink) 7%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 72px 72px;
+}
