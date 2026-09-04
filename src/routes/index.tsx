@@ -59,6 +59,8 @@ type Institution = {
   locations: string;
   blurb: string;
   href: string | null;
+  highlight?: string;
+  branches?: { name: string; status?: string }[];
 };
 
 const institutions: Institution[] = [
@@ -68,8 +70,9 @@ const institutions: Institution[] = [
     category: "Education",
     locations: "Mandikatar",
     blurb:
-      "Nepal's founding fashion and interior design college — studio-led teaching, national runway showcases and industry placements.",
+      "Nepal's founding fashion and interior design college — studio-led teaching, national runway showcases and industry placements. Its degree programmes are delivered in academic partnership with Teesside University, UK, so students earn a British qualification while studying in Kathmandu, with the option to progress on to the university's campus.",
     href: "https://ieccollege.com.np/",
+    highlight: "In academic partnership with Teesside University, UK",
   },
   {
     name: "IEC School of Design & IT",
@@ -81,23 +84,32 @@ const institutions: Institution[] = [
     href: "https://iecsaf.com/",
   },
   {
-    name: "EuroKids Early Childhood Education",
-    discipline: "Early Years",
+    name: "EuroKids",
+    discipline: "Early Childhood Education",
     category: "Early Years",
-    locations: "Hattigauda · Samakhusi · Bishalnagar · Tinkune",
+    locations: "Hattigauda · Bishalnagar · Tinkune · Samakhushi",
     blurb:
-      "Play-based early years learning across four Kathmandu neighbourhoods, delivered to an international curriculum standard.",
+      "Play-based early childhood education delivered to an international curriculum standard, with four Kathmandu branches running the same programme so families never lose continuity.",
     href: "https://eurokids.com.np/",
+    branches: [
+      { name: "Hattigauda" },
+      { name: "Bishalnagar" },
+      { name: "Tinkune" },
+      { name: "Samakhushi" },
+      { name: "Sitapaila", status: "Coming soon" },
+    ],
   },
   {
     name: "Euro School Kathmandu",
-    discipline: "K–12",
+    discipline: "IB World School · K–12",
     category: "K-12",
     locations: "Hattigauda",
     blurb:
-      "A full K-12 school where academic rigour sits beside music, sport and design — the long arc of a student's education.",
+      "An IB World School offering the International Baccalaureate alongside a full K-12 pathway — inquiry-led learning, global-minded assessment, and space for music, sport and design.",
     href: "https://euroschool.edu.np/",
+    highlight: "IB World School",
   },
+
   {
     name: "Metaphor Consultancy",
     discipline: "Career & Admissions",
@@ -748,9 +760,43 @@ function Institutions() {
                   </span>
                 </div>
 
+                {inst.highlight ? (
+                  <p className="mt-6 inline-flex rounded-lg bg-secondary px-3 py-2 font-body text-[12px] font-semibold text-primary">
+                    {inst.highlight}
+                  </p>
+                ) : null}
+
                 <p className="mt-6 font-body text-sm leading-relaxed text-muted-foreground text-pretty">
                   {inst.blurb}
                 </p>
+
+                {inst.branches ? (
+                  <div className="mt-6">
+                    <p className="font-body text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                      Branches
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {inst.branches.map((b) => (
+                        <span
+                          key={b.name}
+                          className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 font-body text-[12px] ${
+                            b.status
+                              ? "border-dashed border-brandred/40 text-brandred"
+                              : "border-border text-foreground"
+                          }`}
+                        >
+                          {b.name}
+                          {b.status ? (
+                            <span className="font-body text-[10px] uppercase tracking-[0.14em]">
+                              {b.status}
+                            </span>
+                          ) : null}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+
 
                 <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
                   <span className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground">
