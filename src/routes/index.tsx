@@ -99,6 +99,12 @@ const leaders = [
     note: "An engineer by training, he has held the group's operating standards since its very first year.",
     image: leaderManish.url,
   },
+  {
+    name: "Sona Deepak",
+    role: "Business Director",
+    note: "Bridges craft and technology, steering the group's next chapter toward global standards.",
+    image: leaderSonaDeepak.url,
+  },
 ];
 
 
