@@ -1400,9 +1400,9 @@ const infrastructureImages = [
   },
   {
     src: infraCafeteria.url,
-    alt: "Architectural render of a new glass and timber cafeteria building",
-    caption: "New cafeteria — coming soon",
-    blurb: "A two-level dining and social space now under development.",
+    alt: "Glass and timber cafeteria building at Euro School Hattigauda",
+    caption: "Cafeteria — Euro School Hattigauda",
+    blurb: "A two-level dining and social space serving students and staff every day.",
     span: "sm:col-span-2 lg:col-span-2",
   },
 ];
