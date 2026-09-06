@@ -183,6 +183,7 @@ const institutions: Institution[] = [
 
   {
     name: "Metaphor Consultancy",
+    logo: logoMetaphor.url,
     discipline: "Career & Admissions",
     category: "Consultancy",
     locations: "Mandikatar",
