@@ -1351,33 +1351,35 @@ function Leadership() {
 
 function Partners() {
   return (
-    <section className="border-y border-border bg-background">
+    <section className="relative border-y border-border bg-gradient-to-b from-secondary/40 via-background to-secondary/40">
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <Reveal>
-          <p className="text-center font-body text-[11px] uppercase tracking-[0.26em] text-muted-foreground">
-            Institutions & partners in the group
+          <p className="text-center font-body text-[11px] uppercase tracking-[0.26em] text-brandred">
+            Institutions &amp; partners in the group
           </p>
+          <h2 className="mt-4 text-center font-display text-3xl font-semibold tracking-[-0.02em] text-primary">
+            One family of brands
+          </h2>
         </Reveal>
-        <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-12 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-6">
           {institutions.map((inst, i) => (
             <Reveal key={inst.name} delay={i * 60}>
-              <div className="group flex h-28 items-center justify-center bg-card px-5 text-center">
+              <div className="group flex h-32 items-center justify-center rounded-2xl border border-border bg-card px-5 text-center shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
                 {inst.logo ? (
                   <img
                     src={inst.logo}
                     alt={`${inst.name} logo`}
                     loading="lazy"
-                    className="max-h-16 w-auto max-w-[80%] object-contain grayscale opacity-70 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
+                    className="max-h-20 w-auto max-w-[85%] object-contain transition-transform duration-500 group-hover:scale-105"
                   />
                 ) : (
-                  <span className="font-display text-[13px] font-semibold leading-snug text-primary opacity-60 transition-opacity duration-500 group-hover:opacity-100">
+                  <span className="font-display text-[13px] font-semibold leading-snug text-primary transition-colors duration-500 group-hover:text-brandred">
                     {inst.name}
                   </span>
                 )}
               </div>
             </Reveal>
           ))}
-
         </div>
       </div>
     </section>
