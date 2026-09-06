@@ -376,6 +376,8 @@ function Index() {
         <Testimonials />
         <Gallery />
         <StudioSection />
+        <InfrastructureSection />
+
 
         <CallToAction />
         <Contact />
