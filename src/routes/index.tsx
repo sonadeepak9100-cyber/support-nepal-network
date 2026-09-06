@@ -301,6 +301,11 @@ const timeline = [
     body: "IEC enters the IT field with short, job-focused technology courses, and launches Metaphor Abroad Consultancy to guide students to further studies overseas.",
   },
   {
+    year: "2025",
+    title: "Into real estate and construction",
+    body: "IEC steps into a new phase beyond education with Infinity Developers Pvt. Ltd., its real estate and construction arm — building campuses, residential and institutional projects across the Kathmandu Valley under the promise of building a better tomorrow.",
+  },
+  {
 
     year: "Today",
     title: "10+ institutions and campuses",
