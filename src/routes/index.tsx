@@ -162,6 +162,7 @@ const institutions: Institution[] = [
     locations: "Suryakot · Koteshwor",
     blurb:
       "The Koteshwor campus of Euro School — a full school setting with open play areas, activity courts and modern classrooms serving families across east Kathmandu.",
+    href: "https://euroschool.edu.np/",
     highlight: "Koteshwor campus",
   },
   {
