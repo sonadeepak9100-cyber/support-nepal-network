@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 
 import kathmanduValley from "@/assets/kathmandu-valley.jpg";
+import storyRoots from "@/assets/story-roots-1997-2026.jpg";
 import aboutCampusAsset from "@/assets/about-campus-bright.jpg.asset.json";
 import aboutStudio from "@/assets/about-design-studio.jpg.asset.json";
 import aboutEarlyYears from "@/assets/about-early-years.jpg.asset.json";
@@ -687,16 +688,7 @@ function StatCard({
   );
 }
 
-const statPhotos = [
-  { src: infraIecCollege.url, alt: "IEC College campus in Kathmandu" },
-  { src: convocationProcession.url, alt: "Graduates at the IEC College convocation" },
-  { src: infraEuroSchool.url, alt: "Euro School campus and school buses" },
-  { src: infraEurokidsHattigauda.url, alt: "EuroKids Hattigauda early years campus" },
-];
-
 function Stats() {
-  const { ref, visible } = useReveal(0.2);
-
   return (
     <section className="relative bg-background">
       <div className="mx-auto -mt-20 grid max-w-7xl gap-6 px-6 sm:grid-cols-2 lg:grid-cols-4 lg:px-10">
@@ -704,35 +696,10 @@ function Stats() {
           <StatCard key={stat.label} stat={stat} index={i} />
         ))}
       </div>
-
-      <div
-        ref={ref}
-        data-visible={visible}
-        className="reveal mx-auto mt-14 max-w-7xl px-6 lg:px-10"
-      >
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-          {statPhotos.map((photo) => (
-            <div
-              key={photo.src}
-              className="group relative overflow-hidden rounded-2xl border border-border"
-            >
-              <img
-                src={photo.src}
-                alt={photo.alt}
-                loading="lazy"
-                className="h-40 w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-52"
-              />
-            </div>
-          ))}
-        </div>
-        <p className="mt-5 text-center font-body text-sm text-muted-foreground">
-          Campuses across the Kathmandu Valley — from early years classrooms to
-          college convocations.
-        </p>
-      </div>
     </section>
   );
 }
+
 
 
 const aboutFacts = [
@@ -790,14 +757,20 @@ function About() {
           </div>
 
           <Reveal delay={100} className="relative">
-            <img
-              src={aboutCampusAsset.url}
-              alt="Students at an IEC Group campus"
-              loading="lazy"
-              width={1200}
-              height={900}
-              className="aspect-[4/3] w-full rounded-2xl object-cover"
-            />
+            <figure className="overflow-hidden rounded-2xl border border-border bg-card">
+              <img
+                src={storyRoots}
+                alt="Illustration of IEC Group's growth from its roots in 1997 to 2026"
+                loading="lazy"
+                width={1200}
+                height={1200}
+                className="w-full object-cover"
+              />
+              <figcaption className="px-8 py-6 font-body text-sm leading-relaxed text-muted-foreground">
+                From one studio in 1997 to more than ten institutions in 2026 — the same roots,
+                a much wider canopy.
+              </figcaption>
+            </figure>
             <div className="absolute -bottom-8 -left-8 hidden rounded-2xl border border-border bg-card p-8 shadow-[var(--shadow-lift)] lg:block">
               <p className="font-display text-4xl font-semibold">1997</p>
               <p className="mt-2 font-body text-[10px] uppercase tracking-[0.26em] text-muted-foreground">
@@ -805,6 +778,7 @@ function About() {
               </p>
             </div>
           </Reveal>
+
         </div>
 
         <Reveal delay={80}>
