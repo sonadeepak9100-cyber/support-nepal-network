@@ -1429,8 +1429,8 @@ const infrastructureImages = [
   },
   {
     src: infraEurokidsBlock.url,
-    alt: "EuroKids Block-A building with glass facade",
-    caption: "EuroKids Block A",
+    alt: "EuroKids Bishalnagar building with glass facade",
+    caption: "EuroKids Bishalnagar",
     blurb: "Bright, glass-fronted early-years classrooms and play zones.",
     span: "",
   },
