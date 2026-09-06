@@ -644,7 +644,7 @@ function Hero() {
         <img
           src={iecLogo.url}
           alt="IEC Group of Companies"
-          className="rise h-auto w-[140px] rounded-xl bg-paper object-contain px-3 py-1.5 shadow-2xl sm:w-[165px] lg:w-[185px]"
+          className="rise h-auto w-[105px] rounded-lg bg-paper object-contain px-2.5 py-1 shadow-2xl sm:w-[120px] lg:w-[135px]"
         />
         <h1
           className="rise mt-8 font-display text-[2.4rem] font-bold uppercase leading-[1] tracking-[-0.03em] sm:text-[3.6rem] lg:text-[4.75rem]"
