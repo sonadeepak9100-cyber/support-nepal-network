@@ -32,6 +32,9 @@ import groupFestival from "@/assets/group-festival.jpg.asset.json";
 
 import groupLab from "@/assets/group-lab.jpg.asset.json";
 import groupRunway from "@/assets/group-runway.jpg.asset.json";
+import studioGreenscreen from "@/assets/studio-greenscreen.jpg.asset.json";
+import studioPodcast from "@/assets/studio-podcast.jpg.asset.json";
+import studioAudio from "@/assets/studio-audio.jpg.asset.json";
 import heroUnity from "@/assets/hero-unity.jpg.asset.json";
 
 import heroCampus from "@/assets/hero-eurokids.jpg.asset.json";
@@ -353,6 +356,7 @@ function Index() {
         <Partners />
         <Testimonials />
         <Gallery />
+        <StudioSection />
 
         <CallToAction />
         <Contact />
@@ -1176,9 +1180,10 @@ const galleryImages = [
   },
   {
     src: groupEurocup,
-    alt: "Students competing at the Eurocup sports tournament at Euro School Hattigauda",
-    caption: "Eurocup at Euro School",
-    blurb: "Hattigauda's celebration of sportsmanship, teamwork and talent.",
+    alt: "Euro School students at a major production and annual day celebration",
+    caption: "Euro School major production",
+    blurb:
+      "Our major production, annual day and investiture ceremony — the highlights of the Euro School calendar.",
     span: "",
   },
   {
@@ -1199,11 +1204,36 @@ const galleryImages = [
   {
     src: groupLab.url,
     alt: "Students working in a modern computer lab",
-    caption: "Technology labs",
+    caption: "Computer labs",
     blurb: "Short, job-focused IT courses across our campuses.",
     span: "lg:col-span-2",
   },
 ];
+
+const studioImages = [
+  {
+    src: studioGreenscreen.url,
+    alt: "Green screen shooting floor with studio lighting and a camera on a slider",
+    caption: "Green screen floor",
+    blurb: "Chroma-key shoots, lighting rigs and camera movement for film projects.",
+    span: "lg:col-span-2",
+  },
+  {
+    src: studioPodcast.url,
+    alt: "Podcast set with sofas, boom microphones and a wall-mounted screen",
+    caption: "Podcast & interview set",
+    blurb: "A fully dressed set for podcasts, interviews and talk formats.",
+    span: "",
+  },
+  {
+    src: studioAudio.url,
+    alt: "Audio control room with studio monitors, interface and editing workstation",
+    caption: "Audio & edit room",
+    blurb: "Recording, mixing and post-production in one place.",
+    span: "",
+  },
+];
+
 
 
 function Gallery() {
@@ -1213,7 +1243,7 @@ function Gallery() {
         <SectionHeading
           eyebrow="Life at IEC"
           title="One group, many campuses"
-          intro="From preschool playgrounds to convocation halls, runway shows and technology labs — a sense of the scale the group works at every single day."
+          intro="From preschool playgrounds to convocation halls, runway shows and computer labs — a sense of the scale the group works at every single day."
           align="center"
         />
         <div className="mt-16 grid auto-rows-[200px] gap-4 sm:grid-cols-2 lg:auto-rows-[190px] lg:grid-cols-4">
@@ -1245,6 +1275,48 @@ function Gallery() {
     </section>
   );
 }
+
+function StudioSection() {
+  return (
+    <section className="bg-secondary/40">
+      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+        <SectionHeading
+          eyebrow="IEC School Studio"
+          title="A professional studio on campus"
+          intro="Our own production studio — green screen floor, podcast set and audio room — where students shoot, record and edit real work."
+          align="center"
+        />
+        <div className="mt-16 grid auto-rows-[220px] gap-4 sm:grid-cols-2 lg:auto-rows-[240px] lg:grid-cols-4">
+          {studioImages.map((img, i) => (
+            <Reveal
+              key={img.caption}
+              delay={i * 90}
+              className={`group relative overflow-hidden rounded-2xl border border-border ${img.span}`}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                width={1200}
+                height={900}
+                loading="lazy"
+                className="size-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 p-5 text-primary-foreground">
+                <p className="font-display text-lg font-semibold">{img.caption}</p>
+                <p className="mt-1 max-w-[38ch] font-body text-sm text-primary-foreground/80">
+                  {img.blurb}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 
 
 
