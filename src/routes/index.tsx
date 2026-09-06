@@ -495,7 +495,7 @@ function Nav() {
           : "border-transparent bg-paper"
       }`}
     >
-      <div className="mx-auto flex h-28 max-w-7xl items-center justify-between px-6 lg:px-10">
+      <div className="mx-auto flex h-32 max-w-7xl items-center justify-between px-6 lg:h-36 lg:px-10">
         <a href="#top" className="flex items-center gap-3">
           <Wordmark />
         </a>
