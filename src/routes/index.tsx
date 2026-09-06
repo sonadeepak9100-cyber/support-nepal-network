@@ -33,6 +33,7 @@ import logoIecDesignIt from "@/assets/logo-iec-design-it.jpg.asset.json";
 import logoEuroKids from "@/assets/logo-eurokids.jpg.asset.json";
 import logoEuroSchool from "@/assets/logo-euro-school.jpg.asset.json";
 import logoMetaphor from "@/assets/logo-metaphor.jpg.asset.json";
+import logoInfinity from "@/assets/logo-infinity-developers.png.asset.json";
 import euroAnnualDay from "@/assets/euro-investiture.jpg.asset.json";
 import groupFestival from "@/assets/group-festival.jpg.asset.json";
 
@@ -192,9 +193,28 @@ const institutions: Institution[] = [
       "Admissions counselling, test preparation and university placement for students heading abroad and at home.",
     href: "https://metaphorconsultancy.com/",
   },
+  {
+    name: "Infinity Developers Pvt. Ltd.",
+    logo: logoInfinity.url,
+    discipline: "Real Estate & Construction",
+    category: "Real Estate",
+    locations: "Kathmandu",
+    blurb:
+      "The group's real estate and construction arm — building a better tomorrow through residential and institutional projects, campus development and quality-led construction across the Kathmandu Valley.",
+    href: null,
+    highlight: "Newest company in the group",
+  },
 ];
 
-const categories = ["All", "Education", "K-12", "Early Years", "Technology", "Consultancy"];
+const categories = [
+  "All",
+  "Education",
+  "K-12",
+  "Early Years",
+  "Technology",
+  "Consultancy",
+  "Real Estate",
+];
 
 const navLinks = [
   { id: "top", label: "Home", href: "#top" },
