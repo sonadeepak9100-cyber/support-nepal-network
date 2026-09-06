@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 
 import kathmanduValley from "@/assets/kathmandu-valley.jpg";
+import storyRoots from "@/assets/story-roots-1997-2026.jpg";
 import aboutCampusAsset from "@/assets/about-campus-bright.jpg.asset.json";
 import aboutStudio from "@/assets/about-design-studio.jpg.asset.json";
 import aboutEarlyYears from "@/assets/about-early-years.jpg.asset.json";
