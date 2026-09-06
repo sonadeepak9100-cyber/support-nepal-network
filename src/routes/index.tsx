@@ -137,13 +137,13 @@ const institutions: Institution[] = [
     ],
   },
   {
-    name: "EuroKids Early Childhood Education",
+    name: "EuroKids Sitapaila — Early Childhood Education",
     logo: logoEuroKidsSitapaila.url,
     discipline: "Early Childhood Education",
     category: "Early Years",
     locations: "Sitapaila",
     blurb:
-      "A separate early childhood education centre opening in Sitapaila, extending the group's early years work with a dedicated, purpose-built campus.",
+      "EuroKids Sitapaila is the newest EuroKids branch, opening soon in Sitapaila. It brings the same play-based early childhood programme families know from Hattigauda, Bishalnagar, Tinkune and Samakhusi — bright, child-safe classrooms, trained early years teachers, activity and outdoor play areas, and a nurturing first step into school for children before Grade 1. Enquiries and early registrations are welcome now.",
     href: null,
     highlight: "Coming soon",
   },
