@@ -239,26 +239,27 @@ const timeline = [
     body: "IEC opens with a single fashion and interior design college under Ms. Shailaja Adhikary.",
   },
   {
-    year: "2006",
-    title: "Into schooling",
-    body: "The group moves into formal schooling, building the foundations of Euro School Kathmandu.",
+    year: "2007",
+    title: "EuroKids comes to Nepal",
+    body: "EuroKids is launched in Nepal, bringing structured play-based early years learning to Kathmandu families.",
   },
   {
-    year: "2014",
-    title: "Early years expansion",
-    body: "EuroKids arrives in Nepal, growing to four Kathmandu campuses for pre-primary learners.",
+    year: "2008",
+    title: "Euro School opens",
+    body: "Euro School Kathmandu is launched, taking the group into formal schooling from Grade 1 upward.",
   },
   {
-    year: "2020",
-    title: "Design meets IT",
-    body: "Creative arts and computing merge into the School of Design & IT across two campuses.",
+    year: "2009",
+    title: "IEC College is launched",
+    body: "IEC College begins degree-level study in art, fashion and design, later in academic partnership with Teesside University, UK.",
   },
   {
     year: "Today",
-    title: "Eight institutions",
-    body: "A group of eight institutions with 500+ faculty and a 50,000-strong alumni network.",
+    title: "10+ institutions and campuses",
+    body: "More than ten institutions and campuses across early years, K-12, design, IT and consultancy, with 500+ faculty and a 50,000-strong alumni network.",
   },
 ];
+
 
 const stories = [
   {
