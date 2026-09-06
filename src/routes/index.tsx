@@ -26,6 +26,10 @@ import aboutStudio from "@/assets/about-design-studio.jpg.asset.json";
 import aboutEarlyYears from "@/assets/about-early-years.jpg.asset.json";
 import convocationAward from "@/assets/convocation-award.jpg.asset.json";
 import convocationProcession from "@/assets/convocation-procession.jpg.asset.json";
+import logoIecCollege from "@/assets/logo-iec-college.jpg.asset.json";
+import logoIecDesignIt from "@/assets/logo-iec-design-it.jpg.asset.json";
+import logoEuroKids from "@/assets/logo-eurokids.jpg.asset.json";
+import logoEuroSchool from "@/assets/logo-euro-school.jpg.asset.json";
 import euroAnnualDay from "@/assets/euro-investiture.jpg.asset.json";
 import groupFestival from "@/assets/group-festival.jpg.asset.json";
 
@@ -69,6 +73,7 @@ export const Route = createFileRoute("/")({
 
 type Institution = {
   name: string;
+  logo?: string;
   discipline: string;
   category: string;
   locations: string;
@@ -81,6 +86,7 @@ type Institution = {
 const institutions: Institution[] = [
   {
     name: "IEC College of Art & Fashion",
+    logo: logoIecCollege.url,
     discipline: "Fashion & Interior Design",
     category: "Education",
     locations: "Mandikatar",
@@ -91,6 +97,7 @@ const institutions: Institution[] = [
   },
   {
     name: "IEC School of Design & IT",
+    logo: logoIecDesignIt.url,
     discipline: "Design, Creative Arts & IT",
     category: "Technology",
     locations: "Mandikhatar · Miteripul",
@@ -100,6 +107,7 @@ const institutions: Institution[] = [
   },
   {
     name: "EuroKids",
+    logo: logoEuroKids.url,
     discipline: "Pre-School",
     category: "Early Years",
     locations: "Hattigauda · Bishalnagar · Tinkune · Samakhushi",
@@ -115,6 +123,7 @@ const institutions: Institution[] = [
   },
   {
     name: "EuroKids Early Childhood Education",
+    logo: logoEuroKids.url,
     discipline: "Early Childhood Education",
     category: "Early Years",
     locations: "Sitapaila",
@@ -126,6 +135,7 @@ const institutions: Institution[] = [
 
   {
     name: "Euro School Kathmandu",
+    logo: logoEuroSchool.url,
     discipline: "IB World School · Grade 1–10",
     category: "K-12",
     locations: "Hattigauda",
@@ -136,6 +146,7 @@ const institutions: Institution[] = [
   },
   {
     name: "Euro A Level Academy",
+    logo: logoEuroSchool.url,
     discipline: "+2 / A Levels",
     category: "K-12",
     locations: "Kathmandu",
@@ -862,9 +873,20 @@ function Institutions() {
                       {inst.discipline}
                     </p>
                   </div>
-                  <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-secondary font-display text-sm font-semibold text-primary">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+                  {inst.logo ? (
+                    <span className="grid size-16 shrink-0 place-items-center overflow-hidden rounded-xl border border-border bg-white p-1.5">
+                      <img
+                        src={inst.logo}
+                        alt={`${inst.name} logo`}
+                        loading="lazy"
+                        className="h-full w-full object-contain"
+                      />
+                    </span>
+                  ) : (
+                    <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-secondary font-display text-sm font-semibold text-primary">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  )}
                 </div>
 
                 {inst.highlight ? (
