@@ -1383,8 +1383,6 @@ function Partners() {
         </div>
       </div>
     </section>
-      </div>
-    </section>
   );
 }
 
