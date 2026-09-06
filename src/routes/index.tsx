@@ -561,10 +561,10 @@ function Hero() {
         <img
           src={iecLogo.url}
           alt="IEC Group of Companies"
-          className="rise h-[130px] w-auto rounded-xl bg-paper object-contain px-3 py-1 shadow-2xl sm:h-[160px] lg:h-[190px]"
+          className="rise h-[100px] w-auto rounded-xl bg-paper object-contain px-3 py-1 shadow-2xl sm:h-[120px] lg:h-[140px]"
         />
         <h1
-          className="rise mt-10 font-display text-[3.6rem] font-bold uppercase leading-[0.92] tracking-[-0.03em] sm:text-[6rem] lg:text-[8rem]"
+          className="rise mt-8 font-display text-[2.4rem] font-bold uppercase leading-[1] tracking-[-0.03em] sm:text-[3.6rem] lg:text-[4.75rem]"
           style={{ animationDelay: "100ms" }}
         >
           IEC Group
