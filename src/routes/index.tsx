@@ -24,7 +24,8 @@ import {
 import aboutCampusAsset from "@/assets/about-campus-bright.jpg.asset.json";
 import aboutStudio from "@/assets/about-design-studio.jpg.asset.json";
 import aboutEarlyYears from "@/assets/about-early-years.jpg.asset.json";
-import groupConvocation from "@/assets/group-convocation.jpg";
+import convocationAward from "@/assets/convocation-award.jpg.asset.json";
+import convocationProcession from "@/assets/convocation-procession.jpg.asset.json";
 import groupEurocup from "@/assets/group-eurocup.jpg";
 import groupFestival from "@/assets/group-festival.jpg.asset.json";
 
