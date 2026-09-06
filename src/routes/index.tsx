@@ -1239,7 +1239,7 @@ function Gallery() {
         <SectionHeading
           eyebrow="Life at IEC"
           title="One group, many campuses"
-          intro="From preschool playgrounds to convocation halls, runway shows and technology labs — a sense of the scale the group works at every single day."
+          intro="From preschool playgrounds to convocation halls, runway shows and computer labs — a sense of the scale the group works at every single day."
           align="center"
         />
         <div className="mt-16 grid auto-rows-[200px] gap-4 sm:grid-cols-2 lg:auto-rows-[190px] lg:grid-cols-4">
