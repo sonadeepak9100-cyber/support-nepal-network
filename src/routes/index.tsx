@@ -762,15 +762,15 @@ function About() {
             <figure className="overflow-hidden rounded-2xl border border-border bg-card">
               <img
                 src={storyRoots}
-                alt="Illustration of IEC Group's growth from its roots in 1997 to 2026"
+                alt="Illustration of IEC Group's journey from one institution in Bagbazar in 1997 to a global outlook in 2026"
                 loading="lazy"
                 width={1200}
                 height={1200}
                 className="w-full object-cover"
               />
               <figcaption className="px-8 py-6 font-body text-sm leading-relaxed text-muted-foreground">
-                From one studio in 1997 to more than ten institutions in 2026 — the same roots,
-                a much wider canopy.
+                From one institution in Bagbazar in 1997 to more than ten institutions and a
+                global outlook in 2026.
               </figcaption>
             </figure>
             <div className="absolute -bottom-8 -left-8 hidden rounded-2xl border border-border bg-card p-8 shadow-[var(--shadow-lift)] lg:block">
