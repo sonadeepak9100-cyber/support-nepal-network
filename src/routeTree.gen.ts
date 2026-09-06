@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LeadershipSlugRouteImport } from './routes/leadership.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LeadershipSlugRoute = LeadershipSlugRouteImport.update({
+  id: '/leadership/$slug',
+  path: '/leadership/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/leadership/$slug': typeof LeadershipSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/leadership/$slug': typeof LeadershipSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/leadership/$slug': typeof LeadershipSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/leadership/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/leadership/$slug'
+  id: '__root__' | '/' | '/leadership/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LeadershipSlugRoute: typeof LeadershipSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/leadership/$slug': {
+      id: '/leadership/$slug'
+      path: '/leadership/$slug'
+      fullPath: '/leadership/$slug'
+      preLoaderRoute: typeof LeadershipSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LeadershipSlugRoute: LeadershipSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
