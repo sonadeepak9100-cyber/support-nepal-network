@@ -436,6 +436,7 @@ function Index() {
         <About />
         <Pillars />
         <Institutions />
+        <SitapailaSection />
         <MapSection />
         <Impact />
         <Timeline />
