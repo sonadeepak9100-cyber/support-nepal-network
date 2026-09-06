@@ -32,6 +32,9 @@ import groupFestival from "@/assets/group-festival.jpg.asset.json";
 
 import groupLab from "@/assets/group-lab.jpg.asset.json";
 import groupRunway from "@/assets/group-runway.jpg.asset.json";
+import studioGreenscreen from "@/assets/studio-greenscreen.jpg.asset.json";
+import studioPodcast from "@/assets/studio-podcast.jpg.asset.json";
+import studioAudio from "@/assets/studio-audio.jpg.asset.json";
 import heroUnity from "@/assets/hero-unity.jpg.asset.json";
 
 import heroCampus from "@/assets/hero-eurokids.jpg.asset.json";
