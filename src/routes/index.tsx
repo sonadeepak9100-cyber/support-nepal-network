@@ -353,6 +353,7 @@ function Index() {
         <Partners />
         <Testimonials />
         <Gallery />
+        <StudioSection />
 
         <CallToAction />
         <Contact />
