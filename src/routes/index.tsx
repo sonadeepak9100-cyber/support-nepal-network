@@ -1176,9 +1176,10 @@ const galleryImages = [
   },
   {
     src: groupEurocup,
-    alt: "Students competing at the Eurocup sports tournament at Euro School Hattigauda",
-    caption: "Eurocup at Euro School",
-    blurb: "Hattigauda's celebration of sportsmanship, teamwork and talent.",
+    alt: "Euro School students at a major production and annual day celebration",
+    caption: "Euro School major production",
+    blurb:
+      "Our major production, annual day and investiture ceremony — the highlights of the Euro School calendar.",
     span: "",
   },
   {
@@ -1199,11 +1200,36 @@ const galleryImages = [
   {
     src: groupLab.url,
     alt: "Students working in a modern computer lab",
-    caption: "Technology labs",
+    caption: "Computer labs",
     blurb: "Short, job-focused IT courses across our campuses.",
     span: "lg:col-span-2",
   },
 ];
+
+const studioImages = [
+  {
+    src: studioGreenscreen.url,
+    alt: "Green screen shooting floor with studio lighting and a camera on a slider",
+    caption: "Green screen floor",
+    blurb: "Chroma-key shoots, lighting rigs and camera movement for film projects.",
+    span: "lg:col-span-2",
+  },
+  {
+    src: studioPodcast.url,
+    alt: "Podcast set with sofas, boom microphones and a wall-mounted screen",
+    caption: "Podcast & interview set",
+    blurb: "A fully dressed set for podcasts, interviews and talk formats.",
+    span: "",
+  },
+  {
+    src: studioAudio.url,
+    alt: "Audio control room with studio monitors, interface and editing workstation",
+    caption: "Audio & edit room",
+    blurb: "Recording, mixing and post-production in one place.",
+    span: "",
+  },
+];
+
 
 
 function Gallery() {
