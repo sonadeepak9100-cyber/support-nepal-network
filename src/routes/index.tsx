@@ -805,12 +805,6 @@ function About() {
                 </span>
               </figcaption>
             </figure>
-            <div className="absolute -bottom-8 -left-8 hidden rounded-2xl border border-border bg-card p-8 shadow-[var(--shadow-lift)] lg:block">
-              <p className="font-display text-4xl font-semibold">1997</p>
-              <p className="mt-2 font-body text-[10px] uppercase tracking-[0.26em] text-muted-foreground">
-                Bagbazar — where we started
-              </p>
-            </div>
           </Reveal>
 
         </div>
