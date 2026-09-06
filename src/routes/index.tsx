@@ -52,7 +52,7 @@ import infraEuroKoteshwor from "@/assets/infra-euroschool-koteshwor.jpg.asset.js
 import logoEuroKoteshwor from "@/assets/euroschool-koteshwor-logo.jpg.asset.json";
 import heroUnity from "@/assets/hero-unity.jpg.asset.json";
 
-import heroCampus from "@/assets/hero-eurokids.jpg.asset.json";
+import heroCampus from "@/assets/hero-eurokids-bright.jpg";
 import iecLogo from "@/assets/iec-logo.jpg.asset.json";
 import leaderManish from "@/assets/leader-manish.jpg.asset.json";
 import leaderSona from "@/assets/leader-sona.jpg.asset.json";
@@ -602,11 +602,11 @@ function Hero() {
   return (
     <section id="top" className="relative isolate min-h-[92vh] overflow-hidden bg-primary">
       <img
-        src={heroCampus.url}
+        src={heroCampus}
         alt="Students walking through an IEC Group campus courtyard at golden hour"
         className="absolute inset-0 size-full scale-105 object-cover"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(150deg,color-mix(in_oklab,var(--veil-base)_92%,transparent),color-mix(in_oklab,var(--veil-base)_62%,transparent))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(150deg,color-mix(in_oklab,var(--veil-base)_74%,transparent),color-mix(in_oklab,var(--veil-base)_40%,transparent))]" />
       <div className="absolute inset-x-0 bottom-0 h-56 veil" />
 
       <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col items-center justify-center px-6 py-32 text-center text-paper lg:px-10">
