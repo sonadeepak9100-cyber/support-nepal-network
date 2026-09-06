@@ -1243,13 +1243,23 @@ function Partners() {
         <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3 lg:grid-cols-6">
           {institutions.map((inst, i) => (
             <Reveal key={inst.name} delay={i * 60}>
-              <div className="flex h-28 items-center justify-center bg-card px-5 text-center grayscale transition-all duration-500 hover:grayscale-0">
-                <span className="font-display text-[13px] font-semibold leading-snug text-primary opacity-60 transition-opacity duration-500 hover:opacity-100">
-                  {inst.name}
-                </span>
+              <div className="group flex h-28 items-center justify-center bg-card px-5 text-center">
+                {inst.logo ? (
+                  <img
+                    src={inst.logo}
+                    alt={`${inst.name} logo`}
+                    loading="lazy"
+                    className="max-h-16 w-auto max-w-[80%] object-contain grayscale opacity-70 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
+                  />
+                ) : (
+                  <span className="font-display text-[13px] font-semibold leading-snug text-primary opacity-60 transition-opacity duration-500 group-hover:opacity-100">
+                    {inst.name}
+                  </span>
+                )}
               </div>
             </Reveal>
           ))}
+
         </div>
       </div>
     </section>
