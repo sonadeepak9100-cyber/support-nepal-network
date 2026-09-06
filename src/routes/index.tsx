@@ -32,6 +32,7 @@ import logoIecCollege from "@/assets/logo-iec-college.jpg.asset.json";
 import logoIecDesignIt from "@/assets/logo-iec-design-it.jpg.asset.json";
 import logoEuroKids from "@/assets/logo-eurokids.jpg.asset.json";
 import logoEuroSchool from "@/assets/logo-euro-school.jpg.asset.json";
+import logoMetaphor from "@/assets/logo-metaphor.jpg.asset.json";
 import euroAnnualDay from "@/assets/euro-investiture.jpg.asset.json";
 import groupFestival from "@/assets/group-festival.jpg.asset.json";
 
