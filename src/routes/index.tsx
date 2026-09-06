@@ -141,15 +141,6 @@ const institutions: Institution[] = [
       "Admissions counselling, test preparation and university placement for students heading abroad and at home.",
     href: "https://metaphorconsultancy.com/",
   },
-  {
-    name: "IEC Tech",
-    discipline: "Technology & Digital Skills",
-    category: "Technology",
-    locations: "Mandikatar",
-    blurb:
-      "Short-cycle digital skills training and the technology backbone that keeps every campus in the group running.",
-    href: null,
-  },
 ];
 
 const categories = ["All", "Education", "K-12", "Early Years", "Technology", "Consultancy"];
