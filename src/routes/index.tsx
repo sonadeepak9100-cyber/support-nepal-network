@@ -1502,6 +1502,122 @@ function InfrastructureSection() {
 
 
 
+const pathwaySteps = [
+  {
+    stage: "Ages 2–5",
+    title: "EuroKids Pre-School",
+    body: "Play-based early years learning across Hattigauda, Bishalnagar, Tinkune and Samakhusi, with EuroKids Early Childhood Education arriving in Sitapaila.",
+  },
+  {
+    stage: "Grade 1–10",
+    title: "Euro School",
+    body: "An IB World School experience in Hattigauda and Suryakot, Koteshwor — inquiry-led classrooms, sport, music, production and leadership through the investiture programme.",
+  },
+  {
+    stage: "Grade 11–12",
+    title: "Euro A Level Academy",
+    body: "A Levels and +2 pathways designed for students aiming at competitive universities at home and abroad. Coming soon.",
+  },
+  {
+    stage: "Bachelor degrees",
+    title: "IEC College",
+    body: "Undergraduate programmes delivered in partnership with Teesside University, UK, plus design, creative arts and IT degrees at IEC School of Design & IT.",
+  },
+  {
+    stage: "Career & abroad",
+    title: "Short IT courses & Metaphor Abroad",
+    body: "Job-focused short IT courses launched in 2024, and Metaphor Abroad Consultancy guiding students through overseas study applications.",
+  },
+];
+
+function PathwaySection() {
+  return (
+    <section className="bg-secondary/40">
+      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+        <SectionHeading
+          eyebrow="One group, one journey"
+          title="From first classroom to first career"
+          intro="A family can begin at two years old and stay with us all the way to a bachelor degree or a flight abroad — without ever leaving the group."
+        />
+
+        <ol className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {pathwaySteps.map((step, i) => (
+            <Reveal key={step.title} delay={i * 80}>
+              <li className="group h-full rounded-2xl border border-border/70 bg-background p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
+                <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">
+                  {step.stage}
+                </span>
+                <h3 className="mt-3 font-display text-2xl font-semibold tracking-[-0.01em]">
+                  {step.title}
+                </h3>
+                <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
+                  {step.body}
+                </p>
+              </li>
+            </Reveal>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
+
+const faqs = [
+  {
+    q: "How many institutions are part of IEC Group?",
+    a: "More than ten institutions and campuses across Kathmandu, spanning pre-school, K-10 schooling, A Levels, bachelor degrees, design and IT, and study-abroad guidance.",
+  },
+  {
+    q: "When did the group begin?",
+    a: "IEC was founded in 1997. EuroKids came to Nepal in 2007, Euro School followed in 2008, and IEC College opened in 2009.",
+  },
+  {
+    q: "Is Euro School an IB school?",
+    a: "Yes. Euro School is an IB World School for Grade 1 to 10, with campuses at Hattigauda and Suryakot, Koteshwor.",
+  },
+  {
+    q: "Can students earn a UK degree in Kathmandu?",
+    a: "IEC College runs its undergraduate programmes in partnership with Teesside University, UK, so students study in Nepal on an international curriculum.",
+  },
+  {
+    q: "What facilities do students use?",
+    a: "Purpose-built campuses with computer labs, a green-screen and podcast studio, an auditorium, cafeteria, turf playgrounds and school transport.",
+  },
+  {
+    q: "How do admissions work?",
+    a: "Contact the group office in Kathmandu and we will connect you with the right campus, arrange a visit and walk you through the requirements.",
+  },
+];
+
+function FaqSection() {
+  return (
+    <section className="bg-background">
+      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+        <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
+          <SectionHeading
+            eyebrow="Good to know"
+            title="Questions families ask us"
+            intro="The essentials about our campuses, curricula and admissions — and our office is always happy to answer more."
+          />
+
+          <dl className="divide-y divide-border/70 border-y border-border/70">
+            {faqs.map((f, i) => (
+              <Reveal key={f.q} delay={i * 60}>
+                <div className="py-6">
+                  <dt className="font-display text-lg font-semibold tracking-[-0.01em]">{f.q}</dt>
+                  <dd className="mt-2 font-body text-sm leading-relaxed text-muted-foreground">
+                    {f.a}
+                  </dd>
+                </div>
+              </Reveal>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function CallToAction() {
   return (
     <section className="bg-background">
