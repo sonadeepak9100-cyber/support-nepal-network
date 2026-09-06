@@ -1058,6 +1058,86 @@ function Institutions() {
   );
 }
 
+function SitapailaSection() {
+  const points = [
+    {
+      title: "Play-based early years",
+      body: "The same EuroKids curriculum running in Hattigauda, Bishalnagar, Tinkune and Samakhusi — learning through play, stories, music, art and guided activity.",
+    },
+    {
+      title: "Built for little children",
+      body: "Bright, child-safe classrooms, soft play and activity corners, clean washrooms and a secure outdoor play area designed around small children.",
+    },
+    {
+      title: "Trained early years teachers",
+      body: "Teachers and caregivers trained in early childhood care, with small groups so every child is known by name.",
+    },
+    {
+      title: "A clear next step",
+      body: "Children move on confidently into Grade 1, including at Euro School, with the reading, number and social readiness they need.",
+    },
+  ];
+
+  return (
+    <section className="bg-background">
+      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <Reveal>
+            <figure className="rounded-2xl border border-border bg-card p-10">
+              <img
+                src={logoEuroKidsSitapaila.url}
+                alt="EuroKids Sitapaila Early Childhood Education logo"
+                loading="lazy"
+                width={600}
+                height={600}
+                className="mx-auto w-full max-w-xs object-contain"
+              />
+              <figcaption className="mt-6 text-center font-body text-sm text-muted-foreground">
+                EuroKids Sitapaila · Early Childhood Education
+              </figcaption>
+            </figure>
+          </Reveal>
+          <Reveal delay={120}>
+            <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 font-body text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+              Coming soon
+            </span>
+            <h2 className="mt-6 font-display text-4xl font-semibold leading-tight tracking-[-0.02em] text-balance lg:text-5xl">
+              EuroKids Sitapaila — our newest branch
+            </h2>
+            <p className="mt-6 font-body leading-relaxed text-muted-foreground text-pretty">
+              EuroKids is opening a new early childhood education branch in Sitapaila. It joins our
+              existing preschools in Hattigauda, Bishalnagar, Tinkune and Samakhusi, bringing the
+              same warm, play-based first years of school to families on the western side of the
+              Kathmandu Valley.
+            </p>
+            <p className="mt-4 font-body leading-relaxed text-muted-foreground text-pretty">
+              The campus is being prepared now. Enquiries and early registrations are open, and
+              families are welcome to speak with us about admission before the branch opens.
+            </p>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              {points.map((p) => (
+                <div key={p.title} className="rounded-xl border border-border bg-card p-6">
+                  <h3 className="font-display text-lg font-semibold">{p.title}</h3>
+                  <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
+                    {p.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <a
+              href="#contact"
+              className="group mt-10 inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-4 font-body text-sm font-semibold text-primary-foreground transition-all duration-500 hover:-translate-y-0.5"
+            >
+              Enquire about Sitapaila
+              <ArrowRight className="size-4 transition-transform duration-500 group-hover:translate-x-1" />
+            </a>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function MapSection() {
   return (
     <section className="relative bg-secondary/50">
