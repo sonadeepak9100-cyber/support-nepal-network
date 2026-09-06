@@ -254,6 +254,12 @@ const timeline = [
     body: "IEC College begins degree-level study in art, fashion and design, later in academic partnership with Teesside University, UK.",
   },
   {
+    year: "2024",
+    title: "Into IT — and abroad",
+    body: "IEC enters the IT field with short, job-focused technology courses, and launches Metaphor Abroad Consultancy to guide students to further studies overseas.",
+  },
+  {
+
     year: "Today",
     title: "10+ institutions and campuses",
     body: "More than ten institutions and campuses across early years, K-12, design, IT and consultancy, with 500+ faculty and a 50,000-strong alumni network.",
