@@ -39,6 +39,14 @@ import groupRunway from "@/assets/group-runway.jpg.asset.json";
 import studioGreenscreen from "@/assets/studio-greenscreen.jpg.asset.json";
 import studioPodcast from "@/assets/studio-podcast.jpg.asset.json";
 import studioAudio from "@/assets/studio-audio.jpg.asset.json";
+import infraIecCollege from "@/assets/infra-iec-college.jpg.asset.json";
+import infraDesignIt from "@/assets/infra-design-it.jpg.asset.json";
+import infraEuroSchool from "@/assets/infra-euro-school.jpg.asset.json";
+import infraEurokidsHattigauda from "@/assets/infra-eurokids-hattigauda.jpg.asset.json";
+import infraEurokidsBlock from "@/assets/infra-eurokids-block.jpg.asset.json";
+import infraEurokidsSamakhusi from "@/assets/infra-eurokids-samakhusi.jpg.asset.json";
+import infraAuditorium from "@/assets/infra-auditorium.jpg.asset.json";
+import infraCafeteria from "@/assets/infra-cafeteria.jpg.asset.json";
 import heroUnity from "@/assets/hero-unity.jpg.asset.json";
 
 import heroCampus from "@/assets/hero-eurokids.jpg.asset.json";
