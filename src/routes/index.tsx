@@ -34,7 +34,7 @@ import { useActiveSection, useCountUp, useReveal } from "@/lib/use-reveal";
 
 const TITLE = "IEC Group — Nepal's Legacy of Education Since 1997";
 const DESCRIPTION =
-  "IEC Group is Nepal's education house: eight institutions across design, IT, K-12 and early years, guided since 1997 by Ms. Shailaja Adhikary.";
+  "IEC Group is Nepal's education house: more than ten institutions and campuses across design, IT, K-12 and early years, guided since 1997 by Ms. Shailaja Adhikary.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -220,7 +220,7 @@ const leaders = [
   {
     name: "Manish Kumar Deepak",
     role: "Director, Operations",
-    note: "An engineer by training, he has held the group's operating standards since its very first year — campuses, facilities, faculty systems and the day-to-day discipline that keeps eight institutions running to one standard.",
+    note: "An engineer by training, he has held the group's operating standards since its very first year — campuses, facilities, faculty systems and the day-to-day discipline that keeps more than ten institutions and campuses running to one standard.",
     image: leaderManish.url,
   },
   {
@@ -574,7 +574,7 @@ function Hero() {
           className="rise mt-8 max-w-[58ch] font-body text-lg leading-relaxed text-paper/85 text-pretty"
           style={{ animationDelay: "200ms" }}
         >
-          Since 1997, IEC Group has built a network of eight institutions across design, IT, K-12 and
+          Since 1997, IEC Group has built a network of more than ten institutions and campuses across design, IT, K-12 and
           early years — held to a single, uncompromising standard of teaching and care.
         </p>
 
@@ -736,7 +736,7 @@ function Institutions() {
         <div className="flex flex-wrap items-end justify-between gap-8">
           <SectionHeading
             eyebrow="The house"
-            title="Eight institutions, one standard"
+            title="Ten-plus institutions, one standard"
             intro="Colleges, schools, studios and a consultancy — filter by what you're looking for."
           />
         </div>
