@@ -1272,6 +1272,48 @@ function Gallery() {
   );
 }
 
+function StudioSection() {
+  return (
+    <section className="bg-secondary/40">
+      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+        <SectionHeading
+          eyebrow="IEC School Studio"
+          title="A professional studio on campus"
+          intro="Our own production studio — green screen floor, podcast set and audio room — where students shoot, record and edit real work."
+          align="center"
+        />
+        <div className="mt-16 grid auto-rows-[220px] gap-4 sm:grid-cols-2 lg:auto-rows-[240px] lg:grid-cols-4">
+          {studioImages.map((img, i) => (
+            <Reveal
+              key={img.caption}
+              delay={i * 90}
+              className={`group relative overflow-hidden rounded-2xl border border-border ${img.span}`}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                width={1200}
+                height={900}
+                loading="lazy"
+                className="size-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 p-5 text-primary-foreground">
+                <p className="font-display text-lg font-semibold">{img.caption}</p>
+                <p className="mt-1 max-w-[38ch] font-body text-sm text-primary-foreground/80">
+                  {img.blurb}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+
 
 
 function CallToAction() {
