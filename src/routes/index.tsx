@@ -265,13 +265,13 @@ const timeline = [
   },
   {
     year: "2008",
-    title: "Euro School opens",
-    body: "Euro School Kathmandu is launched, taking the group into formal schooling from Grade 1 upward.",
+    title: "Euro School takes birth",
+    body: "Euro School Kathmandu is born, taking the group into formal schooling from Grade 1 upward and growing into an IB World School.",
   },
   {
     year: "2009",
-    title: "IEC College is launched",
-    body: "IEC College begins degree-level study in art, fashion and design, later in academic partnership with Teesside University, UK.",
+    title: "IEC College takes birth",
+    body: "IEC College takes birth with degree-level study in art, fashion and design, later in academic partnership with Teesside University, UK.",
   },
   {
     year: "2024",
