@@ -47,6 +47,8 @@ import infraEurokidsBlock from "@/assets/infra-eurokids-block.jpg.asset.json";
 import infraEurokidsSamakhusi from "@/assets/infra-eurokids-samakhusi.jpg.asset.json";
 import infraAuditorium from "@/assets/infra-auditorium.jpg.asset.json";
 import infraCafeteria from "@/assets/infra-cafeteria.jpg.asset.json";
+import infraEuroKoteshwor from "@/assets/infra-euroschool-koteshwor.jpg.asset.json";
+import logoEuroKoteshwor from "@/assets/euroschool-koteshwor-logo.jpg.asset.json";
 import heroUnity from "@/assets/hero-unity.jpg.asset.json";
 
 import heroCampus from "@/assets/hero-eurokids.jpg.asset.json";
