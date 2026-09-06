@@ -452,6 +452,7 @@ function Index() {
         <StudioSection />
         <InfrastructureSection />
         <SitapailaSection />
+        <InfinitySection />
         <PathwaySection />
         <FaqSection />
         <CallToAction />
