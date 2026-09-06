@@ -35,6 +35,7 @@ import logoEuroSchool from "@/assets/logo-euro-school.jpg.asset.json";
 import logoMetaphor from "@/assets/logo-metaphor.jpg.asset.json";
 import logoInfinity from "@/assets/logo-infinity-developers.png.asset.json";
 import logoEuroKidsSitapaila from "@/assets/logo-eurokids-sitapaila.png.asset.json";
+import sitapailaCampus from "@/assets/eurokids-sitapaila-campus.png.asset.json";
 import euroAnnualDay from "@/assets/euro-investiture.jpg.asset.json";
 import groupFestival from "@/assets/group-festival.jpg.asset.json";
 
