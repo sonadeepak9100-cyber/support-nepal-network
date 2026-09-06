@@ -687,16 +687,7 @@ function StatCard({
   );
 }
 
-const statPhotos = [
-  { src: infraIecCollege.url, alt: "IEC College campus in Kathmandu" },
-  { src: convocationProcession.url, alt: "Graduates at the IEC College convocation" },
-  { src: infraEuroSchool.url, alt: "Euro School campus and school buses" },
-  { src: infraEurokidsHattigauda.url, alt: "EuroKids Hattigauda early years campus" },
-];
-
 function Stats() {
-  const { ref, visible } = useReveal(0.2);
-
   return (
     <section className="relative bg-background">
       <div className="mx-auto -mt-20 grid max-w-7xl gap-6 px-6 sm:grid-cols-2 lg:grid-cols-4 lg:px-10">
@@ -704,35 +695,10 @@ function Stats() {
           <StatCard key={stat.label} stat={stat} index={i} />
         ))}
       </div>
-
-      <div
-        ref={ref}
-        data-visible={visible}
-        className="reveal mx-auto mt-14 max-w-7xl px-6 lg:px-10"
-      >
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-          {statPhotos.map((photo) => (
-            <div
-              key={photo.src}
-              className="group relative overflow-hidden rounded-2xl border border-border"
-            >
-              <img
-                src={photo.src}
-                alt={photo.alt}
-                loading="lazy"
-                className="h-40 w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-52"
-              />
-            </div>
-          ))}
-        </div>
-        <p className="mt-5 text-center font-body text-sm text-muted-foreground">
-          Campuses across the Kathmandu Valley — from early years classrooms to
-          college convocations.
-        </p>
-      </div>
     </section>
   );
 }
+
 
 
 const aboutFacts = [
