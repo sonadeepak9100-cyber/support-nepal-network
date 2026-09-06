@@ -420,8 +420,8 @@ function Index() {
         <Gallery />
         <StudioSection />
         <InfrastructureSection />
-
-
+        <PathwaySection />
+        <FaqSection />
         <CallToAction />
         <Contact />
       </main>
