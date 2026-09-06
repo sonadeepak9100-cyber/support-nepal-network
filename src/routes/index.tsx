@@ -796,9 +796,13 @@ function About() {
                 height={1200}
                 className="w-full object-cover"
               />
-              <figcaption className="px-8 py-6 font-body text-sm leading-relaxed text-muted-foreground">
-                From one institution in Bagbazar in 1997 to more than ten institutions and a
-                global outlook in 2026.
+              <figcaption className="border-t border-border px-8 py-7">
+                <span className="block font-display text-lg font-bold uppercase tracking-[0.12em] text-primary">
+                  BAGBAZAR, 1997 — THIS IS WHERE IEC GROUP STARTED
+                </span>
+                <span className="mt-3 block font-body text-sm font-semibold uppercase leading-relaxed tracking-[0.08em] text-brandred">
+                  FROM ONE INSTITUTION TO MORE THAN TEN INSTITUTIONS AND A GLOBAL OUTLOOK IN 2026
+                </span>
               </figcaption>
             </figure>
             <div className="absolute -bottom-8 -left-8 hidden rounded-2xl border border-border bg-card p-8 shadow-[var(--shadow-lift)] lg:block">
