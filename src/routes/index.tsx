@@ -182,7 +182,7 @@ const navLinks = [
 
 const stats = [
   { target: 28, suffix: "+", label: "Years of excellence", icon: Award },
-  { target: 6, suffix: "", label: "Institutions", icon: Building2 },
+  { target: 10, suffix: "+", label: "Institutions", icon: Building2 },
   { target: 50, suffix: "K+", label: "Students empowered", icon: Users },
   { target: 500, suffix: "+", label: "Faculty & staff", icon: GraduationCap },
 ];
