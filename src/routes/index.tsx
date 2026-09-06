@@ -1154,6 +1154,105 @@ function SitapailaSection() {
   );
 }
 
+function InfinitySection() {
+  const pillars = [
+    {
+      title: "Campus development",
+      body: "Designing and building school and college campuses for the group — classrooms, laboratories, studios, auditoriums and play areas built to the standards our students use every day.",
+    },
+    {
+      title: "Residential projects",
+      body: "Homes and apartments built with careful planning, honest materials and finishing quality that families can trust for the long term.",
+    },
+    {
+      title: "Institutional & commercial",
+      body: "Institutional and commercial buildings delivered end to end, from land and drawings through structure, services and handover.",
+    },
+    {
+      title: "Built to last",
+      body: "Engineering-led construction with attention to structural safety, natural light, ventilation and maintenance — the same discipline we bring to education.",
+    },
+  ];
+
+  return (
+    <section className="relative overflow-hidden bg-secondary/40">
+      <div className="absolute inset-0 grid-faint opacity-40" />
+      <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+          <Reveal>
+            <span className="inline-flex items-center rounded-full border border-brandred/30 bg-brandred/5 px-4 py-1.5 font-body text-xs font-semibold uppercase tracking-[0.18em] text-brandred">
+              A new chapter
+            </span>
+            <h2 className="mt-6 font-display text-4xl font-semibold leading-tight tracking-[-0.02em] text-balance lg:text-5xl">
+              Infinity Developers — IEC enters real estate and construction
+            </h2>
+            <p className="mt-6 font-body leading-relaxed text-muted-foreground text-pretty">
+              After nearly three decades of building institutions, IEC Group has stepped into
+              building spaces. Infinity Developers Pvt. Ltd. is the group's real estate and
+              construction arm, taking the same care we put into classrooms into land, structure
+              and finishing across the Kathmandu Valley.
+            </p>
+            <p className="mt-4 font-body leading-relaxed text-muted-foreground text-pretty">
+              It grew out of a simple need: our own campuses in Hattigauda, Bishalnagar, Samakhusi,
+              Tinkune, Koteshwor and Mandikhatar had to be planned, built and maintained properly.
+              That in-house expertise is now offered to families and institutions outside the
+              group as well, under the promise of building a better tomorrow.
+            </p>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              {pillars.map((p) => (
+                <div key={p.title} className="rounded-xl border border-border bg-card p-6">
+                  <h3 className="font-display text-lg font-semibold">{p.title}</h3>
+                  <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
+                    {p.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <a
+              href="#contact"
+              className="group mt-10 inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-4 font-body text-sm font-semibold text-primary-foreground transition-all duration-500 hover:-translate-y-0.5"
+            >
+              Talk to Infinity Developers
+              <ArrowRight className="size-4 transition-transform duration-500 group-hover:translate-x-1" />
+            </a>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="rounded-2xl border border-border bg-card p-10 text-center shadow-sm">
+              <img
+                src={logoInfinity.url}
+                alt="Infinity Developers Pvt. Ltd. logo"
+                loading="lazy"
+                className="mx-auto max-h-32 w-auto object-contain"
+              />
+              <p className="mt-8 font-body text-sm leading-relaxed text-muted-foreground">
+                Building a better tomorrow — residential, institutional and campus projects across
+                the Kathmandu Valley.
+              </p>
+              <dl className="mt-8 grid grid-cols-2 gap-6 border-t border-border pt-8 text-left">
+                <div>
+                  <dt className="font-body text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+                    Established
+                  </dt>
+                  <dd className="mt-2 font-display text-2xl font-semibold text-primary">2025</dd>
+                </div>
+                <div>
+                  <dt className="font-body text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+                    Focus
+                  </dt>
+                  <dd className="mt-2 font-display text-lg font-semibold text-primary">
+                    Real estate &amp; construction
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 function MapSection() {
   return (
     <section className="relative bg-secondary/50">
