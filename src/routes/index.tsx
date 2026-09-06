@@ -343,6 +343,8 @@ function Index() {
         <Leadership />
         <Partners />
         <Testimonials />
+        <Gallery />
+
         <CallToAction />
         <Contact />
       </main>
@@ -1146,6 +1148,79 @@ function Testimonials() {
     </section>
   );
 }
+
+const galleryImages = [
+  {
+    src: groupGrad.url,
+    alt: "Hundreds of IEC graduates at a convocation ceremony",
+    caption: "Convocation",
+    blurb: "Hundreds of graduates every year across the group's colleges.",
+    span: "lg:col-span-2 lg:row-span-2",
+  },
+  {
+    src: groupAssembly.url,
+    alt: "School assembly with hundreds of uniformed students",
+    caption: "Morning assembly",
+    blurb: "Thousands of students, from early years to Grade 10.",
+    span: "lg:col-span-2",
+  },
+  {
+    src: groupRunway.url,
+    alt: "Student fashion show on a lit runway with a full audience",
+    caption: "Annual runway show",
+    blurb: "Design students present their collections to the industry.",
+    span: "",
+  },
+  {
+    src: groupLab.url,
+    alt: "Students working in a modern computer lab",
+    caption: "Technology labs",
+    blurb: "Short, job-focused IT courses across our campuses.",
+    span: "",
+  },
+];
+
+function Gallery() {
+  return (
+    <section className="bg-background">
+      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+        <SectionHeading
+          eyebrow="Life at IEC"
+          title="One group, many campuses"
+          intro="From preschool playgrounds to convocation halls, runway shows and technology labs — a sense of the scale the group works at every single day."
+          align="center"
+        />
+        <div className="mt-16 grid auto-rows-[200px] gap-4 sm:grid-cols-2 lg:auto-rows-[190px] lg:grid-cols-4">
+          {galleryImages.map((img, i) => (
+            <Reveal
+              key={img.caption}
+              delay={i * 90}
+              className={`group relative overflow-hidden rounded-2xl border border-border ${img.span}`}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                width={1200}
+                height={900}
+                loading="lazy"
+                className="size-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 p-5 text-primary-foreground">
+                <p className="font-display text-lg font-semibold">{img.caption}</p>
+                <p className="mt-1 max-w-[38ch] font-body text-sm text-primary-foreground/80">
+                  {img.blurb}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 
 function CallToAction() {
   return (
