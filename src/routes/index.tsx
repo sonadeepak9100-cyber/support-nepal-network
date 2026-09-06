@@ -24,10 +24,11 @@ import {
 import aboutCampusAsset from "@/assets/about-campus-bright.jpg.asset.json";
 import aboutStudio from "@/assets/about-design-studio.jpg.asset.json";
 import aboutEarlyYears from "@/assets/about-early-years.jpg.asset.json";
-import groupAnnualDay from "@/assets/group-annualday.jpg.asset.json";
+import groupConvocation from "@/assets/group-convocation.jpg";
+import groupEurocup from "@/assets/group-eurocup.jpg";
 import groupFestival from "@/assets/group-festival.jpg.asset.json";
 
-import groupGrad from "@/assets/group-grad.jpg.asset.json";
+
 import groupLab from "@/assets/group-lab.jpg.asset.json";
 import groupRunway from "@/assets/group-runway.jpg.asset.json";
 import heroUnity from "@/assets/hero-unity.jpg.asset.json";
