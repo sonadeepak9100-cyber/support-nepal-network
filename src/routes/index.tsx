@@ -1179,7 +1179,7 @@ const galleryImages = [
     span: "lg:col-span-2",
   },
   {
-    src: groupEurocup,
+    src: euroAnnualDay.url,
     alt: "Euro School students at a major production and annual day celebration",
     caption: "Euro School major production",
     blurb:
