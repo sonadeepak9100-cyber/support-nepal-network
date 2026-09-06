@@ -137,7 +137,7 @@ const institutions: Institution[] = [
   },
   {
     name: "EuroKids Early Childhood Education",
-    logo: logoEuroKids.url,
+    logo: logoEuroKidsSitapaila.url,
     discipline: "Early Childhood Education",
     category: "Early Years",
     locations: "Sitapaila",
