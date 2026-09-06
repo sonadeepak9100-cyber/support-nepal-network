@@ -58,7 +58,7 @@ import logoEuroKoteshwor from "@/assets/euroschool-koteshwor-logo.jpg.asset.json
 import heroUnity from "@/assets/hero-unity.jpg.asset.json";
 
 import heroCampus from "@/assets/hero-eurokids-bright.jpg";
-import iecLogo from "@/assets/iec-logo.jpg.asset.json";
+import iecLogo from "@/assets/iec-logo-wide.jpg.asset.json";
 import leaderManish from "@/assets/leader-manish.jpg.asset.json";
 import leaderSona from "@/assets/leader-sona.jpg.asset.json";
 import leaderSonaDeepak from "@/assets/leader-sona-deepak.jpg.asset.json";
