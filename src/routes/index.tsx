@@ -638,6 +638,28 @@ function Stats() {
   );
 }
 
+const aboutFacts = [
+  { value: "1997", label: "Founded in Bagbazar, Kathmandu" },
+  { value: "10+", label: "Institutions & campuses" },
+  { value: "500+", label: "Faculty and staff" },
+  { value: "50,000+", label: "Alumni across Nepal & abroad" },
+];
+
+const aboutValues = [
+  {
+    title: "Learning that lasts",
+    body: "From play-based early years rooms to degree studios, every stage is designed to build on the one before it — a child can grow up inside the group without ever losing continuity.",
+  },
+  {
+    title: "Taught by practitioners",
+    body: "Designers, engineers, IB-trained educators and industry mentors teach here, so what happens in class stays close to what happens in the profession.",
+  },
+  {
+    title: "Recognised beyond Nepal",
+    body: "An IB World School, degree programmes with Teesside University in the UK, and a consultancy that places students on campuses across the world.",
+  },
+];
+
 function About() {
   return (
     <section id="about" className="bg-background">
@@ -651,8 +673,14 @@ function About() {
             />
             <Reveal delay={120}>
               <p className="mt-6 max-w-[52ch] font-body leading-relaxed text-muted-foreground text-pretty">
-                From early years classrooms to design studios, we build places where curiosity is
-                treated as craft — practised slowly, attentively, and for a lifetime.
+                What began as a small studio in Bagbazar now spans early childhood centres, an IB
+                World School, a design and IT college, an A Levels academy and an overseas study
+                consultancy — more than ten institutions, taught by over 500 faculty, with an alumni
+                network of some fifty thousand across Nepal and abroad.
+              </p>
+              <p className="mt-4 max-w-[52ch] font-body leading-relaxed text-muted-foreground text-pretty">
+                We stay deliberately close to the ground: small cohorts, teachers who practise what
+                they teach, and campuses run to one standard whichever neighbourhood you walk into.
               </p>
               <a
                 href="#leadership"
@@ -681,10 +709,39 @@ function About() {
             </div>
           </Reveal>
         </div>
+
+        <Reveal delay={80}>
+          <div className="mt-20 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+            {aboutFacts.map((f) => (
+              <div key={f.label} className="bg-card px-8 py-10">
+                <p className="font-display text-3xl font-semibold tracking-[-0.02em] text-primary">
+                  {f.value}
+                </p>
+                <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
+                  {f.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+
+        <div className="mt-8 grid gap-6 lg:grid-cols-3">
+          {aboutValues.map((v, i) => (
+            <Reveal key={v.title} delay={i * 90}>
+              <div className="card-lift h-full rounded-2xl border border-border bg-card p-8">
+                <h3 className="font-display text-xl font-semibold tracking-[-0.01em]">{v.title}</h3>
+                <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground">
+                  {v.body}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
+
 
 function Pillars() {
   return (
