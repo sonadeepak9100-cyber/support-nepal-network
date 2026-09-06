@@ -469,7 +469,7 @@ function Wordmark({ className = "" }: { className?: string }) {
       alt="IEC Group of Companies"
       width={320}
       height={160}
-      className={`h-20 w-auto object-contain lg:h-24 ${className}`}
+      className={`h-24 w-auto object-contain sm:h-28 lg:h-32 ${className}`}
     />
   );
 }
@@ -495,7 +495,7 @@ function Nav() {
           : "border-transparent bg-paper"
       }`}
     >
-      <div className="mx-auto flex h-28 max-w-7xl items-center justify-between px-6 lg:px-10">
+      <div className="mx-auto flex h-32 max-w-7xl items-center justify-between px-6 lg:h-36 lg:px-10">
         <a href="#top" className="flex items-center gap-3">
           <Wordmark />
         </a>
