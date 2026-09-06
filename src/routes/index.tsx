@@ -34,7 +34,7 @@ import { useActiveSection, useCountUp, useReveal } from "@/lib/use-reveal";
 
 const TITLE = "IEC Group — Nepal's Legacy of Education Since 1997";
 const DESCRIPTION =
-  "IEC Group is Nepal's education house: eight institutions across design, IT, K-12 and early years, guided since 1997 by Ms. Shailaja Adhikary.";
+  "IEC Group is Nepal's education house: 10+ institutions and campuses in design, IT, K-12 and early years, led since 1997 by Ms. Shailaja Adhikary.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -220,7 +220,7 @@ const leaders = [
   {
     name: "Manish Kumar Deepak",
     role: "Director, Operations",
-    note: "An engineer by training, he has held the group's operating standards since its very first year — campuses, facilities, faculty systems and the day-to-day discipline that keeps eight institutions running to one standard.",
+    note: "An engineer by training, he has held the group's operating standards since its very first year — campuses, facilities, faculty systems and the day-to-day discipline that keeps more than ten institutions and campuses running to one standard.",
     image: leaderManish.url,
   },
   {
@@ -239,26 +239,27 @@ const timeline = [
     body: "IEC opens with a single fashion and interior design college under Ms. Shailaja Adhikary.",
   },
   {
-    year: "2006",
-    title: "Into schooling",
-    body: "The group moves into formal schooling, building the foundations of Euro School Kathmandu.",
+    year: "2007",
+    title: "EuroKids comes to Nepal",
+    body: "EuroKids is launched in Nepal, bringing structured play-based early years learning to Kathmandu families.",
   },
   {
-    year: "2014",
-    title: "Early years expansion",
-    body: "EuroKids arrives in Nepal, growing to four Kathmandu campuses for pre-primary learners.",
+    year: "2008",
+    title: "Euro School opens",
+    body: "Euro School Kathmandu is launched, taking the group into formal schooling from Grade 1 upward.",
   },
   {
-    year: "2020",
-    title: "Design meets IT",
-    body: "Creative arts and computing merge into the School of Design & IT across two campuses.",
+    year: "2009",
+    title: "IEC College is launched",
+    body: "IEC College begins degree-level study in art, fashion and design, later in academic partnership with Teesside University, UK.",
   },
   {
     year: "Today",
-    title: "Eight institutions",
-    body: "A group of eight institutions with 500+ faculty and a 50,000-strong alumni network.",
+    title: "10+ institutions and campuses",
+    body: "More than ten institutions and campuses across early years, K-12, design, IT and consultancy, with 500+ faculty and a 50,000-strong alumni network.",
   },
 ];
+
 
 const stories = [
   {
@@ -573,7 +574,7 @@ function Hero() {
           className="rise mt-8 max-w-[58ch] font-body text-lg leading-relaxed text-paper/85 text-pretty"
           style={{ animationDelay: "200ms" }}
         >
-          Since 1997, IEC Group has built a network of eight institutions across design, IT, K-12 and
+          Since 1997, IEC Group has built a network of more than ten institutions and campuses across design, IT, K-12 and
           early years — held to a single, uncompromising standard of teaching and care.
         </p>
 
@@ -735,7 +736,7 @@ function Institutions() {
         <div className="flex flex-wrap items-end justify-between gap-8">
           <SectionHeading
             eyebrow="The house"
-            title="Eight institutions, one standard"
+            title="Ten-plus institutions, one standard"
             intro="Colleges, schools, studios and a consultancy — filter by what you're looking for."
           />
         </div>
