@@ -24,7 +24,9 @@ import {
 import aboutCampusAsset from "@/assets/about-campus-bright.jpg.asset.json";
 import aboutStudio from "@/assets/about-design-studio.jpg.asset.json";
 import aboutEarlyYears from "@/assets/about-early-years.jpg.asset.json";
-import groupAssembly from "@/assets/group-assembly.jpg.asset.json";
+import groupAnnualDay from "@/assets/group-annualday.jpg.asset.json";
+import groupFestival from "@/assets/group-festival.jpg.asset.json";
+
 import groupGrad from "@/assets/group-grad.jpg.asset.json";
 import groupLab from "@/assets/group-lab.jpg.asset.json";
 import groupRunway from "@/assets/group-runway.jpg.asset.json";
@@ -1157,23 +1159,30 @@ function Testimonials() {
 const galleryImages = [
   {
     src: groupGrad.url,
-    alt: "Hundreds of IEC graduates at a convocation ceremony",
-    caption: "Convocation",
-    blurb: "Hundreds of graduates every year across the group's colleges.",
+    alt: "IEC College graduates at the most recent convocation ceremony",
+    caption: "IEC College convocation",
+    blurb: "Our newest batch of fashion and interior design graduates.",
     span: "lg:col-span-2 lg:row-span-2",
   },
   {
-    src: groupAssembly.url,
-    alt: "School assembly with hundreds of uniformed students",
-    caption: "Morning assembly",
-    blurb: "Thousands of students, from early years to Grade 10.",
+    src: groupAnnualDay.url,
+    alt: "Euro School Hattigauda annual day stage performance under bright lights",
+    caption: "Euro School Annual Day",
+    blurb: "A packed auditorium at Hattigauda — performances, Eurocup and grand celebrations.",
     span: "lg:col-span-2",
   },
   {
     src: groupRunway.url,
-    alt: "Student fashion show on a lit runway with a full audience",
-    caption: "Annual runway show",
-    blurb: "Design students present their collections to the industry.",
+    alt: "Models on the runway at IEC Designers Runway",
+    caption: "IEC Designers Runway",
+    blurb: "Fourteen editions of Nepal's biggest student fashion showcase.",
+    span: "",
+  },
+  {
+    src: groupFestival.url,
+    alt: "EuroKids Bishalnagar children celebrating a Nepali festival in traditional dress",
+    caption: "EuroKids Bishalnagar festivals",
+    blurb: "Teej, Holi, Dashain and annual day — our littlest ones celebrate it all.",
     span: "",
   },
   {
@@ -1181,9 +1190,10 @@ const galleryImages = [
     alt: "Students working in a modern computer lab",
     caption: "Technology labs",
     blurb: "Short, job-focused IT courses across our campuses.",
-    span: "",
+    span: "lg:col-span-2",
   },
 ];
+
 
 function Gallery() {
   return (
