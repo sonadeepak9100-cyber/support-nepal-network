@@ -192,9 +192,28 @@ const institutions: Institution[] = [
       "Admissions counselling, test preparation and university placement for students heading abroad and at home.",
     href: "https://metaphorconsultancy.com/",
   },
+  {
+    name: "Infinity Developers Pvt. Ltd.",
+    logo: logoInfinity.url,
+    discipline: "Real Estate & Construction",
+    category: "Real Estate",
+    locations: "Kathmandu",
+    blurb:
+      "The group's real estate and construction arm — building a better tomorrow through residential and institutional projects, campus development and quality-led construction across the Kathmandu Valley.",
+    href: null,
+    highlight: "Newest company in the group",
+  },
 ];
 
-const categories = ["All", "Education", "K-12", "Early Years", "Technology", "Consultancy"];
+const categories = [
+  "All",
+  "Education",
+  "K-12",
+  "Early Years",
+  "Technology",
+  "Consultancy",
+  "Real Estate",
+];
 
 const navLinks = [
   { id: "top", label: "Home", href: "#top" },
