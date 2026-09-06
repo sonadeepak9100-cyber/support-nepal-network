@@ -26,7 +26,7 @@ import aboutStudio from "@/assets/about-design-studio.jpg.asset.json";
 import aboutEarlyYears from "@/assets/about-early-years.jpg.asset.json";
 import convocationAward from "@/assets/convocation-award.jpg.asset.json";
 import convocationProcession from "@/assets/convocation-procession.jpg.asset.json";
-import groupEurocup from "@/assets/group-eurocup.jpg";
+import euroAnnualDay from "@/assets/euro-annual-day.jpg.asset.json";
 import groupFestival from "@/assets/group-festival.jpg.asset.json";
 
 
