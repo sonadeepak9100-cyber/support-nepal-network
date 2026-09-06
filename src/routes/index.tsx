@@ -21,6 +21,7 @@ import {
   Quote,
 } from "lucide-react";
 
+import kathmanduValley from "@/assets/kathmandu-valley.jpg";
 import aboutCampusAsset from "@/assets/about-campus-bright.jpg.asset.json";
 import aboutStudio from "@/assets/about-design-studio.jpg.asset.json";
 import aboutEarlyYears from "@/assets/about-early-years.jpg.asset.json";
