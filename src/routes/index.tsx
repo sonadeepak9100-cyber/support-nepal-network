@@ -306,6 +306,36 @@ const testimonials = [
     name: "Creative studio partner",
     role: "Industry recruiter",
   },
+  {
+    quote:
+      "The IB programme at Euro School gave my daughter the confidence to question, research and present like a university student.",
+    name: "Parent, Euro School",
+    role: "IB Grade 10 · Kathmandu",
+  },
+  {
+    quote:
+      "Short IT courses here are practical from day one. I built real projects and moved into a junior developer role within months.",
+    name: "IT course graduate",
+    role: "IEC School of Design & IT",
+  },
+  {
+    quote:
+      "As a teacher, the training and freedom I get to design my own classroom activities is what keeps me here.",
+    name: "Early years educator",
+    role: "EuroKids Bishalnagar",
+  },
+  {
+    quote:
+      "The Teesside University pathway made studying abroad realistic for our family — clear steps, honest counselling, no surprises.",
+    name: "Parent of a college student",
+    role: "IEC College · Kathmandu",
+  },
+  {
+    quote:
+      "Convocation day showed the scale of this group. Hundreds of graduates, and every one of them named on stage.",
+    name: "Guest at convocation",
+    role: "Community member",
+  },
 ];
 
 /* ------------------------------------------------------------- helpers --- */
