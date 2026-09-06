@@ -47,6 +47,8 @@ import infraEurokidsBlock from "@/assets/infra-eurokids-block.jpg.asset.json";
 import infraEurokidsSamakhusi from "@/assets/infra-eurokids-samakhusi.jpg.asset.json";
 import infraAuditorium from "@/assets/infra-auditorium.jpg.asset.json";
 import infraCafeteria from "@/assets/infra-cafeteria.jpg.asset.json";
+import infraEuroKoteshwor from "@/assets/infra-euroschool-koteshwor.jpg.asset.json";
+import logoEuroKoteshwor from "@/assets/euroschool-koteshwor-logo.jpg.asset.json";
 import heroUnity from "@/assets/hero-unity.jpg.asset.json";
 
 import heroCampus from "@/assets/hero-eurokids.jpg.asset.json";
@@ -151,6 +153,17 @@ const institutions: Institution[] = [
       "An IB World School running Grade 1 to Grade 10 — inquiry-led learning and globally benchmarked assessment, with room for music, sport and design alongside academics.",
     href: "https://euroschool.edu.np/",
     highlight: "IB World School · Grade 1–10",
+  },
+  {
+    name: "Euro School Suryakot, Koteshwor",
+    logo: logoEuroKoteshwor.url,
+    discipline: "School · Learning Unlike Any Other",
+    category: "K-12",
+    locations: "Suryakot · Koteshwor",
+    blurb:
+      "The Koteshwor campus of Euro School — a full school setting with open play areas, activity courts and modern classrooms serving families across east Kathmandu.",
+    href: "https://euroschool.edu.np/",
+    highlight: "Koteshwor campus",
   },
   {
     name: "Euro A Level Academy",
@@ -1434,6 +1447,13 @@ const infrastructureImages = [
     caption: "Cafeteria — Euro School Hattigauda",
     blurb: "A two-level dining and social space serving students and staff every day.",
     span: "sm:col-span-2 lg:col-span-2",
+  },
+  {
+    src: infraEuroKoteshwor.url,
+    alt: "Euro School Suryakot Koteshwor campus with turf ground and play area",
+    caption: "Euro School Suryakot, Koteshwor",
+    blurb: "Open turf ground, activity courts and classroom blocks across a green campus.",
+    span: "sm:col-span-2 lg:col-span-3",
   },
 ];
 
