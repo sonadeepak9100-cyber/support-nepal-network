@@ -567,8 +567,8 @@ function Hero() {
           className="rise mt-8 max-w-[58ch] font-body text-lg leading-relaxed text-paper/85 text-pretty"
           style={{ animationDelay: "200ms" }}
         >
-          Since 1997, IEC Group has built a network of more than ten institutions and campuses across design, IT, K-12 and
-          early years — held to a single, uncompromising standard of teaching and care.
+          Since 1997, IEC Group has built a network of more than ten institutions and campuses across design, IT, K-10,
+          early years and bachelor degrees — held to a single, uncompromising standard of teaching and care.
         </p>
 
         <div
