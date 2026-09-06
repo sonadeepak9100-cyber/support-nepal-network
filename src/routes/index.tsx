@@ -34,7 +34,7 @@ import { useActiveSection, useCountUp, useReveal } from "@/lib/use-reveal";
 
 const TITLE = "IEC Group — Nepal's Legacy of Education Since 1997";
 const DESCRIPTION =
-  "IEC Group is Nepal's education house: more than ten institutions and campuses across design, IT, K-12 and early years, guided since 1997 by Ms. Shailaja Adhikary.";
+  "IEC Group is Nepal's education house: 10+ institutions and campuses in design, IT, K-12 and early years, led since 1997 by Ms. Shailaja Adhikary.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
