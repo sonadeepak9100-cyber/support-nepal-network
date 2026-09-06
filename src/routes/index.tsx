@@ -24,7 +24,12 @@ import {
 import aboutCampusAsset from "@/assets/about-campus-bright.jpg.asset.json";
 import aboutStudio from "@/assets/about-design-studio.jpg.asset.json";
 import aboutEarlyYears from "@/assets/about-early-years.jpg.asset.json";
+import groupAssembly from "@/assets/group-assembly.jpg.asset.json";
+import groupGrad from "@/assets/group-grad.jpg.asset.json";
+import groupLab from "@/assets/group-lab.jpg.asset.json";
+import groupRunway from "@/assets/group-runway.jpg.asset.json";
 import heroUnity from "@/assets/hero-unity.jpg.asset.json";
+
 import heroCampus from "@/assets/hero-eurokids.jpg.asset.json";
 import iecLogo from "@/assets/iec-logo.jpg.asset.json";
 import leaderManish from "@/assets/leader-manish.jpg.asset.json";
