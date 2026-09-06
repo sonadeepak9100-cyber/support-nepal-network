@@ -260,8 +260,8 @@ const timeline = [
   },
   {
     year: "2007",
-    title: "EuroKids comes to Nepal",
-    body: "EuroKids is launched in Nepal, bringing structured play-based early years learning to Kathmandu families.",
+    title: "EuroKids comes to Nepal — Tangal",
+    body: "EuroKids is launched in Nepal at Tangal, bringing structured play-based early years learning to Kathmandu families. The Tangal EuroKids is today EuroKids Bishalnagar.",
   },
   {
     year: "2008",
