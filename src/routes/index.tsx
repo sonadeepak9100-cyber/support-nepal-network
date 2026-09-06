@@ -173,7 +173,6 @@ const institutions: Institution[] = [
   },
   {
     name: "Euro A Level Academy",
-    logo: logoEuroSchool.url,
     discipline: "+2 / A Levels",
     category: "K-12",
     locations: "Kathmandu",
