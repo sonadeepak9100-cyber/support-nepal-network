@@ -1447,6 +1447,13 @@ const infrastructureImages = [
     blurb: "A two-level dining and social space serving students and staff every day.",
     span: "sm:col-span-2 lg:col-span-2",
   },
+  {
+    src: infraEuroKoteshwor.url,
+    alt: "Euro School Suryakot Koteshwor campus with turf ground and play area",
+    caption: "Euro School Suryakot, Koteshwor",
+    blurb: "Open turf ground, activity courts and classroom blocks across a green campus.",
+    span: "sm:col-span-2 lg:col-span-3",
+  },
 ];
 
 function InfrastructureSection() {
