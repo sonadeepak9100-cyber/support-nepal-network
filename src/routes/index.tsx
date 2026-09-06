@@ -1083,17 +1083,27 @@ function SitapailaSection() {
       <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
         <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <Reveal>
-            <figure className="rounded-2xl border border-border bg-card p-10">
+            <figure className="overflow-hidden rounded-2xl border border-border bg-card">
               <img
-                src={logoEuroKidsSitapaila.url}
-                alt="EuroKids Sitapaila Early Childhood Education logo"
+                src={sitapailaCampus.url}
+                alt="EuroKids Sitapaila campus with playground and entrance gate"
                 loading="lazy"
-                width={600}
-                height={600}
-                className="mx-auto w-full max-w-xs object-contain"
+                width={1712}
+                height={906}
+                className="w-full object-cover transition-transform duration-[1400ms] ease-out hover:scale-[1.04]"
               />
-              <figcaption className="mt-6 text-center font-body text-sm text-muted-foreground">
-                EuroKids Sitapaila · Early Childhood Education
+              <figcaption className="flex items-center gap-4 border-t border-border p-6">
+                <img
+                  src={logoEuroKidsSitapaila.url}
+                  alt="EuroKids Sitapaila logo"
+                  loading="lazy"
+                  width={120}
+                  height={120}
+                  className="size-14 object-contain"
+                />
+                <span className="font-body text-sm text-muted-foreground">
+                  EuroKids Sitapaila · Early Childhood Education
+                </span>
               </figcaption>
             </figure>
           </Reveal>
