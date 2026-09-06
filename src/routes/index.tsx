@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -22,6 +22,8 @@ import {
 } from "lucide-react";
 
 import aboutCampusAsset from "@/assets/about-campus-bright.jpg.asset.json";
+import aboutStudio from "@/assets/about-design-studio.jpg.asset.json";
+import aboutEarlyYears from "@/assets/about-early-years.jpg.asset.json";
 import heroUnity from "@/assets/hero-unity.jpg.asset.json";
 import heroCampus from "@/assets/hero-eurokids.jpg.asset.json";
 import iecLogo from "@/assets/iec-logo.jpg.asset.json";
@@ -29,6 +31,7 @@ import leaderManish from "@/assets/leader-manish.jpg.asset.json";
 import leaderSona from "@/assets/leader-sona.jpg.asset.json";
 import leaderSonaDeepak from "@/assets/leader-sona-deepak.jpg.asset.json";
 
+import { leaders } from "@/lib/leaders";
 import { NepalMap } from "@/components/nepal-map";
 import { useActiveSection, useCountUp, useReveal } from "@/lib/use-reveal";
 
@@ -153,9 +156,9 @@ const navLinks = [
     label: "Leadership",
     href: "#leadership",
     children: [
-      { label: "Ms. Shailaja Adhikary", href: "#leadership", note: "Founder & Managing Director" },
-      { label: "Manish Kumar Deepak", href: "#leadership", note: "Director, Operations" },
-      { label: "Sona Deepak", href: "#leadership", note: "Business Director" },
+      { label: "Ms. Shailaja Adhikary", href: "/leadership/shailaja-adhikary", note: "Founder & Managing Director" },
+      { label: "Manish Kumar Deepak", href: "/leadership/manish-kumar-deepak", note: "Director, Operations" },
+      { label: "Sona Deepak", href: "/leadership/sona-deepak", note: "Business Director" },
     ],
   },
   {
@@ -200,28 +203,6 @@ const pillars = [
     body: "Live client briefs, runway shows and technology labs keep our classrooms tied to the work students will actually do.",
   },
 ];
-
-const leaders = [
-  {
-    name: "Ms. Shailaja Adhikary",
-    role: "Founder & Managing Director",
-    note: "In 1997 she opened Nepal's first professional fashion and interior design institution in a small block in Bagbazar; a decade later she brought EuroKids to Nepal and went on to establish Euro School. Today she leads the IEC Group of Companies as Managing Director and serves as principal of Euro School, and has been profiled internationally as one of Asia's women leaders in education. Her conviction is simple — education has to be all-encompassing and enjoyable — and it shapes every campus in the group.",
-    image: leaderSona.url,
-  },
-  {
-    name: "Manish Kumar Deepak",
-    role: "Director, Operations",
-    note: "An engineer by training, he has held the group's operating standards since its very first year — campuses, facilities, faculty systems and the day-to-day discipline that keeps more than ten institutions and campuses running to one standard.",
-    image: leaderManish.url,
-  },
-  {
-    name: "Sona Deepak",
-    role: "Business Director",
-    note: "A graduate of Kodaikanal International School and the University of Leicester, he leads business development across the group and works at the meeting point of creativity and technology. His focus is on aligning IEC's programmes with global standards — international academic partnerships, industry-facing curricula and new ventures — so students graduate ready for a world that keeps changing.",
-    image: leaderSonaDeepak.url,
-  },
-];
-
 
 const timeline = [
   {
@@ -725,6 +706,39 @@ function About() {
           </div>
         </Reveal>
 
+        <Reveal delay={60}>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <figure className="overflow-hidden rounded-2xl border border-border bg-card">
+              <img
+                src={aboutStudio.url}
+                alt="Students at work in an IEC design studio"
+                loading="lazy"
+                width={1200}
+                height={912}
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <figcaption className="px-8 py-6 font-body text-sm leading-relaxed text-muted-foreground">
+                Design studios where fashion and interior students work to live client briefs — the
+                discipline IEC introduced to Nepal in 1997.
+              </figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-2xl border border-border bg-card">
+              <img
+                src={aboutEarlyYears.url}
+                alt="Children learning in an EuroKids early years classroom"
+                loading="lazy"
+                width={1200}
+                height={912}
+                className="aspect-[4/3] w-full object-cover"
+              />
+              <figcaption className="px-8 py-6 font-body text-sm leading-relaxed text-muted-foreground">
+                Play-based early years classrooms across four Kathmandu neighbourhoods, run to one
+                shared standard of care.
+              </figcaption>
+            </figure>
+          </div>
+        </Reveal>
+
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
           {aboutValues.map((v, i) => (
             <Reveal key={v.title} delay={i * 90}>
@@ -1030,12 +1044,16 @@ function Leadership() {
         <SectionHeading
           eyebrow="Leadership"
           title="The stewards of the house"
-          intro="Three people have carried the group's standard since its earliest years."
+          intro="Three people have carried the group's standard since its earliest years — open a profile to read their full story."
         />
         <div className="mt-16 grid gap-10 md:grid-cols-3">
           {leaders.map((leader, i) => (
             <Reveal key={leader.name} delay={i * 100}>
-              <article className="group">
+              <Link
+                to="/leadership/$slug"
+                params={{ slug: leader.slug }}
+                className="group block"
+              >
                 <div className="overflow-hidden rounded-2xl bg-secondary">
                   <img
                     src={leader.image}
@@ -1055,7 +1073,11 @@ function Leadership() {
                 <p className="mt-5 font-body text-sm leading-relaxed text-muted-foreground text-pretty">
                   {leader.note}
                 </p>
-              </article>
+                <span className="mt-5 inline-flex items-center gap-2 font-body text-sm font-semibold text-primary">
+                  Read full profile
+                  <ArrowRight className="size-4 transition-transform duration-500 group-hover:translate-x-1" />
+                </span>
+              </Link>
             </Reveal>
           ))}
         </div>
