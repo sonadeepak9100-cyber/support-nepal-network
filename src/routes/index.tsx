@@ -21,6 +21,7 @@ import {
   Quote,
 } from "lucide-react";
 
+import kathmanduValley from "@/assets/kathmandu-valley.jpg";
 import aboutCampusAsset from "@/assets/about-campus-bright.jpg.asset.json";
 import aboutStudio from "@/assets/about-design-studio.jpg.asset.json";
 import aboutEarlyYears from "@/assets/about-early-years.jpg.asset.json";
@@ -1033,9 +1034,51 @@ function MapSection() {
           title="Rooted in Kathmandu, felt across Nepal"
           intro="Hover a province to see how the group reaches it — through campuses, partner schools or alumni."
         />
-        <Reveal delay={100} className="mt-14">
-          <NepalMap />
-        </Reveal>
+        <div className="mt-14 grid items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+          <Reveal delay={100}>
+            <NepalMap />
+          </Reveal>
+
+          <Reveal delay={200}>
+            <div>
+              <figure className="overflow-hidden rounded-2xl border border-border bg-secondary">
+                <img
+                  src={kathmanduValley}
+                  alt="The Kathmandu valley at golden hour with the Himalaya behind it"
+                  loading="lazy"
+                  width={1600}
+                  height={1008}
+                  className="aspect-[16/10] w-full object-cover transition-transform duration-[1400ms] ease-out hover:scale-[1.04]"
+                />
+                <figcaption className="px-5 py-4 font-body text-xs text-muted-foreground">
+                  The Kathmandu valley — home to every IEC campus.
+                </figcaption>
+              </figure>
+
+              <p className="mt-6 font-body leading-relaxed text-muted-foreground text-pretty">
+                Every campus we run sits inside the Kathmandu valley — Hattigauda, Bishalnagar,
+                Samakhusi, Tinkune, Mandikhatar, Koteshwor and Sitapaila — close enough that
+                teachers, resources and events move between them as one group. Families choose a
+                campus near home without giving up the standards of the whole network.
+              </p>
+
+              <dl className="mt-8 grid gap-6 sm:grid-cols-3">
+                {[
+                  { k: "7", v: "Valley neighbourhoods with an IEC campus" },
+                  { k: "77", v: "Districts our students come from" },
+                  { k: "28", v: "Years of teaching in Nepal" },
+                ].map((item) => (
+                  <div key={item.v} className="border-t border-border pt-4">
+                    <dt className="font-display text-3xl font-semibold text-primary">{item.k}</dt>
+                    <dd className="mt-2 font-body text-sm leading-relaxed text-muted-foreground">
+                      {item.v}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
