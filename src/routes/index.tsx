@@ -23,7 +23,7 @@ import {
 
 import aboutCampus from "@/assets/hero-campus.jpg";
 import heroUnity from "@/assets/hero-unity.jpg.asset.json";
-import heroCampus from "@/assets/hero-campus.jpg.asset.json";
+import heroCampus from "@/assets/hero-eurokids.jpg.asset.json";
 import iecLogo from "@/assets/iec-logo.jpg.asset.json";
 import leaderManish from "@/assets/leader-manish.jpg.asset.json";
 import leaderSona from "@/assets/leader-sona.jpg.asset.json";
