@@ -39,6 +39,14 @@ import groupRunway from "@/assets/group-runway.jpg.asset.json";
 import studioGreenscreen from "@/assets/studio-greenscreen.jpg.asset.json";
 import studioPodcast from "@/assets/studio-podcast.jpg.asset.json";
 import studioAudio from "@/assets/studio-audio.jpg.asset.json";
+import infraIecCollege from "@/assets/infra-iec-college.jpg.asset.json";
+import infraDesignIt from "@/assets/infra-design-it.jpg.asset.json";
+import infraEuroSchool from "@/assets/infra-euro-school.jpg.asset.json";
+import infraEurokidsHattigauda from "@/assets/infra-eurokids-hattigauda.jpg.asset.json";
+import infraEurokidsBlock from "@/assets/infra-eurokids-block.jpg.asset.json";
+import infraEurokidsSamakhusi from "@/assets/infra-eurokids-samakhusi.jpg.asset.json";
+import infraAuditorium from "@/assets/infra-auditorium.jpg.asset.json";
+import infraCafeteria from "@/assets/infra-cafeteria.jpg.asset.json";
 import heroUnity from "@/assets/hero-unity.jpg.asset.json";
 
 import heroCampus from "@/assets/hero-eurokids.jpg.asset.json";
@@ -368,6 +376,8 @@ function Index() {
         <Testimonials />
         <Gallery />
         <StudioSection />
+        <InfrastructureSection />
+
 
         <CallToAction />
         <Contact />
@@ -1337,6 +1347,106 @@ function StudioSection() {
     </section>
   );
 }
+
+const infrastructureImages = [
+  {
+    src: infraIecCollege.url,
+    alt: "IEC College of Art & Fashion campus with wide paved forecourt",
+    caption: "IEC College of Art & Fashion",
+    blurb: "A purpose-built campus with studios, workshops and open courtyards.",
+    span: "sm:col-span-2 lg:col-span-2 lg:row-span-2",
+  },
+  {
+    src: infraDesignIt.url,
+    alt: "Four-storey IEC School of Design and IT building",
+    caption: "IEC School of Design & IT",
+    blurb: "Four floors of design studios and computer labs at Mandikhatar.",
+    span: "lg:col-span-2",
+  },
+  {
+    src: infraEuroSchool.url,
+    alt: "Euro School building with school buses parked outside",
+    caption: "Euro School",
+    blurb: "An IB World School campus with its own transport fleet.",
+    span: "lg:col-span-2",
+  },
+  {
+    src: infraAuditorium.url,
+    alt: "Large auditorium with tiered blue and red seating",
+    caption: "Auditorium",
+    blurb: "A full-scale auditorium for convocations, productions and assemblies.",
+    span: "sm:col-span-2 lg:col-span-2",
+  },
+  {
+    src: infraEurokidsHattigauda.url,
+    alt: "EuroKids Hattigauda preschool building",
+    caption: "EuroKids Hattigauda",
+    blurb: "A premium preschool branch with covered play areas.",
+    span: "",
+  },
+  {
+    src: infraEurokidsBlock.url,
+    alt: "EuroKids Block-A building with glass facade",
+    caption: "EuroKids Block A",
+    blurb: "Bright, glass-fronted early-years classrooms and play zones.",
+    span: "",
+  },
+  {
+    src: infraEurokidsSamakhusi.url,
+    alt: "EuroKids Samakhusi with turf playground and slides",
+    caption: "EuroKids Samakhusi",
+    blurb: "Turfed outdoor playground built around safe, active learning.",
+    span: "lg:col-span-2",
+  },
+  {
+    src: infraCafeteria.url,
+    alt: "Architectural render of a new glass and timber cafeteria building",
+    caption: "New cafeteria — coming soon",
+    blurb: "A two-level dining and social space now under development.",
+    span: "sm:col-span-2 lg:col-span-2",
+  },
+];
+
+function InfrastructureSection() {
+  return (
+    <section className="bg-background">
+      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+        <SectionHeading
+          eyebrow="Strong infrastructure"
+          title="Campuses built to last"
+          intro="Owned buildings, a full auditorium, laboratories, studios, playgrounds and transport — the group invests in physical infrastructure so learning never waits on facilities."
+          align="center"
+        />
+        <div className="mt-16 grid auto-rows-[200px] gap-4 sm:grid-cols-2 lg:auto-rows-[210px] lg:grid-cols-4">
+          {infrastructureImages.map((img, i) => (
+            <Reveal
+              key={img.caption}
+              delay={i * 80}
+              className={`group relative overflow-hidden rounded-2xl border border-border ${img.span}`}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                width={1200}
+                height={900}
+                loading="lazy"
+                className="size-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 p-5 text-primary-foreground">
+                <p className="font-display text-lg font-semibold">{img.caption}</p>
+                <p className="mt-1 max-w-[38ch] font-body text-sm text-primary-foreground/80">
+                  {img.blurb}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 
 
