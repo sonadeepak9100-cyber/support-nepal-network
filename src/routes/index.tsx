@@ -1160,22 +1160,29 @@ function Testimonials() {
 
 const galleryImages = [
   {
-    src: groupConvocation,
-    alt: "IEC College convocation ceremony with graduates on a decorated stage",
+    src: convocationAward.url,
+    alt: "Award being presented on stage at the IEC College convocation ceremony",
     caption: "IEC College convocation",
     blurb:
       "Our most recent convocation, graced by chief guest Mrs. Sabina Kafle.",
     span: "lg:col-span-2 lg:row-span-2",
   },
   {
+    src: convocationProcession.url,
+    alt: "Faculty and graduates in gowns during the IEC College convocation procession",
+    caption: "Convocation procession",
+    blurb: "Graduates and faculty walk in for the degree ceremony.",
+    span: "lg:col-span-2",
+  },
+  {
     src: groupEurocup,
     alt: "Students competing at the Eurocup sports tournament at Euro School Hattigauda",
     caption: "Eurocup at Euro School",
     blurb: "Hattigauda's celebration of sportsmanship, teamwork and talent.",
-    span: "lg:col-span-2",
+    span: "",
   },
-
   {
+
     src: groupRunway.url,
     alt: "Models on the runway at IEC Designers Runway",
     caption: "IEC Designers Runway",
