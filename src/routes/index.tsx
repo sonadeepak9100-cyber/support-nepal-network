@@ -141,15 +141,6 @@ const institutions: Institution[] = [
       "Admissions counselling, test preparation and university placement for students heading abroad and at home.",
     href: "https://metaphorconsultancy.com/",
   },
-  {
-    name: "IEC Tech",
-    discipline: "Technology & Digital Skills",
-    category: "Technology",
-    locations: "Mandikatar",
-    blurb:
-      "Short-cycle digital skills training and the technology backbone that keeps every campus in the group running.",
-    href: null,
-  },
 ];
 
 const categories = ["All", "Education", "K-12", "Early Years", "Technology", "Consultancy"];
@@ -386,7 +377,7 @@ function Wordmark({ className = "" }: { className?: string }) {
       alt="IEC Group of Companies"
       width={320}
       height={160}
-      className={`h-14 w-auto object-contain lg:h-16 ${className}`}
+      className={`h-20 w-auto object-contain lg:h-24 ${className}`}
     />
   );
 }
@@ -412,7 +403,7 @@ function Nav() {
           : "border-transparent bg-paper"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+      <div className="mx-auto flex h-28 max-w-7xl items-center justify-between px-6 lg:px-10">
         <a href="#top" className="flex items-center gap-3">
           <Wordmark />
         </a>
