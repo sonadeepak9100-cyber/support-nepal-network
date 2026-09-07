@@ -56,7 +56,7 @@ import infraEuroKoteshwor from "@/assets/infra-euroschool-koteshwor.jpg.asset.js
 import logoEuroKoteshwor from "@/assets/euroschool-koteshwor-logo.jpg.asset.json";
 import heroUnity from "@/assets/hero-unity.jpg.asset.json";
 
-import heroCampus from "@/assets/hero-eurokids-bright.jpg";
+import heroBanner from "@/assets/hero-banner.png.asset.json";
 import iecLogo from "@/assets/iec-logo.jpg.asset.json";
 import leaderManish from "@/assets/leader-manish.jpg.asset.json";
 import leaderSona from "@/assets/leader-sona.jpg.asset.json";
@@ -580,7 +580,7 @@ function Hero() {
   return (
     <section id="top" className="relative isolate min-h-[92vh] overflow-hidden bg-primary">
       <img
-        src={heroCampus}
+        src={heroBanner.url}
         alt="Students walking through an IEC Group campus courtyard at golden hour"
         className="absolute inset-0 size-full scale-105 object-cover"
       />
