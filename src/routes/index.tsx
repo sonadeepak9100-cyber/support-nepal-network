@@ -422,7 +422,7 @@ function Wordmark({ className = "" }: { className?: string }) {
       alt="IEC Group of Companies"
       width={320}
       height={160}
-      className={`h-24 w-auto object-contain sm:h-28 lg:h-32 ${className}`}
+      className={`h-12 w-auto object-contain sm:h-14 lg:h-16 ${className}`}
     />
   );
 }
