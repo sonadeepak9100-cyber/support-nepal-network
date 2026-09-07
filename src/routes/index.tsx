@@ -39,7 +39,6 @@ import sitapailaCampus from "@/assets/eurokids-sitapaila-campus.png.asset.json";
 import euroAnnualDay from "@/assets/euro-investiture.jpg.asset.json";
 import groupFestival from "@/assets/group-festival.jpg.asset.json";
 
-
 import groupLab from "@/assets/group-lab.jpg.asset.json";
 import groupRunway from "@/assets/group-runway.jpg.asset.json";
 import studioGreenscreen from "@/assets/studio-greenscreen.jpg.asset.json";
@@ -130,12 +129,7 @@ const institutions: Institution[] = [
     blurb:
       "Play-based pre-school learning delivered to an international curriculum standard, with four Kathmandu branches running the same programme so families never lose continuity.",
     href: "https://eurokids.com.np/",
-    branches: [
-      { name: "Hattigauda" },
-      { name: "Bishalnagar" },
-      { name: "Tinkune" },
-      { name: "Samakhushi" },
-    ],
+    branches: [{ name: "Hattigauda" }, { name: "Bishalnagar" }, { name: "Tinkune" }, { name: "Samakhushi" }],
   },
   {
     name: "EuroKids Sitapaila — Early Childhood Education",
@@ -172,26 +166,12 @@ const institutions: Institution[] = [
     highlight: "Koteshwor campus",
   },
   {
-    name: "Euro A Level Academy",
-    discipline: "+2 / A Levels",
-    category: "K-12",
-    locations: "Kathmandu",
-    blurb:
-      "The group's +2 stage: a dedicated A Level academy carrying Euro School students — and students from other schools — through to university entry in Nepal and abroad.",
-    href: null,
-    highlight: "Coming soon",
-  },
-
-
-
-  {
     name: "Metaphor Consultancy",
     logo: logoMetaphor.url,
     discipline: "Career & Admissions",
     category: "Consultancy",
     locations: "Mandikatar",
-    blurb:
-      "Admissions counselling, test preparation and university placement for students heading abroad and at home.",
+    blurb: "Admissions counselling, test preparation and university placement for students heading abroad and at home.",
     href: "https://metaphorconsultancy.com/",
   },
   {
@@ -207,15 +187,7 @@ const institutions: Institution[] = [
   },
 ];
 
-const categories = [
-  "All",
-  "Education",
-  "K-12",
-  "Early Years",
-  "Technology",
-  "Consultancy",
-  "Real Estate",
-];
+const categories = ["All", "Education", "K-12", "Early Years", "Technology", "Consultancy", "Real Estate"];
 
 const navLinks = [
   { id: "top", label: "Home", href: "#top" },
@@ -305,13 +277,11 @@ const timeline = [
     body: "IEC steps into a new phase beyond education with Infinity Developers Pvt. Ltd., its real estate and construction arm — building campuses, residential and institutional projects across the Kathmandu Valley under the promise of building a better tomorrow.",
   },
   {
-
     year: "Today",
     title: "10+ institutions and campuses",
     body: "More than ten institutions and campuses across early years, K-12, design, IT and consultancy, with 500+ faculty and a 50,000-strong alumni network.",
   },
 ];
-
 
 const stories = [
   {
@@ -344,8 +314,7 @@ const testimonials = [
     role: "Hattigauda",
   },
   {
-    quote:
-      "We hire from IEC every year. Their design and IT graduates arrive ready for client work from week one.",
+    quote: "We hire from IEC every year. Their design and IT graduates arrive ready for client work from week one.",
     name: "Creative studio partner",
     role: "Industry recruiter",
   },
@@ -362,8 +331,7 @@ const testimonials = [
     role: "IEC School of Design & IT",
   },
   {
-    quote:
-      "As a teacher, the training and freedom I get to design my own classroom activities is what keeps me here.",
+    quote: "As a teacher, the training and freedom I get to design my own classroom activities is what keeps me here.",
     name: "Early years educator",
     role: "EuroKids Bishalnagar",
   },
@@ -383,23 +351,10 @@ const testimonials = [
 
 /* ------------------------------------------------------------- helpers --- */
 
-function Reveal({
-  children,
-  delay = 0,
-  className = "",
-}: {
-  children: ReactNode;
-  delay?: number;
-  className?: string;
-}) {
+function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
   const { ref, visible } = useReveal();
   return (
-    <div
-      ref={ref}
-      data-visible={visible}
-      className={`reveal ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
+    <div ref={ref} data-visible={visible} className={`reveal ${className}`} style={{ transitionDelay: `${delay}ms` }}>
       {children}
     </div>
   );
@@ -422,9 +377,7 @@ function SectionHeading({
       <h2 className="mt-5 font-display text-4xl font-semibold leading-[1.08] tracking-[-0.02em] text-balance lg:text-[3.1rem]">
         {title}
       </h2>
-      {intro ? (
-        <p className="mt-5 font-body leading-relaxed text-muted-foreground text-pretty">{intro}</p>
-      ) : null}
+      {intro ? <p className="mt-5 font-body leading-relaxed text-muted-foreground text-pretty">{intro}</p> : null}
     </Reveal>
   );
 }
@@ -530,9 +483,7 @@ function Nav() {
                         rel={child.href.startsWith("http") ? "noreferrer" : undefined}
                         className="block rounded-xl px-4 py-3 transition-colors duration-300 hover:bg-secondary"
                       >
-                        <span className="block font-display text-[13px] text-foreground">
-                          {child.label}
-                        </span>
+                        <span className="block font-display text-[13px] text-foreground">{child.label}</span>
                         <span className="mt-0.5 block font-body text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                           {child.note}
                         </span>
@@ -590,11 +541,7 @@ function Nav() {
         <nav className="max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-border bg-paper px-6 pb-8 pt-2 md:hidden">
           {navLinks.map((link) => (
             <div key={link.id} className="border-b border-border py-4">
-              <a
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="block font-display text-lg text-foreground"
-              >
+              <a href={link.href} onClick={() => setOpen(false)} className="block font-display text-lg text-foreground">
                 {link.label}
               </a>
               {link.children ? (
@@ -690,13 +637,7 @@ function Hero() {
   );
 }
 
-function StatCard({
-  stat,
-  index,
-}: {
-  stat: (typeof stats)[number];
-  index: number;
-}) {
+function StatCard({ stat, index }: { stat: (typeof stats)[number]; index: number }) {
   const { ref, visible } = useReveal(0.4);
   const value = useCountUp(stat.target, visible);
   const Icon = stat.icon;
@@ -729,8 +670,6 @@ function Stats() {
     </section>
   );
 }
-
-
 
 const aboutFacts = [
   { value: "1997", label: "Founded in Bagbazar, Kathmandu" },
@@ -767,14 +706,13 @@ function About() {
             />
             <Reveal delay={120}>
               <p className="mt-6 max-w-[52ch] font-body leading-relaxed text-muted-foreground text-pretty">
-                What began as a small studio in Bagbazar now spans early childhood centres, an IB
-                World School, a design and IT college, an A Levels academy and an overseas study
-                consultancy — more than ten institutions, taught by over 500 faculty, with an alumni
-                network of some fifty thousand across Nepal and abroad.
+                What began as a small studio in Bagbazar now spans early childhood centres, an IB World School, a design
+                and IT college, an A Levels academy and an overseas study consultancy — more than ten institutions,
+                taught by over 500 faculty, with an alumni network of some fifty thousand across Nepal and abroad.
               </p>
               <p className="mt-4 max-w-[52ch] font-body leading-relaxed text-muted-foreground text-pretty">
-                We stay deliberately close to the ground: small cohorts, teachers who practise what
-                they teach, and campuses run to one standard whichever neighbourhood you walk into.
+                We stay deliberately close to the ground: small cohorts, teachers who practise what they teach, and
+                campuses run to one standard whichever neighbourhood you walk into.
               </p>
               <a
                 href="#leadership"
@@ -806,19 +744,14 @@ function About() {
               </figcaption>
             </figure>
           </Reveal>
-
         </div>
 
         <Reveal delay={80}>
           <div className="mt-20 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
             {aboutFacts.map((f) => (
               <div key={f.label} className="bg-card px-8 py-10">
-                <p className="font-display text-3xl font-semibold tracking-[-0.02em] text-primary">
-                  {f.value}
-                </p>
-                <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
-                  {f.label}
-                </p>
+                <p className="font-display text-3xl font-semibold tracking-[-0.02em] text-primary">{f.value}</p>
+                <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">{f.label}</p>
               </div>
             ))}
           </div>
@@ -836,8 +769,8 @@ function About() {
                 className="aspect-[4/3] w-full object-cover"
               />
               <figcaption className="px-8 py-6 font-body text-sm leading-relaxed text-muted-foreground">
-                Design studios where fashion and interior students work to live client briefs — the
-                discipline IEC introduced to Nepal in 1997.
+                Design studios where fashion and interior students work to live client briefs — the discipline IEC
+                introduced to Nepal in 1997.
               </figcaption>
             </figure>
             <figure className="overflow-hidden rounded-2xl border border-border bg-card">
@@ -850,8 +783,8 @@ function About() {
                 className="aspect-[4/3] w-full object-cover"
               />
               <figcaption className="px-8 py-6 font-body text-sm leading-relaxed text-muted-foreground">
-                Play-based early years classrooms across four Kathmandu neighbourhoods, run to one
-                shared standard of care.
+                Play-based early years classrooms across four Kathmandu neighbourhoods, run to one shared standard of
+                care.
               </figcaption>
             </figure>
           </div>
@@ -862,9 +795,7 @@ function About() {
             <Reveal key={v.title} delay={i * 90}>
               <div className="card-lift h-full rounded-2xl border border-border bg-card p-8">
                 <h3 className="font-display text-xl font-semibold tracking-[-0.01em]">{v.title}</h3>
-                <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground">
-                  {v.body}
-                </p>
+                <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground">{v.body}</p>
               </div>
             </Reveal>
           ))}
@@ -873,7 +804,6 @@ function About() {
     </section>
   );
 }
-
 
 function Pillars() {
   return (
@@ -893,12 +823,8 @@ function Pillars() {
                   <span className="inline-flex size-12 items-center justify-center rounded-xl bg-secondary text-primary transition-colors duration-500 group-hover:bg-primary group-hover:text-primary-foreground">
                     <Icon className="size-5" strokeWidth={1.6} />
                   </span>
-                  <h3 className="mt-8 font-display text-xl font-semibold tracking-[-0.01em]">
-                    {p.title}
-                  </h3>
-                  <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground">
-                    {p.body}
-                  </p>
+                  <h3 className="mt-8 font-display text-xl font-semibold tracking-[-0.01em]">{p.title}</h3>
+                  <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground">{p.body}</p>
                 </div>
               </Reveal>
             );
@@ -987,15 +913,11 @@ function Institutions() {
                   </p>
                 ) : null}
 
-                <p className="mt-6 font-body text-sm leading-relaxed text-muted-foreground text-pretty">
-                  {inst.blurb}
-                </p>
+                <p className="mt-6 font-body text-sm leading-relaxed text-muted-foreground text-pretty">{inst.blurb}</p>
 
                 {inst.branches ? (
                   <div className="mt-6">
-                    <p className="font-body text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-                      Branches
-                    </p>
+                    <p className="font-body text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Branches</p>
                     <div className="mt-3 flex flex-wrap gap-2">
                       {inst.branches.map((b) => (
                         <span
@@ -1008,16 +930,13 @@ function Institutions() {
                         >
                           {b.name}
                           {b.status ? (
-                            <span className="font-body text-[10px] uppercase tracking-[0.14em]">
-                              {b.status}
-                            </span>
+                            <span className="font-body text-[10px] uppercase tracking-[0.14em]">{b.status}</span>
                           ) : null}
                         </span>
                       ))}
                     </div>
                   </div>
                 ) : null}
-
 
                 <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
                   <span className="inline-flex items-center gap-2 font-body text-sm text-muted-foreground">
@@ -1119,22 +1038,19 @@ function SitapailaSection() {
               EuroKids Sitapaila — our newest branch
             </h2>
             <p className="mt-6 font-body leading-relaxed text-muted-foreground text-pretty">
-              EuroKids is opening a new early childhood education branch in Sitapaila. It joins our
-              existing preschools in Hattigauda, Bishalnagar, Tinkune and Samakhusi, bringing the
-              same warm, play-based first years of school to families on the western side of the
-              Kathmandu Valley.
+              EuroKids is opening a new early childhood education branch in Sitapaila. It joins our existing preschools
+              in Hattigauda, Bishalnagar, Tinkune and Samakhusi, bringing the same warm, play-based first years of
+              school to families on the western side of the Kathmandu Valley.
             </p>
             <p className="mt-4 font-body leading-relaxed text-muted-foreground text-pretty">
-              The campus is being prepared now. Enquiries and early registrations are open, and
-              families are welcome to speak with us about admission before the branch opens.
+              The campus is being prepared now. Enquiries and early registrations are open, and families are welcome to
+              speak with us about admission before the branch opens.
             </p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2">
               {points.map((p) => (
                 <div key={p.title} className="rounded-xl border border-border bg-card p-6">
                   <h3 className="font-display text-lg font-semibold">{p.title}</h3>
-                  <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
-                    {p.body}
-                  </p>
+                  <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">{p.body}</p>
                 </div>
               ))}
             </div>
@@ -1185,24 +1101,20 @@ function InfinitySection() {
               Infinity Developers — IEC enters real estate and construction
             </h2>
             <p className="mt-6 font-body leading-relaxed text-muted-foreground text-pretty">
-              After nearly three decades of building institutions, IEC Group has stepped into
-              building spaces. Infinity Developers Pvt. Ltd. is the group's real estate and
-              construction arm, taking the same care we put into classrooms into land, structure
-              and finishing across the Kathmandu Valley.
+              After nearly three decades of building institutions, IEC Group has stepped into building spaces. Infinity
+              Developers Pvt. Ltd. is the group's real estate and construction arm, taking the same care we put into
+              classrooms into land, structure and finishing across the Kathmandu Valley.
             </p>
             <p className="mt-4 font-body leading-relaxed text-muted-foreground text-pretty">
-              It grew out of a simple need: our own campuses in Hattigauda, Bishalnagar, Samakhusi,
-              Tinkune, Koteshwor and Mandikhatar had to be planned, built and maintained properly.
-              That in-house expertise is now offered to families and institutions outside the
-              group as well, under the promise of building a better tomorrow.
+              It grew out of a simple need: our own campuses in Hattigauda, Bishalnagar, Samakhusi, Tinkune, Koteshwor
+              and Mandikhatar had to be planned, built and maintained properly. That in-house expertise is now offered
+              to families and institutions outside the group as well, under the promise of building a better tomorrow.
             </p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2">
               {pillars.map((p) => (
                 <div key={p.title} className="rounded-xl border border-border bg-card p-6">
                   <h3 className="font-display text-lg font-semibold">{p.title}</h3>
-                  <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
-                    {p.body}
-                  </p>
+                  <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">{p.body}</p>
                 </div>
               ))}
             </div>
@@ -1223,8 +1135,7 @@ function InfinitySection() {
                 className="mx-auto max-h-32 w-auto object-contain"
               />
               <p className="mt-8 font-body text-sm leading-relaxed text-muted-foreground">
-                Building a better tomorrow — residential, institutional and campus projects across
-                the Kathmandu Valley.
+                Building a better tomorrow — residential, institutional and campus projects across the Kathmandu Valley.
               </p>
               <dl className="mt-8 grid grid-cols-2 gap-6 border-t border-border pt-8 text-left">
                 <div>
@@ -1234,9 +1145,7 @@ function InfinitySection() {
                   <dd className="mt-2 font-display text-2xl font-semibold text-primary">2026</dd>
                 </div>
                 <div>
-                  <dt className="font-body text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-                    Focus
-                  </dt>
+                  <dt className="font-body text-[11px] uppercase tracking-[0.2em] text-muted-foreground">Focus</dt>
                   <dd className="mt-2 font-display text-lg font-semibold text-primary">
                     Real estate &amp; construction
                   </dd>
@@ -1249,7 +1158,6 @@ function InfinitySection() {
     </section>
   );
 }
-
 
 function MapSection() {
   return (
@@ -1283,10 +1191,10 @@ function MapSection() {
               </figure>
 
               <p className="mt-6 font-body leading-relaxed text-muted-foreground text-pretty">
-                Every campus we run sits inside the Kathmandu valley — Hattigauda, Bishalnagar,
-                Samakhusi, Tinkune, Mandikhatar, Koteshwor and Sitapaila — close enough that
-                teachers, resources and events move between them as one group. Families choose a
-                campus near home without giving up the standards of the whole network.
+                Every campus we run sits inside the Kathmandu valley — Hattigauda, Bishalnagar, Samakhusi, Tinkune,
+                Mandikhatar, Koteshwor and Sitapaila — close enough that teachers, resources and events move between
+                them as one group. Families choose a campus near home without giving up the standards of the whole
+                network.
               </p>
 
               <dl className="mt-8 grid gap-6 sm:grid-cols-3">
@@ -1297,9 +1205,7 @@ function MapSection() {
                 ].map((item) => (
                   <div key={item.v} className="border-t border-border pt-4">
                     <dt className="font-display text-3xl font-semibold text-primary">{item.k}</dt>
-                    <dd className="mt-2 font-body text-sm leading-relaxed text-muted-foreground">
-                      {item.v}
-                    </dd>
+                    <dd className="mt-2 font-body text-sm leading-relaxed text-muted-foreground">{item.v}</dd>
                   </div>
                 ))}
               </dl>
@@ -1343,13 +1249,9 @@ function Impact() {
                   <h3 className="mt-5 font-display text-3xl font-semibold leading-tight tracking-[-0.02em] text-balance">
                     {s.title}
                   </h3>
-                  <p className="mt-5 font-body leading-relaxed text-muted-foreground text-pretty">
-                    {s.body}
-                  </p>
+                  <p className="mt-5 font-body leading-relaxed text-muted-foreground text-pretty">{s.body}</p>
                   <div className="mt-8 flex items-baseline gap-4 border-t border-border pt-6">
-                    <span className="font-display text-4xl font-semibold text-primary">
-                      {s.stat}
-                    </span>
+                    <span className="font-display text-4xl font-semibold text-primary">{s.stat}</span>
                     <span className="font-body text-sm text-muted-foreground">{s.statNote}</span>
                   </div>
                 </div>
@@ -1367,9 +1269,7 @@ function Timeline() {
     <section className="bg-primary text-primary-foreground">
       <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
         <Reveal className="max-w-2xl">
-          <p className="font-body text-[11px] font-bold uppercase tracking-[0.26em] text-brandgold">
-            Our journey
-          </p>
+          <p className="font-body text-[11px] font-bold uppercase tracking-[0.26em] text-brandgold">Our journey</p>
           <h2 className="mt-5 font-display text-4xl font-semibold leading-[1.08] tracking-[-0.02em] text-balance lg:text-[3.1rem]">
             From one college to a group
           </h2>
@@ -1382,9 +1282,7 @@ function Timeline() {
               <Reveal key={t.year} delay={i * 110}>
                 <div className="relative border-l border-paper/20 pl-6 lg:border-l-0 lg:pl-0">
                   <span className="absolute -left-[5px] top-1 size-2.5 rounded-full bg-brandgold lg:static lg:block" />
-                  <p className="mt-0 font-display text-2xl font-semibold text-brandgold lg:mt-6">
-                    {t.year}
-                  </p>
+                  <p className="mt-0 font-display text-2xl font-semibold text-brandgold lg:mt-6">{t.year}</p>
                   <h3 className="mt-3 font-display text-lg font-semibold">{t.title}</h3>
                   <p className="mt-3 font-body text-sm leading-relaxed text-paper/70">{t.body}</p>
                 </div>
@@ -1409,11 +1307,7 @@ function Leadership() {
         <div className="mt-16 grid gap-10 md:grid-cols-3">
           {leaders.map((leader, i) => (
             <Reveal key={leader.name} delay={i * 100}>
-              <Link
-                to="/leadership/$slug"
-                params={{ slug: leader.slug }}
-                className="group block"
-              >
+              <Link to="/leadership/$slug" params={{ slug: leader.slug }} className="group block">
                 <div className="overflow-hidden rounded-2xl bg-secondary">
                   <img
                     src={leader.image}
@@ -1424,12 +1318,8 @@ function Leadership() {
                     className="aspect-[4/5] w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
                   />
                 </div>
-                <h3 className="mt-7 font-display text-2xl font-semibold tracking-[-0.015em]">
-                  {leader.name}
-                </h3>
-                <p className="mt-2 font-body text-[11px] uppercase tracking-[0.2em] text-brandred">
-                  {leader.role}
-                </p>
+                <h3 className="mt-7 font-display text-2xl font-semibold tracking-[-0.015em]">{leader.name}</h3>
+                <p className="mt-2 font-body text-[11px] uppercase tracking-[0.2em] text-brandred">{leader.role}</p>
                 <p className="mt-5 font-body text-sm leading-relaxed text-muted-foreground text-pretty">
                   {leader.note}
                 </p>
@@ -1524,8 +1414,7 @@ const galleryImages = [
     src: convocationAward.url,
     alt: "Award being presented on stage at the IEC College convocation ceremony",
     caption: "IEC College convocation",
-    blurb:
-      "Our most recent convocation, graced by chief guest Mrs. Sabina Kafle.",
+    blurb: "Our most recent convocation, graced by chief guest Mrs. Sabina Kafle.",
     span: "lg:col-span-2 lg:row-span-2",
   },
   {
@@ -1539,12 +1428,10 @@ const galleryImages = [
     src: euroAnnualDay.url,
     alt: "Euro School students at a major production and annual day celebration",
     caption: "Euro School major production",
-    blurb:
-      "Our major production, annual day and investiture ceremony — the highlights of the Euro School calendar.",
+    blurb: "Our major production, annual day and investiture ceremony — the highlights of the Euro School calendar.",
     span: "",
   },
   {
-
     src: groupRunway.url,
     alt: "Models on the runway at IEC Designers Runway",
     caption: "IEC Designers Runway",
@@ -1591,8 +1478,6 @@ const studioImages = [
   },
 ];
 
-
-
 function Gallery() {
   return (
     <section className="bg-background">
@@ -1621,9 +1506,7 @@ function Gallery() {
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent" />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 p-5 text-primary-foreground">
                 <p className="font-display text-lg font-semibold">{img.caption}</p>
-                <p className="mt-1 max-w-[38ch] font-body text-sm text-primary-foreground/80">
-                  {img.blurb}
-                </p>
+                <p className="mt-1 max-w-[38ch] font-body text-sm text-primary-foreground/80">{img.blurb}</p>
               </div>
             </Reveal>
           ))}
@@ -1661,9 +1544,7 @@ function StudioSection() {
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent" />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 p-5 text-primary-foreground">
                 <p className="font-display text-lg font-semibold">{img.caption}</p>
-                <p className="mt-1 max-w-[38ch] font-body text-sm text-primary-foreground/80">
-                  {img.blurb}
-                </p>
+                <p className="mt-1 max-w-[38ch] font-body text-sm text-primary-foreground/80">{img.blurb}</p>
               </div>
             </Reveal>
           ))}
@@ -1767,9 +1648,7 @@ function InfrastructureSection() {
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent" />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 p-5 text-primary-foreground">
                 <p className="font-display text-lg font-semibold">{img.caption}</p>
-                <p className="mt-1 max-w-[38ch] font-body text-sm text-primary-foreground/80">
-                  {img.blurb}
-                </p>
+                <p className="mt-1 max-w-[38ch] font-body text-sm text-primary-foreground/80">{img.blurb}</p>
               </div>
             </Reveal>
           ))}
@@ -1778,11 +1657,6 @@ function InfrastructureSection() {
     </section>
   );
 }
-
-
-
-
-
 
 const pathwaySteps = [
   {
@@ -1829,12 +1703,8 @@ function PathwaySection() {
                 <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">
                   {step.stage}
                 </span>
-                <h3 className="mt-3 font-display text-2xl font-semibold tracking-[-0.01em]">
-                  {step.title}
-                </h3>
-                <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
-                  {step.body}
-                </p>
+                <h3 className="mt-3 font-display text-2xl font-semibold tracking-[-0.01em]">{step.title}</h3>
+                <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">{step.body}</p>
               </li>
             </Reveal>
           ))}
@@ -1887,9 +1757,7 @@ function FaqSection() {
               <Reveal key={f.q} delay={i * 60}>
                 <div className="py-6">
                   <dt className="font-display text-lg font-semibold tracking-[-0.01em]">{f.q}</dt>
-                  <dd className="mt-2 font-body text-sm leading-relaxed text-muted-foreground">
-                    {f.a}
-                  </dd>
+                  <dd className="mt-2 font-body text-sm leading-relaxed text-muted-foreground">{f.a}</dd>
                 </div>
               </Reveal>
             ))}
@@ -1912,8 +1780,8 @@ function CallToAction() {
                 Nepal is stronger when we teach together
               </h2>
               <p className="mx-auto mt-6 max-w-[52ch] font-body leading-relaxed text-paper/75 text-pretty">
-                Partner with the group, enrol a student, or bring your school into our network of
-                campuses and counsellors.
+                Partner with the group, enrol a student, or bring your school into our network of campuses and
+                counsellors.
               </p>
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
                 <a
@@ -1973,10 +1841,7 @@ function Contact() {
                     </dt>
                     <dd className="mt-2 break-words font-display text-lg font-semibold">
                       {d.href ? (
-                        <a
-                          href={d.href}
-                          className="transition-colors duration-300 hover:text-brandred"
-                        >
+                        <a href={d.href} className="transition-colors duration-300 hover:text-brandred">
                           {d.value}
                         </a>
                       ) : (
@@ -2011,8 +1876,8 @@ function Footer() {
               <Wordmark className="h-12 lg:h-12" />
             </span>
             <p className="mt-6 max-w-[38ch] font-body text-sm leading-relaxed text-paper/70">
-              IEC Group has been Nepal's education house since 1997 — eight institutions across
-              design, IT, K-12 and early years, held to one standard of teaching and care.
+              IEC Group has been Nepal's education house since 1997 — eight institutions across design, IT, K-12 and
+              early years, held to one standard of teaching and care.
             </p>
             <div className="mt-8 flex gap-3">
               {socials.map((s) => {
@@ -2032,9 +1897,7 @@ function Footer() {
           </div>
 
           <div>
-            <p className="font-body text-[11px] uppercase tracking-[0.24em] text-brandgold">
-              Quick links
-            </p>
+            <p className="font-body text-[11px] uppercase tracking-[0.24em] text-brandgold">Quick links</p>
             <ul className="mt-6 space-y-3 font-body text-sm text-paper/75">
               {navLinks.map((l) => (
                 <li key={l.id}>
@@ -2047,9 +1910,7 @@ function Footer() {
           </div>
 
           <div>
-            <p className="font-body text-[11px] uppercase tracking-[0.24em] text-brandgold">
-              Organizations
-            </p>
+            <p className="font-body text-[11px] uppercase tracking-[0.24em] text-brandgold">Organizations</p>
             <ul className="mt-6 space-y-3 font-body text-sm text-paper/75">
               {institutions.map((i) => (
                 <li key={i.name}>
@@ -2067,16 +1928,11 @@ function Footer() {
           </div>
 
           <div>
-            <p className="font-body text-[11px] uppercase tracking-[0.24em] text-brandgold">
-              Stay in touch
-            </p>
+            <p className="font-body text-[11px] uppercase tracking-[0.24em] text-brandgold">Stay in touch</p>
             <p className="mt-6 font-body text-sm leading-relaxed text-paper/70">
               Admissions dates, showcases and campus news — a few times a year, never more.
             </p>
-            <form
-              className="mt-6 flex flex-col gap-3 sm:flex-row"
-              onSubmit={(e) => e.preventDefault()}
-            >
+            <form className="mt-6 flex flex-col gap-3 sm:flex-row" onSubmit={(e) => e.preventDefault()}>
               <label htmlFor="newsletter" className="sr-only">
                 Email address
               </label>
@@ -2107,12 +1963,8 @@ function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-paper/15 pt-8 sm:flex-row sm:items-center">
-          <p className="font-body text-[11px] uppercase tracking-[0.2em] text-paper/60">
-            © 1997–2026 IEC Group Nepal
-          </p>
-          <p className="font-body text-[11px] uppercase tracking-[0.2em] text-paper/60">
-            Education… Our Passion
-          </p>
+          <p className="font-body text-[11px] uppercase tracking-[0.2em] text-paper/60">© 1997–2026 IEC Group Nepal</p>
+          <p className="font-body text-[11px] uppercase tracking-[0.2em] text-paper/60">Education… Our Passion</p>
         </div>
       </div>
     </footer>
