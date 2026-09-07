@@ -582,7 +582,7 @@ function Hero() {
       <img
         src={heroBanner.url}
         alt="Students walking through an IEC Group campus courtyard at golden hour"
-        className="absolute inset-0 size-full scale-105 object-cover"
+        className="absolute inset-0 size-full scale-125 object-cover"
       />
       <div className="absolute inset-0 bg-[linear-gradient(150deg,color-mix(in_oklab,var(--veil-base)_74%,transparent),color-mix(in_oklab,var(--veil-base)_40%,transparent))]" />
       <div className="absolute inset-x-0 bottom-0 h-56 veil" />
