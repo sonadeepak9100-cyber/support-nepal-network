@@ -707,8 +707,8 @@ function About() {
             <Reveal delay={120}>
               <p className="mt-6 max-w-[52ch] font-body leading-relaxed text-muted-foreground text-pretty">
                 What began as a small studio in Bagbazar now spans early childhood centres, an IB World School, a design
-                and IT college, an A Levels academy and an overseas study consultancy — more than ten institutions,
-                taught by over 500 faculty, with an alumni network of some fifty thousand across Nepal and abroad.
+                and IT college, an overseas study consultancy — more than ten institutions, taught by over 500 faculty,
+                with an alumni network of some fifty thousand across Nepal and abroad.
               </p>
               <p className="mt-4 max-w-[52ch] font-body leading-relaxed text-muted-foreground text-pretty">
                 We stay deliberately close to the ground: small cohorts, teachers who practise what they teach, and
@@ -1670,11 +1670,6 @@ const pathwaySteps = [
     body: "An IB World School experience in Hattigauda and Suryakot, Koteshwor — inquiry-led classrooms, sport, music, production and leadership through the investiture programme.",
   },
   {
-    stage: "Grade 11–12",
-    title: "Euro A Level Academy",
-    body: "A Levels and +2 pathways designed for students aiming at competitive universities at home and abroad. Coming soon.",
-  },
-  {
     stage: "Bachelor degrees",
     title: "IEC College",
     body: "Undergraduate programmes delivered in partnership with Teesside University, UK, plus design, creative arts and IT degrees at IEC School of Design & IT.",
@@ -1717,7 +1712,7 @@ function PathwaySection() {
 const faqs = [
   {
     q: "How many institutions are part of IEC Group?",
-    a: "More than ten institutions and campuses across Kathmandu, spanning pre-school, K-10 schooling, A Levels, bachelor degrees, design and IT, and study-abroad guidance.",
+    a: "More than ten institutions and campuses across Kathmandu, spanning pre-school, K-10 schooling, bachelor degrees, design and IT, and study-abroad guidance.",
   },
   {
     q: "When did the group begin?",
