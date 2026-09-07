@@ -578,7 +578,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative isolate min-h-[92vh] overflow-hidden bg-primary">
+    <section id="top" className="relative isolate min-h-[100svh] overflow-hidden bg-primary">
       <img
         src={heroCampus}
         alt="Students walking through an IEC Group campus courtyard at golden hour"
@@ -587,7 +587,7 @@ function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(150deg,color-mix(in_oklab,var(--veil-base)_74%,transparent),color-mix(in_oklab,var(--veil-base)_40%,transparent))]" />
       <div className="absolute inset-x-0 bottom-0 h-56 veil" />
 
-      <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col items-center justify-center px-6 py-32 text-center text-paper lg:px-10">
+      <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col items-center justify-center px-6 py-32 text-center text-paper lg:px-10">
         <img
           src={iecLogo.url}
           alt="IEC Group of Companies"
