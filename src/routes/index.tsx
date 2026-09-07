@@ -578,27 +578,27 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative isolate min-h-[100svh] overflow-hidden bg-primary">
-      <img
-        src={heroCampus}
-        alt="Students walking through an IEC Group campus courtyard at golden hour"
-        className="absolute inset-0 size-full scale-105 object-cover"
-      />
-      <div className="absolute inset-0 bg-[linear-gradient(150deg,color-mix(in_oklab,var(--veil-base)_74%,transparent),color-mix(in_oklab,var(--veil-base)_40%,transparent))]" />
-      <div className="absolute inset-x-0 bottom-0 h-56 veil" />
-
-      <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col items-center justify-center px-6 py-32 text-center text-paper lg:px-10">
+    <section id="top" className="relative isolate overflow-hidden bg-primary pt-16 lg:pt-[72px]">
+      <div className="relative mx-auto h-[200px] w-full max-w-[1900px] overflow-hidden">
         <img
-          src={iecLogo.url}
-          alt="IEC Group of Companies"
-          className="rise h-auto w-[105px] rounded-lg bg-paper object-contain px-2.5 py-1 shadow-2xl sm:w-[120px] lg:w-[135px]"
+          src={heroCampus}
+          alt="Students walking through an IEC Group campus courtyard at golden hour"
+          className="absolute inset-0 size-full object-cover"
         />
-        <h1
-          className="rise mt-8 font-display text-[2.4rem] font-bold uppercase leading-[1] tracking-[-0.03em] sm:text-[3.6rem] lg:text-[4.75rem]"
-          style={{ animationDelay: "100ms" }}
-        >
-          IEC Group
-        </h1>
+        <div className="absolute inset-0 bg-[linear-gradient(150deg,color-mix(in_oklab,var(--veil-base)_74%,transparent),color-mix(in_oklab,var(--veil-base)_40%,transparent))]" />
+        <div className="relative flex h-full items-center justify-center gap-4 px-6 text-center text-paper">
+          <img
+            src={iecLogo.url}
+            alt="IEC Group of Companies"
+            className="rise h-auto w-[86px] rounded-lg bg-paper object-contain px-2 py-1 shadow-2xl sm:w-[105px]"
+          />
+          <h1 className="rise font-display text-3xl font-bold uppercase leading-none tracking-[-0.03em] sm:text-5xl">
+            IEC Group
+          </h1>
+        </div>
+      </div>
+
+      <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center px-6 py-16 text-center text-paper lg:px-10">
         <p
           className="rise mt-6 inline-flex items-center gap-2 rounded-full border border-paper/25 bg-paper/10 px-4 py-1.5 font-body text-[11px] uppercase tracking-[0.28em] text-paper/90 backdrop-blur-sm"
           style={{ animationDelay: "160ms" }}
