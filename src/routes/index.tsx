@@ -1720,7 +1720,7 @@ const faqs = [
   },
   {
     q: "Is Euro School an IB school?",
-    a: "Yes. Euro School is an IB World School for Grade 1 to 10, with campuses at Hattigauda and Suryakot, Koteshwor.",
+    a: "Yes. Euro School is an IB School, with campus at Hattigauda.",
   },
   {
     q: "Can students earn a UK degree in Kathmandu?",
